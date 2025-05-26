@@ -1,0 +1,31 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Contact from './pages/contact/Contact';
+import About from './pages/about/AboutSSITM';
+import Undergrad from './pages/Courses/Undergrad';
+import PrivacyPolicy from './pages/Privacy-Policy';
+import TnC from './pages/Terms-and-Conditions';
+import Postgrad from './pages/Courses/Postgrad';
+import AdmissionProcess from './pages/Admission/AdmissionProcess';
+import Eligibility from './pages/Admission/Eligibility';
+
+function App() {
+    return (
+
+
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about/about-ssitm' element={< About />} />
+            <Route path='/contact-us' element={<Contact />} />
+            <Route path='/courses/undergrad' element={< Undergrad />} />
+            <Route path='/courses/postgrad' element={< Postgrad />} />
+            <Route path='/admission/admission-process' element={< AdmissionProcess />} />
+            <Route path='/admission/eligibility' element={< Eligibility />} />
+            <Route path='/privacy-policy' element={< PrivacyPolicy />} />
+            <Route path='/terms-and-conditions' element={< TnC />} />
+        </Routes>
+
+    )
+}
+
+export default App;

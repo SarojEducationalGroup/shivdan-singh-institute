@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import campusImage from '../assets/ssitm-campusLogo.jpg'; // Import your demo image
+import campusImage from '../assets/HERO-IMAGE.jpg'; // Import your demo image
 import Recruiters from './Recruiters';
 import Courses from './Courses'; // Assuming Courses component is in a file named Courses.jsx
 import Placement from './Placement';
@@ -29,12 +29,15 @@ function Home() {
                 6 innovation hubs, and faculty with 15+ years average industry experience.
               </p>
 
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
-                SSITM is committed to nurturing future leaders and innovators. Our holistic
-                approach emphasizes not just academic excellence, but also personal growth,
-                critical thinking, and problem-solving skills, preparing students for a
-                dynamic global landscape.
-              </p>
+              <ul className="list-disc list-inside text-gray-700 text-base leading-relaxed mb-6 space-y-2">
+                <li>SSITM is committed to nurturing future leaders and innovators.</li>
+                <li>Our holistic approach emphasizes not just academic excellence, but also personal growth, critical thinking, and problem-solving skills.</li>
+                <li>We prepare students for a dynamic global landscape.</li>
+                <li>We offer state-of-the-art facilities and a vibrant campus environment.</li>
+                <li>Our dedicated faculty comprises experienced professionals and researchers.</li>
+                <li>Strong industry connections provide excellent internship and placement opportunities.</li>
+                <li>A wide range of extracurricular activities and student clubs foster all-round development.</li>
+              </ul>
 
               {/* <a
                 href="#"

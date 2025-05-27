@@ -1,6 +1,6 @@
 import React  from "react";
 import Layout from "../../components/Layout"
-import campusImage from "../../assets/ssitm-campusLogo.jpg"
+import campusImage from "../../assets/HERO-IMAGE.jpg"
 import WhyChooseUs from "../WhyChooseUs";
 
 

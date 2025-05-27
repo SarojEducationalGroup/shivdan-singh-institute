@@ -1,5 +1,5 @@
 import React from 'react';
-import umeshImage from '../assets/umesh-mishra.jpeg'; 
+import umeshImage from '../assets/umesh-mishra.jpeg';
 import pramuditImage from '../assets/pramudit-shukla.jpeg';
 import shaloniImage from '../assets/shaloni-devi.jpeg';
 import squareitLogo from '../assets/squareit-logo.png'; // Placeholder, replace with actual logo if available
@@ -47,8 +47,8 @@ const Placement = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading - Consistent Styling */}
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
-         <span className="border-l-4 border-orange-500 pl-4">RECENT <span className="text-orange-500">PLACEMENTS</span></span>
-</h1>
+          <span className="border-l-4 border-orange-500 pl-4">RECENT <span className="text-orange-500">PLACEMENTS</span></span>
+        </h1>
         {/* Placements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {placementsData.map((placement) => (
@@ -93,18 +93,12 @@ const Placement = () => {
                 </div>
               </div>
               <div className="bg-yellow-200 p-3 text-center text-gray-800 font-medium text-sm">
-                Best Wishes, Saroj Educational Group
+                Best Wishes, SSITM
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Placements Button */}
-        {/* <div className="flex justify-center mt-10">
-           <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300">
-                        VIEW ALL PLACEMENTS
-                    </button>
-        </div> */}
       </div>
     </section>
   );

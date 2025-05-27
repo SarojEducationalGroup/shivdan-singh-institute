@@ -100,11 +100,11 @@ const Placement = () => {
         </div>
 
         {/* View All Placements Button */}
-        <div className="flex justify-center mt-10">
+        {/* <div className="flex justify-center mt-10">
            <button className="bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-6 rounded-md shadow-lg transition duration-300">
                         VIEW ALL PLACEMENTS
                     </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

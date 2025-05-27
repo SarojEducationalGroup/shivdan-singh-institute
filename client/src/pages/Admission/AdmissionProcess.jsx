@@ -7,52 +7,70 @@ const AdmissionProcess = () => {
   const admissionSteps = [
     {
       id: 1,
-      title: 'Step 1: Application Submission',
+      title: 'Step 1: Online Registration',
       icon: '📝', // Emoji for visual appeal
-      description: 'Fill out the online application form completely and accurately on our admissions portal. Ensure all required fields are filled and information is correct.',
+      description: 'Go to the registration link – Online Registration. A registration form will appear.',
     },
     {
       id: 2,
-      title: 'Step 2: Document Upload',
-      icon: '📁',
-      description: 'Upload scanned copies of all necessary documents, including academic transcripts, identification proof, and photographs, as specified in the guidelines.',
+      title: 'Step 2: Fill & Submit Details',
+      icon: '✍️',
+      description: 'Fill in all the required details and click on "Submit".',
     },
     {
       id: 3,
-      title: 'Step 3: Entrance Exam/Interview',
-      icon: '✍️',
-      description: 'Depending on the program, candidates may be required to appear for an entrance examination or a personal interview. Details will be communicated via email.',
+      title: 'Step 3: Make Payment',
+      icon: '💳',
+      description: 'After submitting the registration form, you will be directed to the Payment page. Click on the "Make Payment" option.',
     },
     {
       id: 4,
-      title: 'Step 4: Merit List & Counseling',
-      icon: '📊',
-      description: 'A merit list will be published based on eligibility criteria and entrance exam/interview performance. Successful candidates will be invited for counseling sessions.',
+      title: 'Step 4: Registration Fee Submission',
+      icon: '💰',
+      description: 'Candidates/ Students are required to submit a registration fee of Rs. 1000 before proceeding.',
     },
     {
       id: 5,
-      title: 'Step 5: Fee Payment & Enrollment',
-      icon: '💳',
-      description: 'Upon selection, pay the first installment of the academic fees to confirm your admission. You will then receive an official enrollment confirmation.',
+      title: 'Step 5: Receive Login Credentials & Print Form',
+      icon: '🔑',
+      description: 'After successful payment of the registration fee, a temporary Login Id and Password will be sent to the respective Email Ids of the candidates. Students/ Candidates can also take a printout of their Registration form.',
     },
     {
       id: 6,
-      title: 'Step 6: Document Verification',
-      icon: '✅',
-      description: 'Submit your original documents for verification at the time of reporting to the college. Ensure all documents match the uploaded copies.',
+      title: 'Step 6: Login to Your Account',
+      icon: '➡️',
+      description: 'For logging into your account, click on the Student Login. Fill in the login credentials sent to your Email Id and click on Login.',
+    },
+    {
+      id: 7,
+      title: 'Step 7: Complete Application Form',
+      icon: '📄',
+      description: 'Students/ Candidates can then proceed to fill the Complete Admission Form.',
+    },
+    {
+      id: 8,
+      title: 'Step 8: Receive Permanent Login ID',
+      icon: '✉️',
+      description: 'After filling the form, a permanent Login Id will be sent to the Email Id of the student/ candidate.',
+    },
+    {
+      id: 9,
+      title: 'Step 9: Print Admission Form',
+      icon: '🖨️',
+      description: 'Take a printout of the admission form after successfully submitting the form online.',
     },
   ];
 
+  // The image doesn't list specific required documents directly in the steps,
+  // but it implies they are needed. We'll keep a general list, or you can remove this section
+  // if you want to strictly adhere to only what's on the screenshot for the "process"
   const requiredDocuments = [
-    'Class 10th Marksheet & Passing Certificate',
-    'Class 12th Marksheet & Passing Certificate',
-    'Graduation Marksheet (for PG courses)',
-    'Transfer Certificate (TC) & Migration Certificate',
+    'Academic Transcripts (10th, 12th, Graduation if applicable)',
+    'Identity Proof (Aadhar Card, Passport, etc.)',
+    'Photographs (Passport size)',
+    'Transfer/Migration Certificate',
     'Character Certificate',
-    'Domicile Certificate (if applicable)',
-    'Category Certificate (SC/ST/OBC, if applicable)',
-    'Aadhar Card or other Photo ID proof',
-    'Passport size photographs (4-6 copies)',
+    'Category/Domicile Certificate (if applicable)',
     'Entrance Exam Scorecard (if applicable)',
   ];
 
@@ -76,11 +94,11 @@ const AdmissionProcess = () => {
             A comprehensive guide to applying for your desired program at SSITM. We're here to help you every step of the way.
           </p>
           <a
-            href="https://www.ssitm.ac.in/admission-form" // Replace with your actual online application link
+            href="https://segiko.org/ssitm/admission-procedure" // This is the link from your screenshot for the application page
             target="_blank"
             rel="noopener noreferrer"
             className="bg-orange-500 text-white hover:bg-orange-600 font-bold py-3 px-8 rounded-full shadow-lg
-                       transition-all duration-300 transform hover:scale-105 inline-block"
+                         transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Start Your Online Application <span className="ml-2">&rarr;</span>
           </a>
@@ -115,6 +133,9 @@ const AdmissionProcess = () => {
       </section>
 
       {/* Required Documents Section - Navy Blue Card Background */}
+      {/* You can keep this section if you want to provide a general list of required documents, 
+          even if the image doesn't explicitly list them step-by-step. 
+          If you want to strictly match the image, you might consider removing or integrating this differently. */}
       <section className="py-12 sm:py-16 bg-blue-900 bg-opacity-95 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-8 sm:mb-12 relative pb-2 text-center">
@@ -136,15 +157,16 @@ const AdmissionProcess = () => {
       {/* Important Dates & Contact Section - Light Orange Background */}
       <section className="bg-orange-50 bg-opacity-70 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Important Dates */}
+          {/* Important Dates - (Example, adjust if you have specific dates) */}
           <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
             <h3 className="text-2xl font-bold text-orange-700 mb-4">Important Dates</h3>
             <ul className="text-gray-700 text-lg space-y-3">
-              <li><span className="font-semibold text-blue-800">Application Start:</span> 15th May 2025</li>
-              <li><span className="font-semibold text-blue-800">Application Deadline:</span> 30th July 2025</li>
-              <li><span className="font-semibold text-blue-800">Entrance Exam (if applicable):</span> 10th August 2025</li>
-              <li><span className="font-semibold text-blue-800">Counseling/Admission:</span> 20th - 30th August 2025</li>
+              <li><span className="font-semibold text-blue-800">Application Start:</span> To be announced</li>
+              <li><span className="font-semibold text-blue-800">Application Deadline:</span> To be announced</li>
+              <li><span className="font-semibold text-blue-800">Entrance Exam (if applicable):</span> To be announced</li>
+              <li><span className="font-semibold text-blue-800">Counseling/Admission:</span> To be announced</li>
             </ul>
+           
           </div>
 
           {/* Contact Information */}
@@ -154,14 +176,10 @@ const AdmissionProcess = () => {
               Have questions about the admission process? Our team is here to help!
             </p>
             <ul className="text-gray-700 text-lg space-y-3">
-              <li><span className="font-semibold text-blue-800">Email:</span> <a href="mailto:admissions@ssitm.ac.in" className="text-orange-600 hover:underline">admissions@ssitm.ac.in</a></li>
-              <li><span className="font-semibold text-blue-800">Phone:</span> <a href="tel:+919876543210" className="text-orange-600 hover:underline">+91-9876543210</a></li>
-              <li><span className="font-semibold text-blue-800">Toll Free:</span> 1800-180-7686</li>
-              <li><span className="font-semibold text-blue-800">Office Hours:</span> Mon-Fri, 9:00 AM - 5:00 PM</li>
+              <li><span className="font-semibold text-blue-800">Contact No:</span> 09555699988,09810054878</li>
+              <li><span className="font-semibold text-blue-800">Email:</span> admission.cell@seglko.orG</li>
             </ul>
-            <p className="text-gray-600 mt-4 text-sm">
-              You can also visit our campus for a personalized counseling session.
-            </p>
+            
           </div>
         </div>
       </section>

@@ -18,8 +18,10 @@ const navItems = [
     title: "Courses",
     path: "/courses", // Consider changing to a parent path like /courses or removing if only subitems are navigable
     subItems: [
-      { title: "Undergraduate", path: "/courses/undergrad" },
-      { title: "Postgraduate", path: "/courses/postgrad" },
+      { title: "Undergraduate", path: "/courses/undergraduate" },
+      { title: "Postgraduate", path: "/courses/postgraduate" },
+      { title: "Diploma", path: "/courses/diploma" },
+
     ],
   },
   {

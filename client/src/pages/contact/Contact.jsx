@@ -32,17 +32,15 @@ const Contact = () => {
   };
 
   const contactInfo = {
-    address: 'NH-2, Delhi-Mathura Road, Near Sector 85, Sikri, Ballabgarh, Faridabad, Haryana 121004',
-    phone1: '+91-9876543210',
-    phone2: '+91-9988776655', // Example additional phone
-    tollFree: '1800-180-7686', // As seen in image_dc5a17.png
-    email: 'info@ssitm.ac.in',
-    admissionsEmail: 'admissions@ssitm.ac.in',
+    address: '10th KM Stone, Aligarh, Mathura Road, Aligarh, Uttar Pradesh, India, 202001',
+    phone1: '+91- 9555699988',
+    phone2: '+91- 09810054878', // Example additional phone
+    tollFree: '1800-180-7686', 
+    admissionsEmail: ' admission.cell@seglko.org',
   };
 
   // Replace this with your actual Google Maps embed URL
-  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.771243764849!2d77.30058887431189!3d28.37424619356345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdb27b9c9f28d%3A0xbef0b7e2c90c765!2sShivdan%20Singh%20Institute%20of%20Technology%20%26%20Management%20(SSITM)!5e0!3m2!1sen!2sin!4v1716719544977!5m2!1sen!2sin";
-
+  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.018170300023!2d78.02029397628621!3d27.809211576124333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a48b1dc2b28f%3A0x23c4fb820ec1cf4!2sShivdan%20Singh%20Institute%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1748329570305!5m2!1sen!2sin" ;
 
   return (
     <Layout>
@@ -179,19 +177,13 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-semibold text-orange-700 mb-2">Email Addresses:</h3>
                 <ul className="space-y-2">
+
                   <li className="flex items-center">
                     <svg className="h-6 w-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
-                    <a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email} (General)</a>
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="h-6 w-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    <a href={`mailto:${contactInfo.admissionsEmail}`} className="hover:underline">{contactInfo.admissionsEmail} (Admissions)</a>
+                    <a href={`mailto:${contactInfo.admissionsEmail}`} className="hover:underline">{contactInfo.admissionsEmail}</a>
                   </li>
                 </ul>
               </div>

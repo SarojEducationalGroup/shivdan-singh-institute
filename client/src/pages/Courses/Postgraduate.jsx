@@ -1,56 +1,31 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-// You might want an image for the PG hero section, similar to your campus image.
-// import pgHeroImage from '../assets/postgrad-hero.png'; // Example: create this image
 
 const postgraduateCourses = [
   {
     id: 1,
     title: 'Master of Technology (M.Tech) - Computer Science & Engineering',
     duration: '2 Years',
-    highlights: [
-      'Advanced research in AI, Machine Learning & Data Analytics',
-      'Specialized modules in Cloud Computing & Cybersecurity',
-      'Dissertation-focused curriculum with industry mentorship',
-      'Preparation for R&D roles and academia',
-    ],
+    // Removed highlights
     eligibility: 'B.Tech/BE in CSE or IT with min. 60% or equivalent',
+    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Royalty-free image for M.Tech/CSE
   },
   {
     id: 2,
     title: 'Master of Business Administration (MBA)',
     duration: '2 Years',
-    highlights: [
-      'Dual specialization options (e.g., Marketing, Finance, HR, Operations)',
-      'Case-study based learning and industry simulations',
-      'Leadership and entrepreneurial skill development',
-      'Summer internships and live projects',
-    ],
+    // Removed highlights
     eligibility: 'Bachelor\'s Degree in any discipline with min. 50%',
+    image: 'https://plus.unsplash.com/premium_photo-1661756423422-4486e27eb6dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFjaGVsb3IlMjBvZiUyMEJ1c2luZXNzJTIwQWRtaW5pc3RyYXRpb258ZW58MHx8MHx8fDA%3D'
+  
   },
   {
     id: 3,
-    title: 'Master of Pharmacy (M.Pharma)',
-    duration: '2 Years',
-    highlights: [
-      'Specializations in Pharmaceutics, Pharmacology, Pharmaceutical Chemistry',
-      'Advanced research facilities and instrumentation',
-      'Focus on drug discovery, development & regulatory affairs',
-      'Opportunities in pharmaceutical industry and research',
-    ],
-    eligibility: 'B.Pharma with min. 55%',
-  },
-  {
-    id: 4,
     title: 'Master of Computer Applications (MCA)',
     duration: '2 Years',
-    highlights: [
-      'Industry-aligned curriculum in latest IT technologies',
-      'Focus on Web Development, Mobile Apps & Data Science',
-      'Hands-on projects and capstone experience',
-      'Career in software development, system analysis & IT consulting',
-    ],
+    // Removed highlights
     eligibility: 'Bachelor\'s Degree with Maths at 10+2 or Graduation Level with min. 50%',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Royalty-free image for MCA
   },
   // Add more postgraduate courses as needed
 ];
@@ -76,11 +51,11 @@ const Postgrad = () => {
             Gain specialized knowledge and advanced skills through SSITM's cutting-edge Master's programs, designed for industry leadership and research.
           </p>
           <a
-            href="/admission" // Link to your admission page
+            href="https://seglko.in8.nopaperforms.com/" // Link to your admission page
             className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg
-                       transition-all duration-300 transform hover:scale-105 inline-block"
+                               transition-all duration-300 transform hover:scale-105 inline-block"
           >
-            Explore Admissions <span className="ml-2">&rarr;</span>
+            Apply Now <span className="ml-2">&rarr;</span>
           </a>
         </div>
       </section>
@@ -98,19 +73,17 @@ const Postgrad = () => {
               <div
                 key={course.id}
                 className="bg-white rounded-lg shadow-xl overflow-hidden border border-orange-200
-                           flex flex-col transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                               flex flex-col transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
               >
+                {/* Image added here */}
+                <img src={course.image} alt={course.title} className="w-full h-48 object-cover object-center" />
+
                 <div className="p-6 sm:p-8 flex-grow">
                   <h3 className="text-2xl font-bold text-orange-700 mb-3">{course.title}</h3>
                   <p className="text-gray-600 mb-4">
                     <span className="font-semibold">Duration:</span> {course.duration}
                   </p>
-                  <p className="text-gray-700 font-semibold mb-2">Key Highlights:</p>
-                  <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed mb-4 space-y-1">
-                    {course.highlights.map((highlight, idx) => (
-                      <li key={idx}>{highlight}</li>
-                    ))}
-                  </ul>
+                  {/* Removed Key Highlights section */}
                 </div>
                 <div className="bg-yellow-100 p-4 border-t border-orange-200 text-gray-800 font-medium text-sm">
                   <span className="font-semibold">Eligibility:</span> {course.eligibility}
@@ -131,7 +104,7 @@ const Postgrad = () => {
           <a
             href="/admission"
             className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-10 rounded-full shadow-lg
-                       transition-all duration-300 transform hover:scale-105 inline-block"
+                             transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Learn More About Admissions
           </a>

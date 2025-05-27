@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import campusImage from '../assets/ssitm-campus.png'; // Import your demo image
+import campusImage from '../assets/ssitm-campusLogo.jpg'; // Import your demo image
 import Recruiters from './Recruiters';
 import Courses from './Courses'; // Assuming Courses component is in a file named Courses.jsx
 import Placement from './Placement';
@@ -36,12 +36,13 @@ function Home() {
                 dynamic global landscape.
               </p>
 
-              <a
+              {/* <a
                 href="#"
                 className="inline-block text-orange-600 font-semibold text-lg hover:underline transition-colors duration-300"
               >
                 Learn More About Our Vision <span aria-hidden="true">&rarr;</span>
-              </a>
+              </a> */}
+
             </div>
 
             {/* Right Column - Image & Highlights */}
@@ -79,7 +80,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Recruiters and Courses sections */}
+      {/* other sections */}
 
       <Courses />
       < Placement />

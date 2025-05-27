@@ -8,63 +8,58 @@ const undergraduateCourses = [
     id: 1,
     title: 'B.Tech - Computer Science Engineering (CSE)',
     duration: '4 Years',
-    highlights: [
-      'Focus on AI, Machine Learning, Data Science & Cloud Computing',
-      'Hands-on lab experience with modern infrastructure',
-      'Strong industry collaborations for projects and internships',
-      'Experienced faculty with research expertise',
-    ],
+    // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1998660059/photo/ai-artificial-intelligence-security-sentinel-password-cyber-security-ransomware-email.webp?a=1&b=1&s=612x612&w=0&k=20&c=b38xp_lw0-upEvjodUgwq9NNC8Lw4uDAS-SATyfr1hI=' // Example image for CSE
   },
   {
     id: 2,
     title: 'B.Tech - Electronics & Communication Engineering (ECE)',
     duration: '4 Years',
-    highlights: [
-      'Specialization in IoT, Embedded Systems & VLSI Design',
-      'Advanced digital and analog electronics labs',
-      'Projects in communication systems and signal processing',
-      'Opportunities in telecom, defense & IT sectors',
-    ],
+    // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1287582736/photo/robot-humanoid-use-laptop-and-sit-at-table-for-big-data-analytic.webp?a=1&b=1&s=612x612&w=0&k=20&c=F20ufOpQFFYfnJNNNiAbSFmP2JC5fc9WlNNz3ICih-Q=' // Example image for ECE
   },
   {
     id: 3,
     title: 'B.Tech - Mechanical Engineering (ME)',
     duration: '4 Years',
-    highlights: [
-      'CAD/CAM, Robotics & Advanced Manufacturing techniques',
-      'State-of-the-art workshops and design studios',
-      'Focus on sustainable energy and automotive design',
-      'Industry visits and practical training',
-    ],
+    // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1705357580/photo/robotic-team-boost-software-machine-ensure-efficiency-troubleshooting-upgrade-for-optimal.webp?a=1&b=1&s=612x612&w=0&k=20&c=iyllNLvGhsg8FpvQ4l55jE4DvK3tQV19G25eOPvbgyE=' // Example image for ME
   },
   {
     id: 4,
     title: 'B.Tech - Civil Engineering (CE)',
     duration: '4 Years',
-    highlights: [
-      'Sustainable infrastructure development and smart cities',
-      'Surveying, structural analysis, and construction management',
-      'Field visits to major construction sites',
-      'Opportunities in government and private infrastructure projects',
-    ],
+    // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://plus.unsplash.com/premium_photo-1661490867606-1ac837f9748e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2l2aWwlMjAlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D' // Example image for CE
   },
   {
     id: 5,
     title: 'Bachelor of Pharmacy (B.Pharma)',
     duration: '4 Years',
-    highlights: [
-      'Comprehensive study of pharmaceutical sciences',
-      'Well-equipped labs for pharmaceutics, pharmacology, medicinal chemistry',
-      'Clinical exposure and industry training',
-      'Career paths in pharma R&D, manufacturing, quality control',
-    ],
+    // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Biology/Maths or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg' 
   },
-  // Add more undergraduate courses as needed
+  {
+    id: 6,
+    title: 'Bachelor of Business Administration (BBA)',
+    duration: '3 Years',
+    // Removed highlights
+    eligibility: '10+2 in any stream or equivalent with min. 45%',
+    image: 'https://plus.unsplash.com/premium_photo-1661756423422-4486e27eb6dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFjaGVsb3IlMjBvZiUyMEJ1c2luZXNzJTIwQWRtaW5pc3RyYXRpb258ZW58MHx8MHx8fDA%3D' // Example image for BBA
+  },
+  {
+    id: 7,
+    title: 'Bachelor of Computer Applications (BCA)',
+    duration: '3 Years',
+    // Removed highlights
+    eligibility: '10+2 in any stream with Maths/Computer Science or equivalent with min. 45%',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Example image for BCA
+  },
 ];
 
 const Undergrad = () => {
@@ -88,9 +83,9 @@ const Undergrad = () => {
             Embark on a journey of discovery and innovation with SSITM's diverse Bachelor's degree offerings. Build a strong foundation for a successful career.
           </p>
           <a
-            href="/admission" // Link to your admission page
+            href="https://seglko.in8.nopaperforms.com/" // Link to your admission page
             className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg
-                       transition-all duration-300 transform hover:scale-105 inline-block"
+                             transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Apply Now <span className="ml-2">&rarr;</span>
           </a>
@@ -110,19 +105,17 @@ const Undergrad = () => {
               <div
                 key={course.id}
                 className="bg-white rounded-lg shadow-xl overflow-hidden border border-orange-200
-                           flex flex-col transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                               flex flex-col transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
               >
+                {/* Image added here */}
+                <img src={course.image} alt={course.title} className="w-full h-48 object-cover object-center" />
+
                 <div className="p-6 sm:p-8 flex-grow">
                   <h3 className="text-2xl font-bold text-orange-700 mb-3">{course.title}</h3>
                   <p className="text-gray-600 mb-4">
                     <span className="font-semibold">Duration:</span> {course.duration}
                   </p>
-                  <p className="text-gray-700 font-semibold mb-2">Key Highlights:</p>
-                  <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed mb-4 space-y-1">
-                    {course.highlights.map((highlight, idx) => (
-                      <li key={idx}>{highlight}</li>
-                    ))}
-                  </ul>
+                  {/* Removed Key Highlights section */}
                 </div>
                 <div className="bg-yellow-100 p-4 border-t border-orange-200 text-gray-800 font-medium text-sm">
                   <span className="font-semibold">Eligibility:</span> {course.eligibility}
@@ -143,7 +136,7 @@ const Undergrad = () => {
           <a
             href="/admission"
             className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-10 rounded-full shadow-lg
-                       transition-all duration-300 transform hover:scale-105 inline-block"
+                             transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Learn More About Admissions
           </a>

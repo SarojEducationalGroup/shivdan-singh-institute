@@ -1,6 +1,7 @@
 import React  from "react";
 import Layout from "../../components/Layout"
-import campusImage from "../../assets/ssitm-campus.png"
+import campusImage from "../../assets/ssitm-campusLogo.jpg"
+import WhyChooseUs from "../WhyChooseUs";
 
 
 const About = ()=>{
@@ -33,12 +34,13 @@ const About = ()=>{
                 dynamic global landscape.
               </p>
 
-              <a
+              {/* <a
                 href="#"
                 className="inline-block text-orange-600 font-semibold text-lg hover:underline transition-colors duration-300"
               >
                 Learn More About Our Vision <span aria-hidden="true">&rarr;</span>
-              </a>
+              </a> */}
+
             </div>
 
             {/* Right Column - Image & Highlights */}
@@ -75,6 +77,7 @@ const About = ()=>{
           </div>
         </div>
       </section>
+      <WhyChooseUs />
 
     </Layout>
     );

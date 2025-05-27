@@ -36,6 +36,7 @@ const Recruiters = () => {
   ];
 
   return (
+
     <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         {/* Main Heading - Consistent Styling based on image_cf1d69.png and image_cebb12.png */}
@@ -85,14 +86,25 @@ const Recruiters = () => {
                 <img
                   src={recruiter.logo}
                   alt={`${recruiter.name} Logo`}
-                  className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-filter duration-300"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* static para */}
+        <div className=" mt-8 ">
+        <p className="text-lg text-gray-700 leading-relaxed">
+          Our strong network of industry partners ensures that our students gain exposure to top-tier companies and secure promising career opportunities. We are committed to fostering talent that meets the demands of the global market.
+          Through dedicated placement assistance, career counseling, and skill development workshops, we prepare our graduates to excel in their chosen fields. These collaborations are a testament to the quality of education and the caliber of students nurtured at our institution.
+        </p>
+
+      </div>
       </div>
     </section>
+
+   
   );
 };
 

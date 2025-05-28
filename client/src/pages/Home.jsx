@@ -5,10 +5,12 @@ import Recruiters from './Recruiters';
 import Courses from './Courses'; // Assuming Courses component is in a file named Courses.jsx
 import Placement from './Placement';
 import WhyChooseUs from './WhyChooseUs.jsx';
+import Hero from './Hero.jsx';
 
 function Home() {
   return (
     <Layout>
+      <Hero />
       <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12"> {/* Consistent section background */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Heading - Consistent Styling */}

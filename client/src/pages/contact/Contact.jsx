@@ -8,6 +8,9 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+  const [submissionStatus, setSubmissionStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+
+  const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL; //
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,30 +20,56 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the formData to your backend or an email service.
-    // For demonstration, we'll just log it.
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you shortly.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+
+    if (!SCRIPT_URL) {
+      console.error("VITE_APPS_SCRIPT_URL is not defined. Please set it in your .env.local file.");
+      setSubmissionStatus('error');
+      alert("Form submission error: API URL is missing. Please check console.");
+      return;
+    }
+
+    setSubmissionStatus('submitting');
+
+    try {
+      const formElement = e.target;
+      const data = new FormData(formElement);
+
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: data, 
+      });
+
+      const result = await response.json();
+
+      if (result.result === 'success') {
+        setSubmissionStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        }); 
+      } else {
+        throw new Error(result.error || 'Unknown submission error from Apps Script.');
+      }
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      setSubmissionStatus('error');
+    }
   };
 
   const contactInfo = {
     address: '10th KM Stone, Aligarh, Mathura Road, Aligarh, Uttar Pradesh, India, 202001',
     phone1: '+91- 9555699988',
-    phone2: '+91- 09810054878', // Example additional phone
-    tollFree: '1800-180-7686', 
+    phone2: '+91- 09810054878',
+    tollFree: '1800-180-7686',
     admissionsEmail: ' admission.cell@seglko.org',
   };
 
   // Replace this with your actual Google Maps embed URL
-  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.018170300023!2d78.02029397628621!3d27.809211576124333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a48b1dc2b28f%3A0x23c4fb820ec1cf4!2sShivdan%20Singh%20Institute%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1748329570305!5m2!1sen!2sin" ;
+  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.774902123996!2d78.08389337535564!3d28.577239175691068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39745a278917e753%3A0xc3f65e2365313936!2sShri%20Ram%20Institute%20of%20Management%20%26%20Technology!5e0!3m2!1sen!2sin!4v1716801946029!5m2!1sen!2sin"; // Replaced with a more realistic embed URL
 
   return (
     <Layout>
@@ -77,7 +106,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="name" // Make sure 'name' attribute matches your Google Sheet column header
                   value={formData.name}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -91,7 +120,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="email" // Make sure 'name' attribute matches your Google Sheet column header
                   value={formData.email}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -105,7 +134,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
-                  name="subject"
+                  name="subject" // Make sure 'name' attribute matches your Google Sheet column header
                   value={formData.subject}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -118,7 +147,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="message" // Make sure 'name' attribute matches your Google Sheet column header
                   value={formData.message}
                   onChange={handleChange}
                   rows="6"
@@ -128,11 +157,19 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
+                disabled={submissionStatus === 'submitting'}
                 className="bg-orange-500 text-white font-bold py-3 px-6 rounded-full shadow-lg
-                           hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105"
+                           hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message <span className="ml-2">&rarr;</span>
+                {submissionStatus === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>
+
+              {submissionStatus === 'success' && (
+                <p className="mt-4 text-center text-green-600">Thank you for your message! We will get back to you shortly.</p>
+              )}
+              {submissionStatus === 'error' && (
+                <p className="mt-4 text-center text-red-600">Error sending message. Please try again or contact us directly.</p>
+              )}
             </form>
           </div>
 
@@ -177,7 +214,6 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-semibold text-orange-700 mb-2">Email Addresses:</h3>
                 <ul className="space-y-2">
-
                   <li className="flex items-center">
                     <svg className="h-6 w-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />

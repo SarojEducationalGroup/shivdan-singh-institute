@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import heroImage from '../assets/hero.png';
+import heroImage from '../assets/students.png';
 
 const Hero = () => {
   const controls = useAnimation();
@@ -70,15 +70,15 @@ const Hero = () => {
   return (
     <section 
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         {/* Circuit board pattern */}
         <motion.div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(circle, #4f46e5 1px, transparent 1px)',
             backgroundSize: '20px 20px'
           }}
           animate={{
@@ -95,7 +95,7 @@ const Hero = () => {
         {['AI', 'ML', 'IoT', 'VR', 'Cloud'].map((tech, index) => (
           <motion.div
             key={tech}
-            className={`absolute text-blue-200 font-mono text-lg opacity-30 ${index % 2 === 0 ? 'font-bold' : ''}`}
+            className={`absolute text-purple-300 font-mono text-lg opacity-20 ${index % 2 === 0 ? 'font-bold' : ''}`}
             style={{
               left: `${10 + (index * 15)}%`,
               top: `${20 + (index * 10)}%`
@@ -130,14 +130,14 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 leading-tight"
             whileHover={{ scale: 1.02 }}
           >
             WELCOME TO SSITM
           </motion.h1>
           
           <motion.p 
-            className="mt-6 text-lg sm:text-xl text-gray-600"
+            className="mt-6 text-lg sm:text-xl text-gray-300"
             variants={itemVariants}
           >
             Empowering future leaders with quality education and cutting-edge technology.
@@ -149,13 +149,13 @@ const Hero = () => {
           >
             <motion.button 
               className="px-6 py-3 sm:px-8 sm:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(255,255,255,0.1)' }}
               whileTap={{ scale: 0.95 }}
             >
               Explore Courses
             </motion.button>
             <motion.button 
-              className="px-6 py-3 sm:px-8 sm:py-3 border-2 border-blue-500 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300"
+              className="px-6 py-3 sm:px-8 sm:py-3 border-2 border-blue-400 text-blue-300 rounded-full font-semibold hover:bg-blue-900/30 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -176,11 +176,11 @@ const Hero = () => {
             ].map((stat, index) => (
               <motion.div 
                 key={stat.label}
-                className="bg-white p-4 rounded-lg shadow-md text-center"
+                className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg shadow-md text-center border border-gray-700"
                 whileHover={{ y: -5 }}
               >
-                <p className="text-2xl font-bold text-blue-600">{stat.value}</p>
-                <p className="text-sm text-gray-600">{stat.label}</p>
+                <p className="text-2xl font-bold text-blue-300">{stat.value}</p>
+                <p className="text-sm text-gray-300">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -196,29 +196,29 @@ const Hero = () => {
             <motion.img 
               src={heroImage} 
               alt="SSITM Campus" 
-              className="rounded-2xl shadow-2xl object-cover w-full h-auto z-20"
+              className="rounded-2xl shadow-2xl object-cover w-full h-auto z-20 border-2 border-gray-700"
               whileHover={{ scale: 1.02 }}
             />
             
             {/* Floating Tech Badges */}
             <motion.div
-              className="absolute -top-8 -left-8 bg-white p-3 rounded-xl shadow-lg z-30"
+              className="absolute -top-8 -left-8 bg-gray-800 p-3 rounded-xl shadow-lg z-30 border border-gray-700"
               variants={floatingVariants}
               animate="float"
             >
               <div className="flex items-center">
-                <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                <p className="font-bold text-sm">AI Courses</p>
+                <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                <p className="font-bold text-sm text-white">AI Courses</p>
               </div>
             </motion.div>
             
             <motion.div
-              className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg z-30"
+              className="absolute -bottom-6 -right-6 bg-gray-800 p-4 rounded-xl shadow-lg z-30 border border-gray-700"
               variants={floatingVariants}
               animate="float"
             >
-              <p className="font-bold text-blue-600">Since 1999</p>
-              <p className="text-sm text-gray-500">Quality Education</p>
+              <p className="font-bold text-blue-300">Since 1999</p>
+              <p className="text-sm text-gray-400">Quality Education</p>
             </motion.div>
 
             {/* Animated Course Highlights */}
@@ -227,9 +227,9 @@ const Hero = () => {
               variants={pulseVariants}
               animate="pulse"
             >
-              <div className="bg-white p-3 rounded-lg shadow-md w-40">
-                <p className="text-xs font-semibold text-blue-600">New Course:</p>
-                <p className="text-sm font-bold">AI & Machine Learning</p>
+              <div className="bg-gray-800 p-3 rounded-lg shadow-md w-40 border border-gray-700">
+                <p className="text-xs font-semibold text-blue-300">New Course:</p>
+                <p className="text-sm font-bold text-white">AI & Machine Learning</p>
               </div>
             </motion.div>
 
@@ -238,9 +238,9 @@ const Hero = () => {
               variants={pulseVariants}
               animate="pulse"
             >
-              <div className="bg-white p-3 rounded-lg shadow-md w-40">
-                <p className="text-xs font-semibold text-purple-600">Featured:</p>
-                <p className="text-sm font-bold">Cloud Computing</p>
+              <div className="bg-gray-800 p-3 rounded-lg shadow-md w-40 border border-gray-700">
+                <p className="text-xs font-semibold text-purple-300">Featured:</p>
+                <p className="text-sm font-bold text-white">Cloud Computing</p>
               </div>
             </motion.div>
           </div>
@@ -250,7 +250,7 @@ const Hero = () => {
       {/* Scrolling announcement bar */}
       <motion.div 
         className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white
-         font-semibold hover:shadow-lg transition-all duration-300 text-white py-4 
+         font-semibold hover:shadow-lg transition-all duration-300 py-4 
          overflow-hidden z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

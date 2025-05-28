@@ -6,6 +6,8 @@ import Courses from './Courses'; // Assuming Courses component is in a file name
 import Placement from './Placement';
 import WhyChooseUs from './WhyChooseUs.jsx';
 import Hero from './Hero.jsx';
+import ChairmanMessage from './ChairmanMessaqe.jsx';
+import VisionMission from './VisionAndMission.jsx';
 
 function Home() {
   return (
@@ -86,7 +88,8 @@ function Home() {
       </section>
 
       {/* other sections */}
-
+ < ChairmanMessage />
+ < VisionMission />
       <Courses />
       < Placement />
       <Recruiters />

@@ -2,6 +2,7 @@ import Header from './Header'
 import Footer from './Footer'
 import TopNav from './TopNavBar';
 import Modal from '../pages/Modal';
+import Chatbot from '../pages/Chatbot';
 
 function Layout({children}){
     return (
@@ -12,7 +13,7 @@ function Layout({children}){
             <div className="flex-1 overflow-hidden">
                 {children}
             </div>
-            
+            < Chatbot />
             <Footer />
         </div>
     );

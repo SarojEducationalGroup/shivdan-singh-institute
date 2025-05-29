@@ -168,6 +168,8 @@ function Header() {
             </button>
           </div>
 
+
+{/* MOBILE MENU */}
           <div className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
             <ul className="pt-2 pb-4 space-y-1">
               {navItems.map((item, index) => (

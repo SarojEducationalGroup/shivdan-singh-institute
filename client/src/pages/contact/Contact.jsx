@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
+    college: 'SSITM', // This value will be sent to the sheet
     name: '',
     email: '',
     subject: '',
@@ -10,7 +11,7 @@ const Contact = () => {
   });
   const [submissionStatus, setSubmissionStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
 
-  const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL; //
+  const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,22 +24,21 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!SCRIPT_URL) {
-      console.error("VITE_APPS_SCRIPT_URL is not defined. Please set it in your .env.local file.");
-      setSubmissionStatus('error');
-      alert("Form submission error: API URL is missing. Please check console.");
-      return;
-    }
+    console.log("Submitting form with data:", formData); // Log formData to see what's being sent
 
     setSubmissionStatus('submitting');
 
     try {
-      const formElement = e.target;
-      const data = new FormData(formElement);
+      const data = new FormData();
+      // Manually append each field from formData state to the FormData object
+      for (const key in formData) {
+        data.append(key, formData[key]);
+      }
 
       const response = await fetch(SCRIPT_URL, {
         method: 'POST',
-        body: data, 
+        body: data,
+        // No headers needed for FormData, fetch sets Content-Type automatically
       });
 
       const result = await response.json();
@@ -46,11 +46,12 @@ const Contact = () => {
       if (result.result === 'success') {
         setSubmissionStatus('success');
         setFormData({
+          college: 'SSITM', // Reset college to default
           name: '',
           email: '',
           subject: '',
           message: '',
-        }); 
+        });
       } else {
         throw new Error(result.error || 'Unknown submission error from Apps Script.');
       }
@@ -68,8 +69,11 @@ const Contact = () => {
     admissionsEmail: ' admission.cell@seglko.org',
   };
 
-  // Replace this with your actual Google Maps embed URL
-  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.774902123996!2d78.08389337535564!3d28.577239175691068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39745a278917e753%3A0xc3f65e2365313936!2sShri%20Ram%20Institute%20of%20Management%20%26%20Technology!5e0!3m2!1sen!2sin!4v1716801946029!5m2!1sen!2sin"; // Replaced with a more realistic embed URL
+  // Ensure this URL is correctly configured for your Google Apps Script Web App
+  // It should be the "Execute as: Me" and "Who has access to the app: Anyone" URL.
+  // For security, you might want to restrict access if not publicly accessible.
+  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.12644260029!2d78.0772093150242!3d27.917454282672323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a44f9402c525%3A0x67a3b3e2a2c2b3e!2sSSITM%20Aligarh!5e0!3m2!1sen!2sin!4v1678912345678!5m2!1sen!2sin";
+
 
   return (
     <Layout>
@@ -77,6 +81,7 @@ const Contact = () => {
       <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            {/* These SVG elements are for decorative background patterns */}
             <rect x="0" y="0" width="10" height="10" fill="currentColor" transform="rotate(45 5 5) translate(10 10)" />
             <circle cx="90" cy="10" r="8" fill="currentColor" />
             <polygon points="50,0 60,20 40,20" fill="currentColor" transform="scale(0.8) translate(10 10)" />
@@ -99,6 +104,9 @@ const Contact = () => {
           <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
             <h2 className="text-3xl font-bold text-orange-700 mb-6">Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Hidden input for college name. It's in the formData state and will be appended. */}
+              {/* <input type="hidden" name="college" value={formData.college} />  No longer strictly necessary if appending from state*/}
+
               <div>
                 <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
                   Your Name
@@ -106,7 +114,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name" // Make sure 'name' attribute matches your Google Sheet column header
+                  name="name"
                   value={formData.name}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -120,7 +128,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  name="email" // Make sure 'name' attribute matches your Google Sheet column header
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -134,7 +142,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
-                  name="subject" // Make sure 'name' attribute matches your Google Sheet column header
+                  name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   className="shadow appearance-none border border-orange-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
@@ -147,7 +155,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="message" // Make sure 'name' attribute matches your Google Sheet column header
+                  name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="6"
@@ -159,7 +167,7 @@ const Contact = () => {
                 type="submit"
                 disabled={submissionStatus === 'submitting'}
                 className="bg-orange-500 text-white font-bold py-3 px-6 rounded-full shadow-lg
-                           hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                          hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submissionStatus === 'submitting' ? 'Sending...' : 'Send Message'}
               </button>

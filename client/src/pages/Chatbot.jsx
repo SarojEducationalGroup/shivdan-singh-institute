@@ -190,7 +190,7 @@ const Chatbot = () => {
     setFormStatus("Sending...");
 
     try {
-      const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      const GOOGLE_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL;
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -250,9 +250,9 @@ const Chatbot = () => {
       {!isOpen && (
         <button
           onClick={toggleChatbot}
-          className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
+          className="w-16 text-white h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
-          <FiMessageSquare className="text-white text-xl" />
+           <FiMessageSquare className="text-white text-xl" />
         </button>
       )}
 
@@ -265,7 +265,7 @@ const Chatbot = () => {
               </div>
               <div>
                 <h3 className="font-bold">SITM Assistant</h3>
-                <p className="text-xs opacity-80">Online</p>
+                <p className="text-md opacity-80">Online</p>
               </div>
             </div>
             <button

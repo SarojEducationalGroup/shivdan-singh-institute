@@ -10,7 +10,7 @@ const NotFound = () => {
           <img 
             src={notFoundImage} 
             alt="404 Not Found" 
-            className="mx-auto h-64*3 w-auto" 
+            className="w-[30rem] h-[26rem]" 
           />
           
           {/* Title */}

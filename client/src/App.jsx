@@ -10,6 +10,8 @@ import AdmissionProcess from './pages/Admission/AdmissionProcess';
 import Eligibility from './pages/Admission/Eligibility';
 import Diploma from './pages/Courses/Diploma';
 import FeeStructure from './pages/Admission/Fee-Structure';
+import NotFound from './pages/NotFound';
+import AllCourses from './pages/AllCourses';
 
 function App() {
     return (
@@ -27,6 +29,8 @@ function App() {
             <Route path='/privacy-policy' element={< PrivacyPolicy />} />
             <Route path='/terms-and-conditions' element={< TnC />} />
             <Route path='/admission/fee-structure' element={< FeeStructure />} />
+            <Route path='*'  element ={< NotFound/>} />
+            <Route path = 'courses/AllCourses' element ={ < AllCourses /> } />
         </Routes>
 
     )

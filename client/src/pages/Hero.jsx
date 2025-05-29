@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import heroImage from '../assets/students.png';
+import heroImage from '../assets/bg2.png';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const controls = useAnimation();
@@ -16,7 +17,6 @@ const Hero = () => {
     }
   }, [controls, inView]);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -72,9 +72,7 @@ const Hero = () => {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 overflow-hidden"
     >
-      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        {/* Circuit board pattern */}
         <motion.div 
           className="absolute inset-0 opacity-10"
           style={{
@@ -91,7 +89,6 @@ const Hero = () => {
           }}
         />
         
-        {/* Floating tech icons */}
         {['AI', 'ML', 'IoT', 'VR', 'Cloud'].map((tech, index) => (
           <motion.div
             key={tech}
@@ -117,16 +114,14 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Main content container */}
       <motion.div
-        className="container mx-auto px-6 py-16 flex flex-col lg:flex-row items-center relative z-10"
+        className="container mx-auto px-6 py-8 flex flex-col lg:flex-row items-center relative z-10" // Changed py-10 to py-8
         variants={containerVariants}
         initial="hidden"
         animate={controls}
       >
-        {/* Text Content - Left Side */}
         <motion.div 
-          className="lg:w-1/2 mb-10 lg:mb-0 relative z-20"
+          className="lg:w-1/2 mb-8 lg:mb-0 relative z-20" // Changed mb-10 to mb-8
           variants={itemVariants}
         >
           <motion.h1 
@@ -137,25 +132,29 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p 
-            className="mt-6 text-lg sm:text-xl text-gray-300"
+            className="mt-4 text-lg sm:text-xl text-gray-300" // Changed mt-6 to mt-4
             variants={itemVariants}
           >
             Empowering future leaders with quality education and cutting-edge technology.
           </motion.p>
           
           <motion.div 
-            className="mt-8 flex flex-col sm:flex-row gap-4"
+            className="mt-6 flex flex-col sm:flex-row gap-4" // Changed mt-8 to mt-6
             variants={itemVariants}
           >
+
+            <Link to="/courses/AllCourses" >
             <motion.button 
-              className="px-6 py-3 sm:px-8 sm:py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+              className="px-6 py-2 sm:px-8 sm:py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300" // Changed py-3 to py-2
               whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(255,255,255,0.1)' }}
               whileTap={{ scale: 0.95 }}
             >
               Explore Courses
             </motion.button>
+            </ Link>
+
             <motion.button 
-              className="px-6 py-3 sm:px-8 sm:py-3 border-2 border-blue-400 text-blue-300 rounded-full font-semibold hover:bg-blue-900/30 transition-all duration-300"
+              className="px-6 py-2 sm:px-8 sm:py-2 border-2 border-blue-400 text-blue-300 rounded-full font-semibold hover:bg-blue-900/30 transition-all duration-300" // Changed py-3 to py-2
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -163,9 +162,8 @@ const Hero = () => {
             </motion.button>
           </motion.div>
 
-          {/* Stats Section */}
           <motion.div 
-            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+            className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" // Changed mt-12 to mt-8
             variants={itemVariants}
           >
             {[
@@ -176,82 +174,77 @@ const Hero = () => {
             ].map((stat, index) => (
               <motion.div 
                 key={stat.label}
-                className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg shadow-md text-center border border-gray-700"
+                className="bg-gray-800/50 backdrop-blur-sm p-3 rounded-lg shadow-md text-center border border-gray-700" // Changed p-4 to p-3
                 whileHover={{ y: -5 }}
               >
-                <p className="text-2xl font-bold text-blue-300">{stat.value}</p>
-                <p className="text-sm text-gray-300">{stat.label}</p>
+                <p className="text-xl font-bold text-blue-300">{stat.value}</p> {/* Changed text-2xl to text-xl */}
+                <p className="text-xs text-gray-300">{stat.label}</p> {/* Changed text-sm to text-xs */}
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* Right Side - Image and Tech Elements */}
         <motion.div 
           className="lg:w-1/2 flex justify-center relative z-20"
           variants={itemVariants}
         >
           <div className="relative w-full max-w-lg">
-            {/* Main Image */}
             <motion.img 
               src={heroImage} 
               alt="SSITM Campus" 
-              className="rounded-2xl shadow-2xl object-cover w-full h-auto z-20 border-2 border-gray-700"
+              className="object-cover w-full h-112 z-20" // Changed h-128 to h-112
               whileHover={{ scale: 1.02 }}
             />
             
-            {/* Floating Tech Badges */}
             <motion.div
-              className="absolute -top-8 -left-8 bg-gray-800 p-3 rounded-xl shadow-lg z-30 border border-gray-700"
+              className="absolute -top-6 -left-6 bg-gray-800 p-2 rounded-xl shadow-lg z-30 border border-gray-700" // Changed p-3 to p-2
               variants={floatingVariants}
               animate="float"
             >
               <div className="flex items-center">
-                <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
-                <p className="font-bold text-sm text-white">AI Courses</p>
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-1"></div> {/* Changed w-3 to w-2 */}
+                <p className="font-bold text-xs text-white">AI Courses</p> {/* Changed text-sm to text-xs */}
               </div>
             </motion.div>
             
             <motion.div
-              className="absolute -bottom-6 -right-6 bg-gray-800 p-4 rounded-xl shadow-lg z-30 border border-gray-700"
+              className="absolute -bottom-4 -right-4 bg-gray-800 p-2 rounded-xl shadow-lg z-30 border border-gray-700" // Changed p-4 to p-2
               variants={floatingVariants}
               animate="float"
             >
-              <p className="font-bold text-blue-300">Since 1999</p>
-              <p className="text-sm text-gray-400">Quality Education</p>
+              <p className="font-bold text-sm text-blue-300">Since 1999</p> {/* Changed text size */}
+              <p className="text-xs text-gray-400">Quality Education</p>
             </motion.div>
 
-            {/* Animated Course Highlights */}
             <motion.div
-              className="absolute -left-20 top-1/3 hidden xl:block"
+              className="absolute -left-16 top-1/3 hidden xl:block" // Changed -left-20 to -left-16
               variants={pulseVariants}
               animate="pulse"
             >
-              <div className="bg-gray-800 p-3 rounded-lg shadow-md w-40 border border-gray-700">
+              <div className="bg-gray-800 p-2 rounded-lg shadow-md w-32 border border-gray-700"> {/* Changed p-3 to p-2, w-40 to w-32 */}
                 <p className="text-xs font-semibold text-blue-300">New Course:</p>
-                <p className="text-sm font-bold text-white">AI & Machine Learning</p>
+                <p className="text-xs font-bold text-white">AI & Machine Learning</p> {/* Changed text-sm to text-xs */}
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -right-20 bottom-1/3 hidden xl:block"
+              className="absolute -right-16 bottom-1/3 hidden xl:block" // Changed -right-20 to -right-16
               variants={pulseVariants}
               animate="pulse"
             >
-              <div className="bg-gray-800 p-3 rounded-lg shadow-md w-40 border border-gray-700">
+              <div className="bg-gray-800 p-2 rounded-lg shadow-md w-32 border border-gray-700"> {/* Changed p-3 to p-2, w-40 to w-32 */}
                 <p className="text-xs font-semibold text-purple-300">Featured:</p>
-                <p className="text-sm font-bold text-white">Cloud Computing</p>
+                <p className="text-xs font-bold text-white">Cloud Computing</p> {/* Changed text-sm to text-xs */}
               </div>
             </motion.div>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* Scrolling announcement bar */}
       <motion.div 
         className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white
-         font-semibold hover:shadow-lg transition-all duration-300 py-4 
-         overflow-hidden z-20"
+         font-semibold hover:shadow-lg transition-all duration-300 py-2 
+         overflow-hidden z-20" // Changed py-4 to py-2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
@@ -267,10 +260,10 @@ const Hero = () => {
             }
           }}
         >
-          <span className="mx-4">🚀 Admissions Open for 2024-25 Batch | </span>
-          <span className="mx-4">💡 New AI & Robotics Lab Inaugurated | </span>
-          <span className="mx-4">🏆 Ranked #1 in Technical Education | </span>
-          <span className="mx-4">🌐 Industry 4.0 Ready Curriculum</span>
+          <span className="mx-2">🚀 Admissions Open for 2024-25 Batch | </span> {/* Changed mx-4 to mx-2 */}
+          <span className="mx-2">💡 New AI & Robotics Lab Inaugurated | </span>
+          <span className="mx-2">🏆 Ranked #1 in Technical Education | </span>
+          <span className="mx-2">🌐 Industry 4.0 Ready Curriculum</span>
         </motion.div>
       </motion.div>
     </section>

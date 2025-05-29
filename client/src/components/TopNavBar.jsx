@@ -4,9 +4,9 @@ const TopNav = () => {
   return (
     <div className="md:flex p-3 bg-orange-500 text-sm gap-4 hidden
     justify-center items-center ">
-      <span className="text-white"> Why SEG?</span>
-      <a href="#" className="text-white hover:underline">Alumni</a>
-      <a href="#" className="text-white hover:underline">Career</a>
+      {/* <span className="text-white"> Why SEG?</span>
+      <a href="#" className="text-white hover:underline">Alumni</a> */}
+      {/* <a href="#" className="text-white hover:underline">Career</a> */}
       <span className="text-white font-bold">Toll Free No: 1800-180-7686</span>
 
       {/* Enroll Now Button - designed to look like an image button */}

@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import campusImage from '../assets/HERO-IMAGE.jpg'; // Import your demo image
+import campusImage from '../assets/HERO-IMAGE.jpg'; 
 import Recruiters from './Recruiters';
-import Courses from './Courses'; // Assuming Courses component is in a file named Courses.jsx
+import Courses from './Courses'; 
 import Placement from './Placement';
 import WhyChooseUs from './WhyChooseUs.jsx';
 import Hero from './Hero.jsx';
-import ChairmanMessage from './ChairmanMessaqe.jsx';
-import VisionMission from './VisionAndMission.jsx';
+import VisionAndMission from './VisionAndMission.jsx';
+import ChairmanMessage from './ChairmanMessage.jsx';
 
 function Home() {
   return (
@@ -88,8 +88,8 @@ function Home() {
       </section>
 
       {/* other sections */}
- < ChairmanMessage />
- < VisionMission />
+      < ChairmanMessage />
+      <VisionAndMission />
       <Courses />
       < Placement />
       <Recruiters />

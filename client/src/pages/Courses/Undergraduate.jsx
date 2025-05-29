@@ -10,7 +10,7 @@ const undergraduateCourses = [
     duration: '4 Years',
     // Removed highlights
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
-    image: 'https://media.istockphoto.com/id/1998660059/photo/ai-artificial-intelligence-security-sentinel-password-cyber-security-ransomware-email.webp?a=1&b=1&s=612x612&w=0&k=20&c=b38xp_lw0-upEvjodUgwq9NNC8Lw4uDAS-SATyfr1hI=' // Example image for CSE
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Example image for BCA
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ const undergraduateCourses = [
     duration: '3 Years',
     // Removed highlights
     eligibility: '10+2 in any stream with Maths/Computer Science or equivalent with min. 45%',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' // Example image for BCA
+    image: 'https://media.istockphoto.com/id/1998660059/photo/ai-artificial-intelligence-security-sentinel-password-cyber-security-ransomware-email.webp?a=1&b=1&s=612x612&w=0&k=20&c=b38xp_lw0-upEvjodUgwq9NNC8Lw4uDAS-SATyfr1hI=' // Example image for CSE
   },
 ];
 

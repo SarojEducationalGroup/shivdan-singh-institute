@@ -18,6 +18,7 @@ const navItems = [
     title: "Courses",
     path: "/courses",
     subItems: [
+      { title: "All Courses", path: "/courses/AllCourses" },
       { title: "Undergraduate", path: "/courses/undergraduate" },
       { title: "Postgraduate", path: "/courses/postgraduate" },
       { title: "Diploma", path: "/courses/diploma" },

@@ -14,34 +14,21 @@ const ChairmanMessage = () => {
               {/* Chairman message heading  */}
               <div className="bg-white/10  overflow-hidden animate-fade-in">
                  
-                  <h1 className="text-4xl font-bold mb-4 relative z-10 animate-slide-down">
-                    Chairman's Message
-                  </h1>
-                  <p className="text-xl md:text-2xl opacity-90 relative z-10 animate-slide-up">
-                    Saroj Educational Group
-                  </p>
+                  <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 pb-2 relative z-10 animate-slide-down">
+                   <span className="border-l-4 border-orange-500 pl-4">CHAIRMAN's <span className="text-orange-500">MESSAGE</span></span>
+        </h1>
+                  
                   <div className="h-1 bg-white/50 mx-auto mt-6 rounded-full animate-grow-width"></div>
                 
               </div>
 
-              <div className="text-xl md:text-2xl text-blue-800 mb-8 animate-fade-in-delay">
-                Dear Students and Educators
-              </div>
-
-              <div className="text-lg leading-relaxed text-gray-700 space-y-6">
+              <div className="text-md leading-relaxed space-y-6">
                 <p className="animate-fade-in-delay-200">
                   It gives me immense pleasure to welcome you to the{" "}
                   <span className="font-semibold text-blue-800">Saroj Educational Group (SEG)</span>, a beacon of
                   knowledge and a nurturing ground for future leaders. Since our inception, SEG has remained steadfast
                   in its mission to impart quality education, develop practical skills, and instill a sense of
                   responsibility in our students.
-                </p>
-
-                <p className="animate-fade-in-delay-300">
-                  Education at SEG is not just about obtaining degrees; it is about shaping character, developing
-                  critical thinking, and preparing individuals for real-world challenges. Our dedicated faculty,
-                  state-of-the-art facilities, and industry-driven curriculum aim to provide a holistic learning
-                  experience that prepares students for a successful future.
                 </p>
               </div>
 
@@ -67,22 +54,12 @@ const ChairmanMessage = () => {
                 </p>
               </div>
 
-              <div className="text-lg leading-relaxed text-gray-700 animate-fade-in-delay-500">
+              <div className="text-md leading-relaxed animate-fade-in-delay-500">
                 <p>
                   I firmly believe that education is the key to empowerment, and at SEG, we strive to ignite the spark
                   of curiosity, creativity, and courage in every learner. I invite you to be a part of this remarkable
                   journey of knowledge, growth, and transformation.
                 </p>
-              </div>
-
-              {/* Signature Section */}
-              <div className="mt-12 pt-8 border-t-2 border-gray-200 animate-fade-in-delay-600">
-                <p className="text-lg italic text-gray-600 mb-6">Warm Regards,</p>
-                <div className="h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 mb-6 rounded-full animate-grow-width-delay"></div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-blue-800">Mr. Sunil Singh</h3>
-                  <p className="text-gray-600 font-medium">Chairman, Saroj Educational Group</p>
-                </div>
               </div>
             </div>
 
@@ -122,7 +99,7 @@ const ChairmanMessage = () => {
 
                   <div className="h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full animate-grow-width-delay-800"></div>
 
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="leading-relaxed">
                     Leading SEG with vision, dedication, and commitment to excellence in education for over two decades.
                   </p>
 
@@ -144,8 +121,8 @@ const ChairmanMessage = () => {
                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                       </svg>
-                      <p className="text-2xl font-bold text-blue-800">20+</p>
-                      <p className="text-sm text-gray-600">Years Experience</p>
+                      <p className="text-md font-bold text-blue-800">20+</p>
+                      <p className="text-sm ">Years Experience</p>
                     </div>
                     <div className="bg-white p-4 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-[1.05]">
                       <svg
@@ -165,8 +142,8 @@ const ChairmanMessage = () => {
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                       </svg>
-                      <p className="text-2xl font-bold text-blue-800">10K+</p>
-                      <p className="text-sm text-gray-600">Students Guided</p>
+                      <p className="text-md font-bold text-blue-800">10K+</p>
+                      <p className="text-sm">Students Guided</p>
                     </div>
                   </div>
                 </div>

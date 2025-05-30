@@ -95,16 +95,16 @@ const Recruiters = () => {
 
         {/* static para */}
         <div className=" mt-8 ">
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Our strong network of industry partners ensures that our students gain exposure to top-tier companies and secure promising career opportunities. We are committed to fostering talent that meets the demands of the global market.
-          Through dedicated placement assistance, career counseling, and skill development workshops, we prepare our graduates to excel in their chosen fields. These collaborations are a testament to the quality of education and the caliber of students nurtured at our institution.
-        </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Our strong network of industry partners ensures that our students gain exposure to top-tier companies and secure promising career opportunities. We are committed to fostering talent that meets the demands of the global market.
+            Through dedicated placement assistance, career counseling, and skill development workshops, we prepare our graduates to excel in their chosen fields. These collaborations are a testament to the quality of education and the caliber of students nurtured at our institution.
+          </p>
 
-      </div>
+        </div>
       </div>
     </section>
 
-   
+
   );
 };
 

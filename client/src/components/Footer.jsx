@@ -120,7 +120,7 @@ function Footer() {
               </ul>
             </div>
 
-             <div>
+            <div>
               <h3 className="font-bold text-lg mb-2">Campus</h3>
               <ul className="space-y-1 text-md">
                 <li>Lecture Halls</li>
@@ -129,7 +129,7 @@ function Footer() {
                 <li>Computer Lab</li>
                 <li>Cafeteria</li>
               </ul>
-            </div> 
+            </div>
 
           </div>
 

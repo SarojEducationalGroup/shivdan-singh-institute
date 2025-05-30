@@ -246,13 +246,15 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 lg:text-xl">
+
+    // Chatbot Button
+    <div className="fixed bottom-8 right-8 z-50 lg:text-md">
       {!isOpen && (
         <button
           onClick={toggleChatbot}
           className="w-16 text-white h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
-           <FiMessageSquare className="text-white text-xl" />
+           <FiMessageSquare className="text-white text-md" />
         </button>
       )}
 

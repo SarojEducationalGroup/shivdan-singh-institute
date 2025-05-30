@@ -45,10 +45,12 @@ const Placement = () => {
   return (
     <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Main Heading - Consistent Styling */}
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
           <span className="border-l-4 border-orange-500 pl-4">RECENT <span className="text-orange-500">PLACEMENTS</span></span>
         </h1>
+
         {/* Placements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {placementsData.map((placement) => (
@@ -67,27 +69,25 @@ const Placement = () => {
               </div>
 
               <div className="p-4 sm:p-6 flex-grow flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Congratulations!
-                </h3>
-                <p className="text-orange-600 font-semibold text-xl mb-2">
+                
+                <p className="font-semibold text-md mb-2">
                   {placement.name}
                 </p>
-                <p className="text-gray-700 text-base leading-relaxed mb-4 flex-grow">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4 flex-grow">
                   We feel immensely proud to announce that our student, {placement.name}, from the {placement.course},
                   has been successfully placed at <span className="font-semibold">{placement.company}</span> as a <span className="font-semibold">{placement.role}</span>!
                 </p>
 
                 {/* LPA and Company Logo */}
                 <div className="flex items-center justify-between bg-yellow-300 p-3 rounded-md mt-auto">
-                  <span className="text-gray-900 font-extrabold text-xl sm:text-2xl">
+                  <span className= "text-xl">
                     {placement.lpa}
                   </span>
                   {placement.companyLogo && (
                     <img
                       src={placement.companyLogo}
                       alt={`${placement.company} Logo`}
-                      className="h-8 sm:h-10 max-w-[100px] object-contain"
+                      className="h-8 sm:h-8 max-w-[100px] object-contain"
                     />
                   )}
                 </div>

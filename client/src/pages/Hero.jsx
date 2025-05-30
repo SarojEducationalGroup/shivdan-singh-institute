@@ -94,7 +94,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="container px-4 sm:px-6 lg:px-8 mx-auto  py-8 flex flex-col lg:flex-row items-center justify-between relative z-10"
+        className="container px-4 sm:px-6  mx-auto py-8 flex flex-col lg:flex-row items-center justify-between relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={controls}
@@ -104,7 +104,7 @@ const Hero = () => {
           variants={itemVariants}
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight" // Darker text for headings
+            className="text-5xl md:text-6xl  font-bold text-gray-900 leading-tight" // Darker text for headings
             whileHover={{ scale: 1.02 }}
           >
           

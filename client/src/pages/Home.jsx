@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import campusImage from '../assets/HERO-IMAGE.jpg'; 
+import campusImage from '../assets/HERO-IMAGE.jpg';
 import Recruiters from './Recruiters';
-import Courses from './Courses'; 
+import Courses from './Courses';
 import Placement from './Placement';
 import WhyChooseUs from './WhyChooseUs.jsx';
 import Hero from './Hero.jsx';
@@ -16,7 +16,7 @@ function Home() {
       <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12"> {/* Consistent section background */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Heading - Consistent Styling */}
-          <h1 className="text-3xl sm:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
             <span className="border-l-4 border-orange-500 pl-4">ABOUT <span className="text-orange-500">SSITM</span></span>
           </h1>
 
@@ -88,11 +88,11 @@ function Home() {
       </section>
 
       {/* other sections */}
-      < ChairmanMessage />
+      <Recruiters />
+      <ChairmanMessage />
       <VisionAndMission />
       <Courses />
-      < Placement />
-      <Recruiters />
+      <Placement />
       <WhyChooseUs />
 
     </Layout>

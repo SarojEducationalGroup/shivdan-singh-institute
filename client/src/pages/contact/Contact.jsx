@@ -110,7 +110,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
+                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Mobile Number</label>
                 <input
                   type="phone"
                   id="phone"

@@ -6,6 +6,7 @@ const Contact = () => {
     college: 'SSITM',
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: '',
   });
@@ -42,6 +43,7 @@ const Contact = () => {
         college: 'SSITM',
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: '',
       });
@@ -106,6 +108,20 @@ const Contact = () => {
                   required
                 />
               </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
+                <input
+                  type="phone"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500" 
+                  required />
+                </div>
+            
+
               <div>
                 <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
                 <input

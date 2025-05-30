@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="w-full">
       {/* Top Section of the Footer */}
-      <div className="relative py-10 px-4 md:px-8 lg:px-16 bg-cover bg-center bg-no-repeat bg-gray-800 text-white">
+      <div className="relative py-10 px-4 md:px-8 lg:px-16 bg-cover bg-center bg-no-repeat bg-black text-white">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
 
           {/*Locations, Mail Us, Quick Contact, Social Icons */}

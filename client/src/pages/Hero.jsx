@@ -68,7 +68,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="min-h-screen relative flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden"
     >
       {techBackground}
 

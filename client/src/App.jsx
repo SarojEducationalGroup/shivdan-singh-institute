@@ -12,10 +12,10 @@ import Diploma from './pages/Courses/Diploma';
 import FeeStructure from './pages/Admission/Fee-Structure';
 import NotFound from './pages/NotFound';
 import AllCourses from './pages/AllCourses';
+import ScrollTop from './components/ScrollTop';
 
 function App() {
     return (
-
 
         <Routes>
             <Route path='/' element={<Home />} />

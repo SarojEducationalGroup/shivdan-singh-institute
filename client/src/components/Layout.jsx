@@ -3,6 +3,7 @@ import Footer from './Footer'
 import TopNav from './TopNavBar';
 import Modal from '../pages/Modal';
 import Chatbot from '../pages/Chatbot';
+import TechnologyCTA from '../pages/TechnologyCTA';
 
 function Layout({children}){
     return (
@@ -14,6 +15,7 @@ function Layout({children}){
                 {children}
             </div>
             < Chatbot />
+            <TechnologyCTA />
             <Footer />
         </div>
     );

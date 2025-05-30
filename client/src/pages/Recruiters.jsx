@@ -37,10 +37,10 @@ const Recruiters = () => {
 
   return (
 
-    <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12 overflow-hidden">
+    <section className="bg-gradient-to-br from-orange-50 to-amber-100 py-8 sm:py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
         {/* Main Heading - Consistent Styling based on image_cf1d69.png and image_cebb12.png */}
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6 relative pb-2">
+        <h2 className=" text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-6 relative pb-2">
           <span className="border-l-4 border-orange-500 pl-4">OUR LEADING <span className='text-orange-500'>RECRUITERS</span></span>
         </h2>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CourseCard = ({ title, description, image }) => ( // Removed 'link' prop as it's no longer used for navigation
+const CourseCard = ({ title, description, image }) => ( 
     <div className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer">
         {image ? (
             <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
@@ -15,7 +15,7 @@ const CourseCard = ({ title, description, image }) => ( // Removed 'link' prop a
                 <p className="text-sm px-2 mb-4 opacity-100 transition-opacity duration-300">
                     {description}
                 </p>
-                {/* Replaced 'Read More' with 'Enroll Now' or similar */}
+
                <a href="https://seglko.in8.nopaperforms.com/"> <button
                     className="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full transition duration-300"
                 >
@@ -87,25 +87,19 @@ const Courses = () => {
         <section className="bg-white-50 bg-opacity-70 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-                    <h2 className="text-4xl font-extrabold text-gray-900 mb-6 md:mb-0">
+                    <h2 className=" text-center text-4xl font-extrabold text-gray-900 mb-6 md:mb-0">
                         <span className="border-l-4 border-orange-500 pl-4">OUR <span className="text-orange-500">COURSES</span></span>
                     </h2>
-
-                 
-                </div>
+                    </div>
 
                 <div className="flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
-                    <button
-                        className={`text-lg font-medium pb-2 transition-colors duration-300 ${activeTab === 'undergraduate'
+                    <button className={`text-lg font-medium pb-2 transition-colors duration-300 ${activeTab === 'undergraduate'
                                 ? 'text-orange-600 border-b-2 border-orange-600'
-                                : 'text-gray-600 hover:text-orange-500'
-                            }`}
-                        onClick={() => setActiveTab('undergraduate')}
-                    >
-                        UNDERGRADUATE
+                                : 'text-gray-600 hover:text-orange-500'   }`}
+                        onClick={() => setActiveTab('undergraduate')}>UNDERGRADUATE
                     </button>
-                    <button
-                        className={`text-lg font-medium pb-2 transition-colors duration-300 ${activeTab === 'postgraduate'
+
+                    <button className={`text-lg font-medium pb-2 transition-colors duration-300 ${activeTab === 'postgraduate'
                                 ? 'text-orange-600 border-b-2 border-orange-600'
                                 : 'text-gray-600 hover:text-orange-500'
                             }`}
@@ -131,7 +125,7 @@ const Courses = () => {
                             title={course.title}
                             description={course.description}
                             image={course.image}
-                            // 'link' prop is no longer needed here as the CourseCard handles its own internal action
+                          
                         />
                     ))}
                 </div>

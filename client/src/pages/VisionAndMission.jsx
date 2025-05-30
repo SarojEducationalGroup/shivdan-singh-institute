@@ -7,7 +7,7 @@ const VisionAndMission = () => {
 
         
         <div className="text-center mb-14 overflow-hidden">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+          <h1 className=" text-center text-3xl sm:text-4xl font-extrabold text-gray-900">
             VISION & <span className="text-orange-500">MISSION</span>
           </h1>
           <p className="mt-1 max-w-xl mx-auto text-xl text-gray-600">

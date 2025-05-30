@@ -2,7 +2,7 @@ import chairmanImg from '../assets/chairman.jpg'
 
 const ChairmanMessage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+    <div className="bg-orange-50">
       <div className="container mx-auto px-4 py-15">
       
         {/* Main Content */}
@@ -14,9 +14,9 @@ const ChairmanMessage = () => {
               {/* Chairman message heading  */}
               <div className="bg-white/10  overflow-hidden animate-fade-in">
                  
-                  <h1 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 pb-2 relative z-10 animate-slide-down">
+                  <h1 className="text-center text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 pb-2 relative z-10 animate-slide-down">
                    <span className="border-l-4 border-orange-500 pl-4">CHAIRMAN's <span className="text-orange-500">MESSAGE</span></span>
-        </h1>
+                </h1>
                   
                   <div className="h-1 bg-white/50 mx-auto mt-6 rounded-full animate-grow-width"></div>
                 
@@ -101,51 +101,7 @@ const ChairmanMessage = () => {
 
                   <p className="leading-relaxed">
                     Leading SEG with vision, dedication, and commitment to excellence in education for over two decades.
-                  </p>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div className="bg-white p-4 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-[1.05]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-8 h-8 text-blue-600 mx-auto mb-2"
-                      >
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                      </svg>
-                      <p className="text-md font-bold text-blue-800">20+</p>
-                      <p className="text-sm ">Years Experience</p>
-                    </div>
-                    <div className="bg-white p-4 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-[1.05]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-8 h-8 text-blue-600 mx-auto mb-2"
-                      >
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                      </svg>
-                      <p className="text-md font-bold text-blue-800">10K+</p>
-                      <p className="text-sm">Students Guided</p>
-                    </div>
-                  </div>
+                  </p>                
                 </div>
               </div>
             </div>

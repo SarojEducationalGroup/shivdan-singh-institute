@@ -8,15 +8,17 @@ import WhyChooseUs from './WhyChooseUs.jsx';
 import Hero from './Hero.jsx';
 import VisionAndMission from './VisionAndMission.jsx';
 import ChairmanMessage from './ChairmanMessage.jsx';
+import AiLearningSection from './AiLearningSection.jsx';
 
 function Home() {
   return (
     <Layout>
       <Hero />
-      <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12"> {/* Consistent section background */}
+      <AiLearningSection />
+      <section className="bg-gradient-to-br from-orange-50 to-amber-100 bg-opacity-70 py-8 sm:py-12"> {/* Consistent section background */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Heading - Consistent Styling */}
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
+          <h1 className="text-3xl text-center sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
             <span className="border-l-4 border-orange-500 pl-4">ABOUT <span className="text-orange-500">SSITM</span></span>
           </h1>
 
@@ -43,13 +45,7 @@ function Home() {
                 <li>A wide range of extracurricular activities and student clubs foster all-round development.</li>
               </ul>
 
-              {/* <a
-                href="#"
-                className="inline-block text-orange-600 font-semibold text-lg hover:underline transition-colors duration-300"
-              >
-                Learn More About Our Vision <span aria-hidden="true">&rarr;</span>
-              </a> */}
-
+             
             </div>
 
             {/* Right Column - Image & Highlights */}
@@ -88,6 +84,7 @@ function Home() {
       </section>
 
       {/* other sections */}
+
       <Recruiters />
       <ChairmanMessage />
       <WhyChooseUs />

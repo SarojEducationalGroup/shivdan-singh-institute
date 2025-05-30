@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiSend, FiX, FiMessageSquare } from "react-icons/fi";
+import { FiSend, FiX, FiMessageSquare, FiRefreshCw } from "react-icons/fi";
 import { Loader2 } from "lucide-react";
 
 const Chatbot = () => {
@@ -10,7 +10,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hi! I'm your AI assistant for Shivdan Singh Institute of Technology & Management.",
+      text: "Hi! I'm your virtual assistant for Shivdan Singh Institute of Technology & Management.",
       sender: "bot",
       time: getCurrentTime(),
       options: null,
@@ -31,6 +31,7 @@ const Chatbot = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [formData, setFormData] = useState({
+    college: "SSITM-ChatBot",
     name: "",
     email: "",
     phone: "",
@@ -57,6 +58,34 @@ const Chatbot = () => {
     if (!isOpen) {
       setShowContactForm(false);
     }
+  };
+
+  const resetChat = () => {
+    setMessages([
+      {
+        id: 1,
+        text: "Hi! I'm your virtual assistant for Shivdan Singh Institute of Technology & Management.",
+        sender: "bot",
+        time: getCurrentTime(),
+        options: null,
+      },
+      {
+        id: 2,
+        text: "How can I help you today?",
+        sender: "bot",
+        time: getCurrentTime(),
+        options: [
+          "Academic programs information",
+          "Admission process",
+          "Campus facilities",
+          "Placement details",
+          "Contact administration",
+        ],
+      },
+    ]);
+    setShowContactForm(false);
+    setHasFirstOptionBeenSelected(false);
+    setInputValue("");
   };
 
   const handleInputChange = (e) => setInputValue(e.target.value);
@@ -98,7 +127,7 @@ const Chatbot = () => {
 
     if (!hasFirstOptionBeenSelected) {
       setHasFirstOptionBeenSelected(true);
-      setShowContactForm(true);
+      setShowContactForm(true); // Changed behavior as per new logic
       return;
     }
 
@@ -127,43 +156,85 @@ const Chatbot = () => {
 
     if (userInput.toLowerCase().includes("program")) {
       response =
-        "We offer the following pharmacy courses:\n\n• D.Pharm\n• B.Pharm\n• M.Pharm";
-     options = [
-    "B.Tech",
-    "D.Pharm details",
-    "B.Pharm details",
-    "M.Pharm details",
-    "BCA details",
-    "BBA details",
-    "MCA details",
-    "MBA details",
-    "Contact administration",
-];
+        "Shivdan Singh Institute of Technology & Management offers the following programs:\n\n• B.Tech\n• D.Pharm\n• B.Pharm\n• M.Pharm\n• BCA\n• BBA\n• MCA\n• MBA";
+      options = [
+        "B.Tech details",
+        "D.Pharm details",
+        "B.Pharm details",
+        "M.Pharm details",
+        "BCA details",
+        "BBA details",
+        "MCA details",
+        "MBA details",
+        "Contact administration",
+      ];
     } else if (userInput.toLowerCase().includes("admission")) {
-      response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application`;
+      response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application\n\nFor B.Tech programs, JEE Main scores are considered.`;
     } else if (userInput.toLowerCase().includes("facility")) {
       response =
-        "Our campus includes modern labs, a library, hostels, sports facilities, and more.";
+        "Our campus includes:\n- Modern labs and workshops\n- Computer centers\n- Library with digital resources\n- Hostel facilities\n- Sports complex\n- Transportation services";
       options = [
         "Lab details",
         "Library info",
         "Hostel info",
         "Sports facilities",
+        "Transportation",
         "Contact administration",
       ];
     } else if (userInput.toLowerCase().includes("placement")) {
-      response = `Recent Placement Highlights:
-- Shaloni Devi → Max Health Care → 18 LPA
-- Harsh Dixit → Eclat Health → 4 LPA
-- Mansi Sahu → Eclat Health → 3 LPA
-- Surendra Pratap → Eclat Health → 4 LPA
-- Pranjali Singh → Eclat Health → 4 LPA
-- Ajay Pratap Yadav → Max Health Care → 3 LPA
-- Piyush Pandey → Max Health Care → 3 LPA
-- Pratit Srivastava → Max Health Care → 4 LPA`;
+      response = `Our Placement Highlights:
+- Strong industry connections with leading companies
+- Regular campus recruitment drives
+- Dedicated placement cell for training and opportunities
+- Alumni network in top firms
+      
+Recent recruiters include top companies in various sectors.`;
       options = ["Contact administration"];
+    } else if (userInput.toLowerCase().includes("b.tech")) {
+      response = `B.Tech Programs (4 years):
+- Computer Science & Engineering
+- Mechanical Engineering
+- Civil Engineering
+- Electrical Engineering
+      
+Eligibility: 10+2 with Physics, Chemistry, and Mathematics`;
+    } else if (userInput.toLowerCase().includes("d.pharm")) {
+      response = `D.Pharm Program (2 years):
+- Diploma in Pharmacy
+      
+Eligibility: 10+2 with Science (Physics, Chemistry, Biology/Mathematics)`;
+    } else if (userInput.toLowerCase().includes("b.pharm")) {
+      response = `B.Pharm Program (4 years):
+- Bachelor of Pharmacy
+      
+Eligibility: 10+2 with Physics, Chemistry, and Biology/Mathematics`;
+    } else if (userInput.toLowerCase().includes("m.pharm")) {
+      response = `M.Pharm Program (2 years):
+- Master of Pharmacy (various specializations)
+      
+Eligibility: B.Pharm degree from a recognized university`;
+    } else if (userInput.toLowerCase().includes("bca")) {
+      response = `BCA Program (3 years):
+- Bachelor of Computer Applications
+      
+Eligibility: 10+2 in any stream`;
+    } else if (userInput.toLowerCase().includes("bba")) {
+      response = `BBA Program (3 years):
+- Bachelor of Business Administration
+      
+Eligibility: 10+2 in any stream`;
+    } else if (userInput.toLowerCase().includes("mca")) {
+      response = `MCA Program (2 years):
+- Master of Computer Applications
+      
+Eligibility: Bachelor's degree with Mathematics at 10+2 or graduation level`;
+    } else if (userInput.toLowerCase().includes("mba")) {
+      response = `MBA Program (2 years):
+- Master of Business Administration
+      
+Eligibility: Bachelor's degree in any discipline`;
     } else {
-      response = "I'm here to assist you with any queries about our institute.";
+      response = "I'm here to assist you with any queries about Shivdan Singh Institute of Technology & Management's programs or facilities.";
       options = [
         "Academic programs information",
         "Admission process",
@@ -190,7 +261,7 @@ const Chatbot = () => {
     setFormStatus("Sending...");
 
     try {
-      const GOOGLE_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL;
+      const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
@@ -203,6 +274,7 @@ const Chatbot = () => {
 
       setFormStatus("Thank you for contacting us! We'll respond soon.");
       setFormData({
+        college: "SSITM-ChatBot",
         name: "",
         email: "",
         phone: "",
@@ -246,15 +318,13 @@ const Chatbot = () => {
   };
 
   return (
-
-    // Chatbot Button
-    <div className="fixed bottom-8 right-8 z-50 lg:text-md">
+    <div className="fixed bottom-8 right-8 z-50">
       {!isOpen && (
         <button
           onClick={toggleChatbot}
-          className="w-16 text-white h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
+          className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
-           <FiMessageSquare className="text-white text-md" />
+          <FiMessageSquare className="text-white text-2xl" />
         </button>
       )}
 
@@ -266,16 +336,25 @@ const Chatbot = () => {
                 <FiMessageSquare className="text-white" />
               </div>
               <div>
-                <h3 className="font-bold">SITM Assistant</h3>
-                <p className="text-md opacity-80">Online</p>
+                <h3 className="font-bold">SSITM Assistant</h3>
+                <p className="text-xs opacity-80">Online</p>
               </div>
             </div>
-            <button
-              onClick={toggleChatbot}
-              className="text-white hover:text-blue-200 transition-colors"
-            >
-              <FiX className="w-5 h-5" />
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={resetChat}
+                className="text-white hover:text-blue-200 transition-colors p-1"
+                title="Reset chat"
+              >
+                <FiRefreshCw className="w-4 h-4" />
+              </button>
+              <button
+                onClick={toggleChatbot}
+                className="text-white hover:text-blue-200 transition-colors p-1"
+              >
+                <FiX className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
@@ -317,7 +396,7 @@ const Chatbot = () => {
             {showContactForm && (
               <div className="mt-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-800 mb-3">
-                  Contact Form
+                  Fill the Form
                 </h4>
                 <form onSubmit={handleFormSubmit} className="space-y-3">
                   <input

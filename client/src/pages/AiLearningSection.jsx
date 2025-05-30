@@ -18,7 +18,7 @@ const AiLearningSection = () => {
         <div className="flex-1 text-center">
           <p className="text-sm sm:text-base">
             Empowering our students with the latest AI tools and
-             technology to shape the future of healthcare.
+             technology to shape the future of Technology and Management.
           </p>
         </div>
 

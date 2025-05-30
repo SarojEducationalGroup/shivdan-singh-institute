@@ -68,116 +68,122 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="relative flex items-center justify-center overflow-hidden"
+      className="relative overflow-hidden flex items-center"
     >
       {techBackground}
 
       <motion.div
-        className="container px-4 sm:px-6 mx-auto py-8 flex flex-col lg:flex-row items-center justify-between relative z-10"
+        className="container px-4 sm:px-6 mx-auto py-10 relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={controls}
       >
-        {/* LEFT */}
-        <motion.div
-          className="lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left"
-          variants={itemVariants}
-        >
-          {/* Badge */}
-          <motion.div className="inline-block bg-orange-100 text-orange-600 font-semibold px-4 py-1 rounded-full text-sm mb-4" variants={itemVariants}>
-            🎓 Established Excellence in Tech & Management
-          </motion.div>
+        {/* Content Container */}
+        <div className="flex flex-col lg:flex-row items-start">
+          {/* LEFT - TEXT CONTENT */}
+          <motion.div
+            className="lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left"
+            variants={itemVariants}
+          >
+            {/* Badge */}
+            <motion.div className="inline-block bg-orange-100 text-orange-600 font-semibold px-4 py-1 rounded-full text-md mb-4" variants={itemVariants}>
+              🎓 Established Excellence in Tech & Management
+            </motion.div>
 
-          {/* Heading */}
-          <motion.h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight" whileHover={{ scale: 1.02 }}>
-            WELCOME TO<br />
-            <span className="text-orange-500">SSITM</span>
-          </motion.h1>
+            {/* Heading */}
+            <motion.h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight" whileHover={{ scale: 1.02 }}>
+              WELCOME TO<br />
+              <span className="text-orange-500">SSITM</span>
+            </motion.h1>
 
-          {/* Description */}
-          <motion.p className="mt-4 text-lg sm:text-xl text-gray-700" variants={itemVariants}>
-            Empowering future leaders with quality education and cutting-edge technology.
-          </motion.p>
+            {/* Description */}
+            <motion.p className="mt-4 text-lg sm:text-xl text-gray-700" variants={itemVariants}>
+              Empowering future leaders with quality education and cutting-edge technology.
+            </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" variants={itemVariants}>
-            <Link to="/courses/AllCourses">
-              <motion.button
-                className="px-6 py-2 sm:px-8 sm:py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-md font-semibold hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Courses
-              </motion.button>
-            </Link>
-            <Link to="/contact-us">
-              <motion.button
-                className="px-6 py-2 sm:px-8 sm:py-2 border border-orange-600 text-orange-600 rounded-md font-semibold hover:bg-orange-50 transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Us
-              </motion.button>
-            </Link>
-          </motion.div>
+            {/* CTA Buttons */}
+            <motion.div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" variants={itemVariants}>
+              <Link to="/courses/AllCourses">
+                <motion.button
+                  className="px-6 py-2 sm:px-8 sm:py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-md font-semibold hover:shadow-lg transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Explore Courses
+                </motion.button>
+              </Link>
+              <Link to="/contact-us">
+                <motion.button
+                  className="px-6 py-2 sm:px-8 sm:py-2 border border-orange-600 text-orange-600 rounded-md font-semibold hover:bg-orange-50 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
+            </motion.div>
 
-          {/* Stats */}
-          <motion.div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" variants={itemVariants}>
-            {[
-              { value: '25+', label: 'Courses' },
-              { value: '1500+', label: 'Students' },
-              { value: '50+', label: 'Faculty' },
-              { value: '100%', label: 'Placement' }
-            ].map((stat) => (
-              <motion.div
-                key={stat.label}
-                className="bg-white p-3 rounded-lg shadow-md text-center border border-gray-200"
-                whileHover={{ y: -5 }}
-              >
-                <p className="text-xl font-bold text-orange-600">{stat.value}</p>
-                <p className="text-xs text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+            {/* Stats */}
+            <motion.div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4" variants={itemVariants}>
+              {[
+                { value: '25+', label: 'Courses' },
+                { value: '1500+', label: 'Students' },
+                { value: '50+', label: 'Faculty' },
+                { value: '100%', label: 'Placement' }
+              ].map((stat) => (
+                <motion.div
+                  key={stat.label}
+                  className="bg-white p-3 rounded-lg shadow-md text-center border border-gray-200"
+                  whileHover={{ y: -5 }}
+                >
+                  <p className="text-xl font-bold text-orange-600">{stat.value}</p>
+                  <p className="text-xs text-gray-600">{stat.label}</p>
+                </motion.div>
+              ))}
+            </motion.div>
 
-          {/* Highlights */}
-          <motion.div className="mt-6 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-gray-700" variants={itemVariants}>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="text-orange-500" size={18} />
-              AICTE Approved
-            </div>
-            <div className="flex items-center gap-2">
-              <Briefcase className="text-orange-400" size={18} />
-              Industry Partnerships
-            </div>
-            <div className="flex items-center gap-2">
-              <GraduationCap className="text-orange-600" size={18} />
-              100% Placement
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* RIGHT - IMAGE */}
-        <motion.div className="lg:w-1/2 flex justify-center lg:justify-end relative z-20" variants={itemVariants}>
-          <div className="relative w-full max-w-lg">
-            <motion.img
-              src={heroImage}
-              alt="University Admission"
-              className="w-full h-auto max-h-[600px]"
-              whileHover={{ scale: 1.02 }}
-            />
-            <motion.div
-              className="absolute -top-6 -left-6 bg-orange-600 p-2 rounded-xl shadow-lg z-30 text-white"
-              variants={floatingVariants}
-              animate="float"
-            >
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-300 rounded-full mr-1"></div>
-                <p className="font-bold text-xs">Admissions Open</p>
+            {/* Highlights */}
+            <motion.div className="mt-6 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-gray-700" variants={itemVariants}>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="text-orange-500" size={18} />
+                AICTE Approved
+              </div>
+              <div className="flex items-center gap-2">
+                <Briefcase className="text-orange-400" size={18} />
+                Industry Partnerships
+              </div>
+              <div className="flex items-center gap-2">
+                <GraduationCap className="text-orange-600" size={18} />
+                100% Placement
               </div>
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* RIGHT - IMAGE (POSITIONED ABSOLUTELY AT BOTTOM RIGHT) */}
+          <motion.div 
+            className="lg:absolute lg:right-0 lg:bottom-0 lg:w-1/2 lg:pr-8 lg:pb-8 mt-8 lg:mt-0"
+            variants={itemVariants}
+          >
+            <div className="relative w-full max-w-lg mx-auto">
+              <motion.img
+                src={heroImage}
+                alt="University Admission"
+                className="w-full h-auto max-h-[400px] lg:max-h-[500px] object-contain"
+                whileHover={{ scale: 1.02 }}
+              />
+              <motion.div
+                className="absolute -top-6 -left-6 bg-orange-600 p-2 rounded-xl shadow-lg z-30 text-white"
+                variants={floatingVariants}
+                animate="float"
+              >
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-300 rounded-full mr-1"></div>
+                  <p className="font-bold text-xs">Admissions Open</p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

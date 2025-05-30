@@ -48,7 +48,7 @@ const TopNav = () => {
           group-hover:text-gray-100 /* Slightly lighter text on hover */
           transition-colors duration-300
         ">
-          Enroll Now
+          Apply Now
         </span>
       </a>
 

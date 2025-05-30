@@ -59,7 +59,7 @@ const Contact = () => {
     admissionsEmail: 'admission.cell@seglko.org',
   };
 
-  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.12644260029!2d78.0772093150242!3d27.917454282672323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a44f9402c525%3A0x67a3b3e2a2c2b3e!2sSSITM%20Aligarh!5e0!3m2!1sen!2sin!4v1678912345678!5m2!1sen!2sin";
+  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.367399847364!2d78.020294!3d27.8092116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a48b1dc2b28f%3A0x23c4fb820ec1cf4!2sShivdan%20Singh%20Institute%20of%20Technology%20and%20Management!5e0!3m2!1sen!2sin!4v1717060000000!5m2!1sen!2sin";
 
   return (
     <Layout>

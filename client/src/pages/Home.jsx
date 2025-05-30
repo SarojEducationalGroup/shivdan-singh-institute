@@ -90,10 +90,11 @@ function Home() {
       {/* other sections */}
       <Recruiters />
       <ChairmanMessage />
+      <WhyChooseUs />
+      <Placement />
       <VisionAndMission />
       <Courses />
-      <Placement />
-      <WhyChooseUs />
+      
 
     </Layout>
   );

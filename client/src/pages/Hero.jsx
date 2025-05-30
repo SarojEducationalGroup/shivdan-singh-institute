@@ -176,7 +176,7 @@ const Hero = () => {
             <motion.img
               src={heroImage}
               alt="University Admission" // Changed alt text
-              className="w-full h-auto max-h-[700px] border-2px shadow-lg" // Added rounded corners and shadow
+              className="w-full h-auto max-h-[600px] border-2px shadow-lg" // Added rounded corners and shadow
               whileHover={{ scale: 1.02 }}
             />
 

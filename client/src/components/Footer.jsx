@@ -4,46 +4,35 @@ function Footer() {
   return (
     <footer className="w-full">
       {/* Top Section of the Footer */}
-      <div
-        className="relative py-10 px-4 md:px-8 lg:px-16
-                   bg-gray-100
-                   bg-cover bg-center bg-no-repeat
-                   text-gray-800 "
-      >
+      <div className="relative py-10 px-4 md:px-8 lg:px-16 bg-gray-100 bg-cover bg-center bg-no-repeat text-gray-800">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
 
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">
-
-          {/* Column 1: Our Locations, Mail Us, Quick Contact, Social Icons */}
+          {/*Locations, Mail Us, Quick Contact, Social Icons */}
           <div className="flex flex-col space-y-4">
             <h3 className="font-bold text-lg mb-2">Other Colleges</h3>
             <ul className="space-y-2 text-md ">
               <li className="flex items-start space-x-2 hover:text-orange-500 ">
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                 <span>Saroj Institute of Technology & Management</span>
               </li>
+
               <li className="flex items-start space-x-2 hover:text-orange-500 ">
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                 <span>Shivdan Singh Institute of Technology & Management</span>
               </li>
+
+
               <li className="flex items-start space-x-2 hover:text-orange-500 ">
-
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                 <span>Saroj College Of Pharmacy</span>
               </li>
             </ul>
 
 
-            {/* mail */}
+            {/* Mail */}
             <h3 className="font-bold text-lg mt-4 mb-2">Mail Us</h3>
             <div className="flex items-center space-x-2 text-md hover:text-orange-500">
-
-
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
               <span>admission.cell@seglko.org</span>
             </div>
 
@@ -65,11 +54,12 @@ function Footer() {
                   <span>09810054878</span>
                 </p>
               </div>
+
             </div>
 
 
 
-            {/* Social Media Icons - More distinct SVGs */}
+            {/* Social Media Icons */}
             <div className="flex space-x-4 mt-6">
               <a href="https://www.instagram.com/segindia/" className="text-gray-800 hover:text-pink-600 transition-colors duration-200">
                 {/* Instagram Icon */}
@@ -87,26 +77,29 @@ function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Programs */}
+          {/* Courses */}
           <div>
             <h3 className="font-bold text-lg mb-2">Courses</h3>
             <div className="grid grid-cols-2 gap-x-4 text-md"> {/* Nested grid for two columns of programs */}
               <ul className="space-y-1">
+
                 <div>
                   <a href="/courses/undergrad">Undergraduate Programs</a>
                 </div>
+
                 <div>
                   <a href="/courses/postgrad">Postgraduate Programs</a>
                 </div>
-              </ul>
 
+              </ul>
             </div>
           </div>
 
-          {/* Column 3: Admissions & Campus */}
+          {/* Admissions & Campus */}
           <div className="flex flex-col space-y-6">
             <div>
               <h3 className="font-bold text-lg mb-2">Admissions</h3>
+
               <ul className="space-y-1 text-md">
                 <div className='hover:text-orange-500'>
                   <a href="/admission/admission-process">Admission Process</a>
@@ -118,6 +111,7 @@ function Footer() {
                   <a href="/">Fee Structure</a>
                 </div>
               </ul>
+
             </div>
 
             <div>
@@ -133,12 +127,10 @@ function Footer() {
 
           </div>
 
-          {/* Column 4: Quick Links (Sports, etc. & Privacy/Terms) */}
+          {/* Privacy Policy and Terms and Conditions */}
           <div className="flex flex-col space-y-6">
-
             <h3 className="font-bold text-lg mb-2">Quick Links</h3>
-
-            <ul className="space-y-1 text-md">
+              <ul className="space-y-1 text-md">
               <div className='hover:text-orange-500'>
                 <a href="/privacy-policy">Privacy Policy</a>
               </div>
@@ -147,11 +139,8 @@ function Footer() {
                 <a href="/terms-and-conditions">Terms and Conditions</a>
               </div>
             </ul>
-
           </div>
-
-
-        </div>
+         </div>
       </div>
 
       {/* Bottom Section (Copyright) */}
@@ -165,4 +154,3 @@ function Footer() {
 }
 
 export default Footer;
-// [url('https://img.freepik.com/free-vector/abstract-soft-blue-watercolor-texture-design-background_1055-17547.jpg')]

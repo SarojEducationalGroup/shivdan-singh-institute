@@ -161,9 +161,9 @@ const Hero = () => {
 
           {/* RIGHT - IMAGE (POSITIONED ABSOLUTELY AT BOTTOM RIGHT) */}
           <motion.div 
-            className="lg:absolute lg:right-0 lg:bottom-0 lg:w-1/2 lg:pr-8 lg:pb-8 mt-8 lg:mt-0"
+            className="lg:absolute lg:right-0 lg:bottom-0 lg:w-1/2 lg:pr-8 lg:pb-0 mt-8 lg:mt-0"
             variants={itemVariants}
-          >
+           >
             <div className="relative w-full max-w-lg mx-auto">
               <motion.img
                 src={heroImage}

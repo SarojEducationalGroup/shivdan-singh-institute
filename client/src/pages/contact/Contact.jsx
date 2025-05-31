@@ -30,14 +30,13 @@ const Contact = () => {
     try {
       await fetch(SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // Needed for Apps Script
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      // No way to confirm success in no-cors, so assume success
       setSubmissionStatus('success');
       setFormData({
         college: 'SSITM',
@@ -65,144 +64,192 @@ const Contact = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16 sm:py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 relative">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-            Get In Touch With <span className="text-orange-300">SSITM</span>
+      {/* Hero Section with light orange theme */}
+      <section className="bg-orange-50 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
+            <span className='border-l-4 border-orange-500 pl-4'>CONTACT</span> <span className='text-orange-600'>US</span>
           </h1>
-          <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8">
-            We're here to answer all your questions. Reach out to us through the form, phone, or visit our campus.
+          <p className="text-lg">
+            We are here to assist you. Please reach out with any questions or feedback.
           </p>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="bg-orange-50 py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
-            <h2 className="text-3xl font-bold text-orange-700 mb-6">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">Mobile Number</label>
-                <input
-                  type="phone"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500" 
-                  required />
+      {/* Main Content with card styling */}
+      <section className="bg-orange-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Information Card */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-orange-100 transition-transform hover:shadow-xl hover:-translate-y-1">
+            <div className="p-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-orange-200">Contact Information</h2>
+              
+              <div className="mb-6 flex items-start">
+                <div className="bg-orange-100 p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                 </div>
-            
-
-              <div>
-                <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                />
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-1">Address</h3>
+                  <p className="text-gray-600">{contactInfo.address}</p>
+                </div>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="shadow border border-orange-200 rounded w-full py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  required
-                ></textarea>
+              
+              <div className="mb-6 flex items-start">
+                <div className="bg-orange-100 p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-1">Phone Numbers</h3>
+                  <p className="text-gray-600">
+                    <a href={`tel:${contactInfo.phone1}`} className="hover:underline block">{contactInfo.phone1}</a>
+                    <a href={`tel:${contactInfo.phone2}`} className="hover:underline block">{contactInfo.phone2}</a>
+                    <span className="font-medium block">Toll Free: {contactInfo.tollFree}</span>
+                  </p>
+                </div>
               </div>
-              <button
-                type="submit"
-                disabled={submissionStatus === 'submitting'}
-                className="bg-orange-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-orange-600 transition disabled:opacity-50"
-              >
-                {submissionStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-              </button>
-
-              {submissionStatus === 'success' && (
-                <p className="mt-4 text-center text-green-600">Thank you for your message! We will get back to you shortly.</p>
-              )}
-              {submissionStatus === 'error' && (
-                <p className="mt-4 text-center text-red-600">Error sending message. Please try again or contact us directly.</p>
-              )}
-            </form>
+              
+              <div className="flex items-start">
+                <div className="bg-orange-100 p-3 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-1">Email</h3>
+                  <p className="text-gray-600">
+                    <a href={`mailto:${contactInfo.admissionsEmail}`} className="hover:underline">{contactInfo.admissionsEmail}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Contact Info */}
-          <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
-            <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Contact Details</h2>
-            <div className="space-y-6 text-gray-700">
-              <div>
-                <h3 className="text-xl font-semibold text-orange-700 mb-2">Address:</h3>
-                <p>{contactInfo.address}</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-orange-700 mb-2">Phone Numbers:</h3>
-                <ul className="space-y-1">
-                  <li><a href={`tel:${contactInfo.phone1}`} className="hover:underline">{contactInfo.phone1}</a></li>
-                  <li><a href={`tel:${contactInfo.phone2}`} className="hover:underline">{contactInfo.phone2}</a></li>
-                  <li><strong>Toll Free: {contactInfo.tollFree}</strong></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-orange-700 mb-2">Email:</h3>
-                <a href={`mailto:${contactInfo.admissionsEmail}`} className="hover:underline">{contactInfo.admissionsEmail}</a>
-              </div>
+          {/* Contact Form Card */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-orange-100 transition-transform hover:shadow-xl hover:-translate-y-1">
+            <div className="p-8">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-orange-200">Send us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="phone" className="block text-gray-700 text-sm font-medium mb-1">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-gray-700 text-sm font-medium mb-1">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-1">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  disabled={submissionStatus === 'submitting'}
+                  className="w-full bg-orange-600 text-white py-3 px-6 rounded-md hover:bg-orange-700 transition disabled:opacity-50 font-medium shadow-md"
+                >
+                  {submissionStatus === 'submitting' ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : 'Send Message'}
+                </button>
+
+                {submissionStatus === 'success' && (
+                  <div className="mt-4 p-3 bg-green-100 text-green-700 rounded-md text-center">
+                    Thank you for your message! We will get back to you shortly.
+                  </div>
+                )}
+                {submissionStatus === 'error' && (
+                  <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-md text-center">
+                    Error sending message. Please try again.
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Google Map */}
-      <section className="bg-blue-900 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-white mb-8 text-center">FIND US ON <span className="text-orange-300">MAP</span></h2>
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-orange-200">
-            <iframe
-              src={googleMapsEmbedUrl}
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="SSITM Location on Google Maps"
-            ></iframe>
+      {/* Google Map Card */}
+      <section className="bg-orange-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-orange-100">
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center pb-2 border-b-2 border-orange-200">Find Us On Map</h2>
+              <div className="rounded-lg overflow-hidden border border-gray-200">
+                <iframe
+                  src={googleMapsEmbedUrl}
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="SSITM Location on Google Maps"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>

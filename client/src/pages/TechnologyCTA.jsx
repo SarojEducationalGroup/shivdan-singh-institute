@@ -11,11 +11,11 @@ const TechnologyCTA = () => {
         <p className="text-lg mb-8">
           Join Shivdan Singh Institute of Technology and Management and be a part of the future of innovation.
         </p>
-        <Link to="/apply">
-          <button className="px-8 py-3 bg-black hover:bg-gray-800 transition duration-300 text-white rounded-full border border-white">
+        
+          <Link to='https://seglko.in8.nopaperforms.com/' className="px-8 py-3 bg-black hover:bg-gray-800 transition duration-300 text-white rounded-full border border-white">
             Apply Now
-          </button>
-        </Link>
+          </Link>
+      
       </div>
     </section>
   );

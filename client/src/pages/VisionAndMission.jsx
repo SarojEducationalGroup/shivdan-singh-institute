@@ -4,12 +4,11 @@ const VisionAndMission = () => {
   return (
     <div className=" bg-orange-50 py-11 px-4 sm:px-6 lg:px-8 pb-30">
       <div className="max-w-7xl mx-auto">
-
         
         <div className="text-center mb-14 overflow-hidden">
-          <h1 className=" text-center text-3xl sm:text-4xl font-extrabold text-gray-900">
-            VISION & <span className="text-orange-500">MISSION</span>
-          </h1>
+        <h1 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
+          <span className="border-l-4 border-orange-500 pl-4">VISION <span className="text-orange-500">& MISSION</span></span>
+        </h1>
           <p className="mt-1 max-w-xl mx-auto text-xl text-gray-600">
             Our guiding principles and aspirations
           </p>

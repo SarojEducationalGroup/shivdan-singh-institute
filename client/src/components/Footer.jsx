@@ -1,4 +1,12 @@
 import React from 'react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Linkedin,
+  Facebook,
+} from 'lucide-react';
 
 function Footer() {
   return (
@@ -11,27 +19,16 @@ function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Other Colleges</h3>
             <ul className="space-y-3 text-md">
-              <li className="flex items-start gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Saroj Institute of Technology & Management</span>
-              </li>
-              <li className="flex items-start gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Shivdan Singh Institute of Technology & Management</span>
-              </li>
-              <li className="flex items-start gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Saroj College Of Pharmacy</span>
-              </li>
+              {[
+                'Saroj Institute of Technology & Management',
+                'Shivdan Singh Institute of Technology & Management',
+                'Saroj College Of Pharmacy',
+              ].map((college, idx) => (
+                <li key={idx} className="flex items-start gap-2 hover:text-orange-500 transition-colors">
+                  <MapPin size={18} className="mt-1 shrink-0" />
+                  <span className="leading-snug">{college}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -69,32 +66,21 @@ function Footer() {
             <h3 className="text-lg font-bold">Quick Contact</h3>
             <div className="space-y-3 text-md">
               <div className="flex items-start gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-1">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>10th KM Stone, Aligarh – Mathura Road, Aligarh, Uttar Pradesh 202001</span>
+                <MapPin size={18} className="mt-1 shrink-0" />
+                <span className="leading-snug">
+                  10th KM Stone, Aligarh – Mathura Road, Aligarh, Uttar Pradesh 202001
+                </span>
               </div>
-              
               <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2 3.18 2 2 0 0 1 4.18 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+                <Phone size={18} className="shrink-0" />
                 <span>09555699988</span>
               </div>
-              
               <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2 3.18 2 2 0 0 1 4.18 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+                <Phone size={18} className="shrink-0" />
                 <span>09810054878</span>
               </div>
-              
               <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
+                <Mail size={18} className="shrink-0" />
                 <span>admission.cell@seglko.org</span>
               </div>
             </div>
@@ -102,30 +88,20 @@ function Footer() {
             {/* Social Media Icons */}
             <div className="flex gap-4 mt-6">
               <a href="https://www.instagram.com/segindia/" className="text-pink-500 hover:text-pink-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.5" y1="6.5" y2="6.5" />
-                </svg>
+                <Instagram size={20} />
               </a>
               <a href="https://www.linkedin.com/company/saroj-educational-group/" className="text-blue-500 hover:text-blue-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+                <Linkedin size={20} />
               </a>
               <a href="https://www.facebook.com/SEGofficial" className="text-blue-600 hover:text-blue-500 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
+                <Facebook size={20} />
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright Section */}
+      {/* Copyright */}
       <div className="bg-gray-900 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm md:text-base font-medium">

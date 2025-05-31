@@ -1,9 +1,6 @@
-
-
-
-
 import React from 'react';
 import Layout from '../components/Layout';
+import { GraduationCap } from 'lucide-react';
 
 const allCourses =[
   // Diploma Courses
@@ -107,15 +104,17 @@ const AllCourses = () => {
     <Layout>
       <section className="bg-orange-50 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12 text-center">
-            Explore All <span className="text-orange-600">Courses</span>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-12 text-center">
+           <span className='border-l-4 border-orange-500 pl-4'  >ALL </span><span className="text-orange-600">COURSES</span>
           </h1>
 
           {Object.entries(groupedCourses).map(([category, courses]) => (
             <div key={category} className="mb-16">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6 border-l-4 border-orange-500 pl-4">
-                {category} Courses
-              </h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+  <GraduationCap className="h-8 w-8 text-orange-500" />
+  {category} Courses
+</h2>
+
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course, index) => (
@@ -134,6 +133,7 @@ const AllCourses = () => {
               </div>
             </div>
           ))}
+
         </div>
       </section>
     </Layout>

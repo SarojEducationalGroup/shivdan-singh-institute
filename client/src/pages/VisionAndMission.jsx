@@ -44,20 +44,12 @@ const VisionAndMission = () => {
             </div>
 
             <div className="px-6 py-8 sm:p-6">
-              <ul className="space-y-4">
-                {[
-                  "To provide quality education through innovative teaching-learning processes.",
-                  "To foster research, innovation, and entrepreneurship among students.",
-                  "To develop industry-relevant skills and professional ethics.",
-                  "To establish strong industry-institute collaboration.",
-                  "To contribute to society through community engagement."
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    {/* Tick Icon removed */}
-                    <span className="ml-3">{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <p className="mb-4 leading-relaxed text-gray-700">
+  Our aim is to provide quality education through innovative teaching-learning processes, 
+  fostering research, innovation, and entrepreneurship among students. 
+  We also focus on developing industry-relevant skills and professional ethics, and contributing to society 
+  through community engagement.
+</p>
             </div>
           </div>
         </div>

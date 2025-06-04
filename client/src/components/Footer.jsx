@@ -19,16 +19,15 @@ function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Other Colleges</h3>
             <ul className="space-y-3 text-md">
-              {[
-                'Saroj Institute of Technology & Management',
-                'Shivdan Singh Institute of Technology & Management',
-                'Saroj College Of Pharmacy',
-              ].map((college, idx) => (
-                <li key={idx} className="flex items-start gap-2 hover:text-orange-500 transition-colors">
-                  <MapPin size={18} className="mt-1 shrink-0" />
-                  <span className="leading-snug">{college}</span>
-                </li>
-              ))}
+              <li>
+                <a href="https://seglko.org/sitm">Saroj Institute of Technology & Management</a>
+              </li>
+              <li>
+                <a href="https://seglko.org/ssitm">Shivdan Singh Institute of Technology & Management</a>
+              </li>
+              <li><a href="https://seglko.org/scp">Saroj College Of Pharmacy</a></li>
+              <li><a href="https://seglko.org/scep">Saroj College Of Engineering and Polytechnic</a></li>
+              <li><a href="https://seglko.org/lip">Lucknow Institute of Pharmacy</a></li>
             </ul>
           </div>
 
@@ -63,12 +62,12 @@ function Footer() {
 
           {/* Quick Contact */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Quick Contact</h3>
+            <h3 className="text-lg font-bold">Quick Contacts</h3>
             <div className="space-y-3 text-md">
               <div className="flex items-start gap-2 hover:text-orange-500 transition-colors">
                 <MapPin size={18} className="mt-1 shrink-0" />
                 <span className="leading-snug">
-                  10th KM Stone, Aligarh – Mathura Road, Aligarh, Uttar Pradesh 202001
+                  10th KM Stone, Aligarh–Mathura Road, Aligarh, Uttar Pradesh,India 202001
                 </span>
               </div>
               <div className="flex items-center gap-2 hover:text-orange-500 transition-colors">

@@ -14,12 +14,21 @@ const About = () => {
                 <span className="border-l-4 border-orange-500 pl-4">ABOUT</span>{" "}
                 <span className="text-orange-600">SSITM</span>
               </h1>
-              <p className="mb-4">
-                Shivdan Singh Institute of Technology & Management (SSITM) stands tall among North India's premier institutions, renowned for its NAAC 'A' accredited excellence through cutting-edge programs in Pharmacy, and Management. SSITM combines academic rigor with industry-ready training through 25+ modern labs, 6 innovation hubs, and faculty with 15+ years average industry experience.
-              </p>
-              <p>
-                SSITM's commitment to nurturing future leaders and innovators. Our holistic approach emphasizes not just academic excellence, personal growth, critical thinking, and problem-solving skills, preparing students for a dynamic global landscape.
-              </p>
+           <p className="mb-4">
+            Shivdan Singh Institute of Technology & Management (SSITM) stands tall among
+            North India's premier institutions, renowned for its accredited
+            excellence through cutting-edge programs in Pharmacy, and Management.
+            SSITM combines academic rigor with industry-ready training through 25+
+            modern labs, 6 innovation hubs, and faculty with 15+ years average
+            industry experience.
+          </p>
+          <p>
+            SSITM's commitment to nurturing future leaders and innovators.
+            Our holistic approach emphasizes not just academic excellence,
+            personal growth, critical thinking, and problem-solving skills,
+            preparing students for a dynamic global landscape.
+          </p>
+             
             </div>
 
             <div>

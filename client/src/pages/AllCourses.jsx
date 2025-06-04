@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { GraduationCap } from 'lucide-react';
 
-const allCourses =[
+const allCourses = [
   // Diploma Courses
   {
     category: 'Diploma',
@@ -22,45 +22,109 @@ const allCourses =[
   // Undergraduate Courses
   {
     category: 'Undergraduate',
-    title: 'B.Tech - Computer Science Engineering (CSE)',
+    title: 'B.Tech - Computer Science and Engineering', // Changed from CSE
     duration: '4 Years',
-    eligibility: '10+2 with PCM, min. 45%',
-    image:  'https://media.istockphoto.com/id/1998660059/photo/ai-artificial-intelligence-security-sentinel-password-cyber-security-ransomware-email.webp?a=1&b=1&s=612x612&w=0&k=20&c=b38xp_lw0-upEvjodUgwq9NNC8Lw4uDAS-SATyfr1hI=' // Example image for CSE
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     category: 'Undergraduate',
     title: 'B.Tech - Electronics & Communication Engineering (ECE)',
     duration: '4 Years',
-    eligibility: '10+2 with PCM, min. 45%',
-    image: 'https://media.istockphoto.com/id/1705357580/photo/robotic-team-boost-software-machine-ensure-efficiency-troubleshooting-upgrade-for-optimal.webp?a=1&b=1&s=612x612&w=0&k=20&c=iyllNLvGhsg8FpvQ4l55jE4DvK3tQV19G25eOPvbgyE=' // Example image for ME
-   },
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1287582736/photo/robot-humanoid-use-laptop-and-sit-at-table-for-big-data-analytic.webp?a=1&b=1&s=612x612&w=0&k=20&c=F20ufOpQFFYfnJNNNiAbSFmP2JC5fc9WlNNz3ICih-Q='
+  },
   {
     category: 'Undergraduate',
     title: 'B.Tech - Mechanical Engineering (ME)',
     duration: '4 Years',
-    eligibility: '10+2 with PCM, min. 45%',
-    image: 'https://media.istockphoto.com/id/1705357580/photo/robotic-team-boost-software-machine-ensure-efficiency-troubleshooting-upgrade-for-optimal.webp?a=1&b=1&s=612x612&w=0&k=20&c=iyllNLvGhsg8FpvQ4l55jE4DvK3tQV19G25eOPvbgyE=' // Example image for ME
-   },
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1705357580/photo/robotic-team-boost-software-machine-ensure-efficiency-troubleshooting-upgrade-for-optimal.webp?a=1&b=1&s=612x612&w=0&k=20&c=iyllNLvGhsg8FpvQ4l55jE4DvK3tQV19G25eOPvbgyE='
+  },
   {
     category: 'Undergraduate',
     title: 'B.Tech - Civil Engineering (CE)',
     duration: '4 Years',
-    eligibility: '10+2 with PCM, min. 45%',
-    image: 'https://plus.unsplash.com/premium_photo-1661490867606-1ac837f9748e'
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://plus.unsplash.com/premium_photo-1661490867606-1ac837f9748e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2l2aWwlMjAlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D'
   },
   {
     category: 'Undergraduate',
     title: 'Bachelor of Pharmacy (B.Pharma)',
     duration: '4 Years',
-    eligibility: '10+2 with PCB/Maths, min. 45%',
+    eligibility: '10+2 with Physics, Chemistry, Biology/Maths or equivalent with min. 45%',
     image: 'https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg'
   },
   {
     category: 'Undergraduate',
     title: 'Bachelor of Business Administration (BBA)',
     duration: '3 Years',
-    eligibility: '10+2 in any stream, min. 45%',
-    image: 'https://plus.unsplash.com/premium_photo-1661756423422-4486e27eb6dd'
+    eligibility: '10+2 in any stream or equivalent with min. 45%',
+    image: 'https://plus.unsplash.com/premium_photo-1661756423422-4486e27eb6dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmFjaGVsb3IlMjBvZiUyMEJ1c2luZXNzJTIwQWRtaW5pc3RyYXRpb258ZW58MHx8MHx8fDA%3D'
+  },
+  {
+    category: 'Undergraduate',
+    title: 'Bachelor of Computer Applications (BCA)',
+    duration: '3 Years',
+    eligibility: '10+2 in any stream with Maths/Computer Science or equivalent with min. 45%',
+    image: 'https://media.istockphoto.com/id/1998660059/photo/ai-artificial-intelligence-security-sentinel-password-cyber-security-ransomware-email.webp?a=1&b=1&s=612x612&w=0&k=20&c=b38xp_lw0-upEvjodUgwq9NNC8Lw4uDAS-SATyfr1hI='
+  },
+  // --- Additional Undergraduate Courses (from your previous array) ---
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Computer Science and Engineering (Cyber Security)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2018/05/18/11/03/cyber-security-3410923_640.jpg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2022/04/04/16/41/technology-7111795_640.jpg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence & Machine Learning)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2023/01/14/16/50/ai-generated-7718607_640.jpg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Computer Science and Engineering (Data Science)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Agricultural Engineering',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths/Biology or equivalent with min. 45%',
+    image: 'https://plus.unsplash.com/premium_photo-1663011236143-62855453066b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFncmljdWx0dXJlJTIwdGVjaHxlbnwwfHwwfHx8MA%3D%3D',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Biotechnology',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Biology/Maths or equivalent with min. 45%',
+    image: 'https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Electrical and Electronics Engineering',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2023/04/03/19/37/soldering-7897827_640.jpg',
+  },
+  {
+    category: 'Undergraduate',
+    title: 'B.Tech - Electrical Engineering',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZWxlY3Ryb25pY3MlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHx8MA%3D%3D',
   },
 
   // Postgraduate Courses

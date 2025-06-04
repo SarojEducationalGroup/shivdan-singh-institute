@@ -34,6 +34,8 @@ const navItems = [
       },
     ],
   },
+   { title: "Alumni", path: "/alumni" },
+    { title: "Fee Payment", path: "/fee-payment" },
   { title: "Contact Us", path: "/contact-us" },
 ];
 

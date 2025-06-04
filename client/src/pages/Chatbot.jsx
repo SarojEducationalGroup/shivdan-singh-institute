@@ -25,7 +25,7 @@ const Chatbot = () => {
         "Admission process",
         "Campus facilities",
         "Placement details",
-        "Contact administration",
+        "Administration Details",
       ],
     },
   ]);
@@ -79,7 +79,7 @@ const Chatbot = () => {
           "Admission process",
           "Campus facilities",
           "Placement details",
-          "Contact administration",
+          "Administration details",
         ],
       },
     ]);
@@ -131,7 +131,7 @@ const Chatbot = () => {
       return;
     }
 
-    if (option === "Contact administration") {
+    if (option === "Administration Details") {
       setShowContactForm(true);
       setTimeout(() => {
         const botResponse = {
@@ -166,7 +166,7 @@ const Chatbot = () => {
         "BBA details",
         "MCA details",
         "MBA details",
-        "Contact administration",
+        "Administration Details",
       ];
     } else if (userInput.toLowerCase().includes("admission")) {
       response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application\n\nFor B.Tech programs, JEE Main scores are considered.`;
@@ -179,7 +179,7 @@ const Chatbot = () => {
         "Hostel info",
         "Sports facilities",
         "Transportation",
-        "Contact administration",
+        "Administration Details",
       ];
     } else if (userInput.toLowerCase().includes("placement")) {
       response = `Our Placement Highlights:
@@ -189,7 +189,7 @@ const Chatbot = () => {
 - Alumni network in top firms
       
 Recent recruiters include top companies in various sectors.`;
-      options = ["Contact administration"];
+      options = ["Administration Details"];
     } else if (userInput.toLowerCase().includes("b.tech")) {
       response = `B.Tech Programs (4 years):
 - Computer Science & Engineering
@@ -240,7 +240,7 @@ Eligibility: Bachelor's degree in any discipline`;
         "Admission process",
         "Campus facilities",
         "Placement details",
-        "Contact administration",
+        "Administration Details",
       ];
     }
 
@@ -304,7 +304,7 @@ Eligibility: Bachelor's degree in any discipline`;
             "Admission process",
             "Campus facilities",
             "Placement details",
-            "Contact administration",
+            "Administration Details",
           ],
         };
         setMessages((prev) => [...prev, fallbackBotResponse]);

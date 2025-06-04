@@ -13,6 +13,7 @@ import FeeStructure from './pages/Admission/Fee-Structure';
 import NotFound from './pages/NotFound';
 import AllCourses from './pages/AllCourses';
 import ScrollTop from './components/ScrollTop';
+import FeePaymentPage from './pages/FeePaymentPage';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='/admission/fee-structure' element={< FeeStructure />} />
             <Route path='*'  element ={< NotFound/>} />
             <Route path = 'courses/AllCourses' element ={ < AllCourses /> } />
+            <Route path='fee-payment'  element ={< FeePaymentPage/>} />
         </Routes>
 
     )

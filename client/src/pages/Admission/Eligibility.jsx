@@ -221,23 +221,7 @@ const Eligibility = () => {
                             ))}
                         </ul>
                     </div>
-
-                    {/* Admissions Call to Action - Kept from previous structure */}
-                    <section className="bg-orange-600 py-12 sm:py-16 text-white text-center mt-12 rounded-lg shadow-xl">
-                        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to Begin Your Academic Journey?</h2>
-                            <p className="text-lg sm:text-xl mb-8">
-                                Admissions are open for our programs. Take the first step towards a bright future.
-                            </p>
-                            <a
-                                href="/admission"
-                                className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-10 rounded-full shadow-lg
-                                         transition-all duration-300 transform hover:scale-105 inline-block"
-                            >
-                                Learn More About Admissions
-                            </a>
-                        </div>
-                    </section>
+                    
                 </div>
             </section>
         </Layout>

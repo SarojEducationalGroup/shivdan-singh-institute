@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   const contactInfo = {
-    address: '10th KM Stone, Aligarh, Mathura Road, Aligarh, Uttar Pradesh, India, 202001',
+    address: '10th KM Stone, Aligarh-Mathura Road, Aligarh, Uttar Pradesh, India, 202001',
     phone1: '+91- 9555699988',
     phone2: '+91- 09810054878',
     tollFree: '1800-180-7686',
@@ -92,7 +92,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-700 mb-1">Address</h3>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-1">College Campus</h3>
                   <p className="text-gray-600">{contactInfo.address}</p>
                 </div>
               </div>

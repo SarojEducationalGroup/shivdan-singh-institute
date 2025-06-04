@@ -3,12 +3,12 @@ import { FaGraduationCap, FaBuilding, FaDollarSign, FaChalkboardTeacher, FaLight
 import { useInView } from 'react-intersection-observer'; // For scroll animations
 
 const reasonsData = [
-  {
-    id: 1,
-    icon: FaGraduationCap,
-    title: 'NAAC \'A\' Accredited Excellence',
-    description: 'Recognized for top-tier academic standards and quality education, ensuring a valuable degree.',
-  },
+{
+  id: 1,
+  icon: FaGraduationCap,
+  title: 'Premier Accredited Excellence',
+  description: 'Recognized for top-tier academic standards and quality education, ensuring a valuable degree.',
+},
   {
     id: 2,
     icon: FaBuilding,

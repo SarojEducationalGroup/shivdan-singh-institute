@@ -94,7 +94,7 @@ const AdmissionProcess = () => {
             A comprehensive guide to applying for your desired program at SSITM. We're here to help you every step of the way.
           </p>
           <a
-            href="https://segiko.org/ssitm/admission-procedure" // This is the link from your screenshot for the application page
+            href="https://seglko.in8.nopaperforms.com/" // This is the link from your screenshot for the application page
             target="_blank"
             rel="noopener noreferrer"
             className="bg-orange-500 text-white hover:bg-orange-600 font-bold py-3 px-8 rounded-full shadow-lg
@@ -156,18 +156,7 @@ const AdmissionProcess = () => {
 
       {/* Important Dates & Contact Section - Light Orange Background */}
       <section className="bg-orange-50 bg-opacity-70 py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Important Dates - (Example, adjust if you have specific dates) */}
-          <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
-            <h3 className="text-2xl font-bold text-orange-700 mb-4">Important Dates</h3>
-            <ul className="text-gray-700 text-lg space-y-3">
-              <li><span className="font-semibold text-blue-800">Application Start:</span> To be announced</li>
-              <li><span className="font-semibold text-blue-800">Application Deadline:</span> To be announced</li>
-              <li><span className="font-semibold text-blue-800">Entrance Exam (if applicable):</span> To be announced</li>
-              <li><span className="font-semibold text-blue-800">Counseling/Admission:</span> To be announced</li>
-            </ul>
-           
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Contact Information */}
           <div className="bg-white p-8 rounded-lg shadow-xl border border-orange-200">
@@ -175,9 +164,9 @@ const AdmissionProcess = () => {
             <p className="text-gray-700 mb-4">
               Have questions about the admission process? Our team is here to help!
             </p>
-            <ul className="text-gray-700 text-lg space-y-3">
-              <li><span className="font-semibold text-blue-800">Contact No:</span> 09555699988,09810054878</li>
-              <li><span className="font-semibold text-blue-800">Email:</span> admission.cell@seglko.orG</li>
+            <ul className="text-gray-700 text-md space-y-3">
+              <li><span className="font-semibold text-blue-800">Contact No:</span> 09555699988, 09810054878</li>
+              <li><span className="font-semibold text-blue-800">Email:</span> admission.cell@seglko.org</li>
             </ul>
             
           </div>

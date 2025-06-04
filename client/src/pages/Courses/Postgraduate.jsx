@@ -94,22 +94,6 @@ const Postgrad = () => {
         </div>
       </section>
 
-      {/* Admissions Call to Action */}
-      <section className="bg-orange-600 py-12 sm:py-16 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Ready to Advance Your Expertise?</h2>
-          <p className="text-lg sm:text-xl mb-8">
-            Our postgraduate programs are designed to transform you into a leader in your field. Apply today!
-          </p>
-          <a
-            href="/admission"
-            className="bg-white text-orange-700 hover:bg-gray-100 font-bold py-3 px-10 rounded-full shadow-lg
-                             transition-all duration-300 transform hover:scale-105 inline-block"
-          >
-            Learn More About Admissions
-          </a>
-        </div>
-      </section>
     </Layout>
   );
 };

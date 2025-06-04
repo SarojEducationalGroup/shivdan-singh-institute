@@ -22,6 +22,7 @@ const TopNav = () => {
           Apply Now
         </span>
       </a>
+      
     </div>
   );
 };

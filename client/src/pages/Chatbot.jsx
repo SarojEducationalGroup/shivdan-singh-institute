@@ -7,6 +7,15 @@ const Chatbot = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [hasFirstOptionBeenSelected, setHasFirstOptionBeenSelected] =
     useState(false);
+
+  // Define mainOptions globally within the component
+  const mainOptions = [
+    "Academic programs information",
+    "Admission process",
+    "Campus facilities",
+    "Contact Form",
+  ];
+
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -20,13 +29,7 @@ const Chatbot = () => {
       text: "How can I help you today?",
       sender: "bot",
       time: getCurrentTime(),
-      options: [
-        "Academic programs information",
-        "Admission process",
-        "Campus facilities",
-        "Placement details",
-        "Administration Details",
-      ],
+      options: mainOptions, // Use the global mainOptions here
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -34,7 +37,7 @@ const Chatbot = () => {
     college: "SSITM-ChatBot",
     name: "",
     email: "",
-    phone: "",
+    phone: "", // Keep phone if your Google Sheet expects it
     subject: "",
     message: "",
   });
@@ -42,43 +45,52 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // --- Program Data (added here) ---
+  // Define academicPrograms data structure here with seat information from images
   const academicPrograms = {
-    "Diploma": [
-      { "Course": "Civil Engineering", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "Mechanical Engineering", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "Electrical Engineering", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "Agricultural Engineering", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "D. Pharma", "Duration": "2 Years", "Seats": 60 }
+    Undergraduate: [
+      { Course: "Computer Science & Engineering", Duration: "4 Years", Seats: 90 },
+      { Course: "Information Technology", Duration: "4 Years", Seats: 60 },
+      { Course: "Electronics and Electrical Engineering", Duration: "4 Years", Seats: 90 },
+      { Course: "Mechanical Engineering", Duration: "4 Years", Seats: 180 },
+      { Course: "Biotechnology", Duration: "4 Years", Seats: 60 },
+      { Course: "Agricultural Engineering", Duration: "4 Years", Seats: 60 },
+      { Course: "Civil Engineering", Duration: "4 Years", Seats: 180 },
+      { Course: "B.Pharma", Duration: "4 Years", Seats: 100 },
+      { Course: "BCA", Duration: "3 Years", Seats: 60 },
+      { Course: "BBA", Duration: "3 Years", Seats: 60 },
+      { Course: "B.Ed", Duration: "2 Years", Seats: 100 },
     ],
-    "Undergraduate": [
-      { "Course": "Computer Science and Engineering", "Duration": "4 Years", "Seats": 90 },
-      { "Course": "Information Technology", "Duration": "4 Years", "Seats": 60 },
-      { "Course": "Electronics and Communication Engineering", "Duration": "4 Years", "Seats": 90 },
-      { "Course": "Electrical Engineering", "Duration": "4 Years", "Seats": 180 },
-      { "Course": "Mechanical Engineering", "Duration": "4 Years", "Seats": 60 },
-      { "Course": "Biotechnology", "Duration": "4 Years", "Seats": 60 },
-      { "Course": "Agricultural Engineering", "Duration": "4 Years", "Seats": 180 },
-      { "Course": "Civil Engineering", "Duration": "4 Years", "Seats": 180 },
-      { "Course": "B.Pharma", "Duration": "4 Years", "Seats": 100 },
-      { "Course": "BBA", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "BCA", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "B.Ed", "Duration": "2 Years", "Seats": 100 }
+    Postgraduate: [
+      { Course: "Production Engineering", Duration: "2 Years", Seats: 18 },
+      { Course: "Computer Aided Design & Manufacturing", Duration: "2 Years", Seats: 18 },
+      { Course: "VLSI Design", Duration: "2 Years", Seats: 18 },
+      { Course: "Electronics Communication Engineering", Duration: "2 Years", Seats: 18 },
+      { Course: "Computer Science", Duration: "2 Years", Seats: 18 },
+      { Course: "MBA", Duration: "2 Years", Seats: 120 },
+      { Course: "MCA", Duration: "3 Years", Seats: 60 },
+      { Course: "M.Pharma (Pharmaceutical Chemistry)", Duration: "2 Years", Seats: 8 },
+      { Course: "M.Pharma (Pharmaceutics)", Duration: "2 Years", Seats: 12 },
     ],
-    "Postgraduate": [
-      { "Course": "Production Engineering", "Duration": "2 Years", "Seats": 18 },
-      { "Course": "Computer Aided Design & Manufacturing", "Duration": "2 Years", "Seats": 18 },
-      { "Course": "VLSI Design", "Duration": "2 Years", "Seats": 18 },
-      { "Course": "Electronics Communication Engineering", "Duration": "2 Years", "Seats": 18 },
-      { "Course": "Computer Science", "Duration": "2 Years", "Seats": 18 },
-      { "Course": "MBA", "Duration": "2 Years", "Seats": 120 },
-      { "Course": "MCA", "Duration": "3 Years", "Seats": 60 },
-      { "Course": "M.Pharma - Pharmaceutical Chemistry", "Duration": "2 Years", "Seats": 8 },
-      { "Course": "M.Pharma - Pharmaceutics", "Duration": "2 Years", "Seats": 12 }
-    ]
+    Diploma: [
+      { Course: "Civil Engineering", Duration: "3 Years", Seats: 60 },
+      { Course: "Mechanical Engineering", Duration: "3 Years", Seats: 60 },
+      { Course: "Electrical Engineering", Duration: "3 Years", Seats: 60 },
+      { Course: "Agricultural Engineering", Duration: "3 Years", Seats: 60 },
+      { Course: "D. Pharma", Duration: "2 Years" }, // Seats not specified in image
+    ],
   };
-  // --- End Program Data ---
 
+  const feesStructure = [
+    { Course: "B.Pharma", TotalFees: "₹85,000.00", TuitionFee: "₹60,000.00" },
+    { Course: "D.Pharma", TotalFees: "₹75,000.00", TuitionFee: "₹65,000.00" },
+    { Course: "Diploma", TotalFees: "₹35,000.00", TuitionFee: "₹35,000.00" },
+    { Course: "BBA", TotalFees: "₹45,000.00", TuitionFee: "₹30,000.00" },
+    { Course: "BCA", TotalFees: "₹45,000.00", TuitionFee: "₹30,000.00" },
+    { Course: "B.Tech", TotalFees: "₹85,000.00", TuitionFee: "₹60,000.00" },
+    { Course: "M.Tech", TotalFees: "₹60,000.00", TuitionFee: "₹30,000.00" },
+    { Course: "MBA", TotalFees: "₹60,000.00", TuitionFee: "₹30,000.00" },
+    { Course: "MCA", TotalFees: "₹60,000.00", TuitionFee: "₹30,000.00" },
+  ];
 
   function getCurrentTime() {
     return new Date().toLocaleTimeString([], {
@@ -112,18 +124,13 @@ const Chatbot = () => {
         text: "How can I help you today?",
         sender: "bot",
         time: getCurrentTime(),
-        options: [
-          "Academic programs information",
-          "Admission process",
-          "Campus facilities",
-          "Placement details",
-          "Administration details",
-        ],
+        options: mainOptions, // Use the global mainOptions here
       },
     ]);
     setShowContactForm(false);
     setHasFirstOptionBeenSelected(false);
     setInputValue("");
+    setFormStatus(""); // Reset form status on chat reset
   };
 
   const handleInputChange = (e) => setInputValue(e.target.value);
@@ -136,7 +143,8 @@ const Chatbot = () => {
   const handleSendMessage = () => {
     if (inputValue.trim() === "") return;
 
-    const newMessage = {
+    const userMessage = {
+      // Renamed for clarity
       id: messages.length + 1,
       text: inputValue,
       sender: "user",
@@ -144,7 +152,7 @@ const Chatbot = () => {
       options: null,
     };
 
-    setMessages([...messages, newMessage]);
+    setMessages((prev) => [...prev, userMessage]); // Use prev callback
     setInputValue("");
 
     setTimeout(() => {
@@ -153,7 +161,8 @@ const Chatbot = () => {
   };
 
   const handleOptionSelect = (option) => {
-    const newMessage = {
+    const userMessage = {
+      // Renamed for clarity
       id: messages.length + 1,
       text: option,
       sender: "user",
@@ -161,26 +170,22 @@ const Chatbot = () => {
       options: null,
     };
 
-    setMessages([...messages, newMessage]);
+    setMessages((prev) => [...prev, userMessage]); // Use prev callback
 
-    // The logic below determines when the contact form should be shown.
-    // Based on the previous conversation, it seems you want the form to appear
-    // if "Administration Details" is selected, or if this is the first option
-    // being selected and the user has gone through the initial options.
-    // If you want to show the form for any first option selection, keep the `setHasFirstOptionBeenSelected` part.
-    // If you only want it for "Administration Details", simplify this block.
-
-    if (option === "Administration Details") {
+    if (option === "Contact Form") {
       setShowContactForm(true);
       setTimeout(() => {
-        const botResponse = {
-          id: messages.length + 2,
-          text: "Please fill out this form to contact our administration team. We'll get back to you shortly.",
-          sender: "bot",
-          time: getCurrentTime(),
-          options: null,
-        };
-        setMessages((prev) => [...prev, botResponse]);
+        setMessages((prev) => [
+          // Use prev callback
+          ...prev,
+          {
+            id: prev.length + 1, // Correct ID calculation
+            text: "Please fill out this form to contact our administration team. We'll get back to you shortly.",
+            sender: "bot",
+            time: getCurrentTime(),
+            options: null,
+          },
+        ]);
       }, 500);
     } else {
       setTimeout(() => {
@@ -190,115 +195,124 @@ const Chatbot = () => {
   };
 
   const generateBotResponse = (userInput) => {
-    let response;
+    let response = "";
     let options = null;
+    // No need to redeclare mainOptions here, it's defined globally
 
-    if (userInput.toLowerCase().includes("academic programs information") || userInput.toLowerCase().includes("program")) {
-      response = "Here are the academic programs offered at SSITM:\n\n";
-
-      // Format Diploma programs
-      response += "--- Diploma Programs ---\n";
-      academicPrograms.Diploma.forEach(program => {
-        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
-      });
-      response += "\n";
-
-      // Format Undergraduate programs
-      response += "--- Undergraduate Programs (B.Tech, B.Pharma, BBA, BCA, B.Ed) ---\n";
-      academicPrograms.Undergraduate.forEach(program => {
-        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
-      });
-      response += "\n";
-
-      // Format Postgraduate programs
-      response += "--- Postgraduate Programs (M.Tech, MBA, MCA, M.Pharma) ---\n";
-      academicPrograms.Postgraduate.forEach(program => {
-        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
-      });
-
+    if (
+      userInput.toLowerCase().includes("academic programs information") ||
+      (userInput.toLowerCase().includes("program") &&
+        !userInput.toLowerCase().includes("b.tech") &&
+        !userInput.toLowerCase().includes("m.tech") &&
+        !userInput.toLowerCase().includes("diploma") &&
+        !userInput.toLowerCase().includes("pharmacy") &&
+        !userInput.toLowerCase().includes("other academic programs"))
+    ) {
+      response = "Which type of program are you interested in?";
       options = [
-        "B.Tech details",
-        "D.Pharm details",
-        "B.Pharm details",
-        "M.Pharm details",
-        "BCA details",
-        "BBA details",
-        "MCA details",
-        "MBA details",
-        "Administration Details",
+        "B.Tech programs",
+        "M.Tech programs",
+        "Diploma programs",
+        "Pharmacy programs",
+        "Other Academic Programs (BBA, BCA, MBA, MCA, B.Ed)",
       ];
+    } else if (userInput.toLowerCase().includes("b.tech programs")) {
+      response = `Our B.Tech programs (4 years) include:\n`;
+      academicPrograms.Undergraduate.filter(
+        (p) => p.Course.includes("Engineering") && p.Duration === "4 Years"
+      ).forEach((p) => {
+        response += `- ${p.Course} (Seats: ${p.Seats})\n`;
+      });
+      response += `\nEligibility: 10+2 with Physics, Chemistry, and Mathematics.`;
+      options = mainOptions; // Use the global mainOptions
+    } else if (userInput.toLowerCase().includes("m.tech programs")) {
+      response = `Our M.Tech programs (2 years) include:\n`;
+      academicPrograms.Postgraduate.filter(
+        (p) => p.Course.includes("Engineering") || p.Course.includes("Computer Science")
+      ).forEach((p) => {
+        response += `- ${p.Course} (Seats: ${p.Seats})\n`;
+      });
+      response += `\nEligibility: B.Tech degree in a relevant discipline.`;
+      options = mainOptions; // Use the global mainOptions
+    } else if (userInput.toLowerCase().includes("diploma programs")) {
+      response = `Our Diploma programs include:\n`;
+      academicPrograms.Diploma.filter(
+        (p) => p.Course.includes("Engineering") || p.Course === "D. Pharma"
+      ).forEach((p) => {
+        response += `- ${p.Course} (${p.Duration}`;
+        if (p.Seats) response += `, Seats: ${p.Seats}`;
+        response += `)\n`;
+      });
+      response += `\nEligibility: 10th pass or equivalent (for Engineering Diplomas); 10+2 with Science (Physics, Chemistry, Biology/Mathematics) for D. Pharma.`;
+      options = mainOptions; // Use the global mainOptions
+    } else if (userInput.toLowerCase().includes("pharmacy programs")) {
+      response = `We offer:\n`;
+      const dPharm = academicPrograms.Diploma.find((p) => p.Course === "D. Pharma");
+      const bPharm = academicPrograms.Undergraduate.find((p) => p.Course === "B.Pharma");
+      const mPharmChem = academicPrograms.Postgraduate.find((p) => p.Course === "M.Pharma (Pharmaceutical Chemistry)");
+      const mPharmPharma = academicPrograms.Postgraduate.find((p) => p.Course === "M.Pharma (Pharmaceutics)");
+
+      if (dPharm) response += `- D.Pharma (${dPharm.Duration}) - Eligibility: 10+2 with Science (Physics, Chemistry, Biology/Mathematics)\n`;
+      if (bPharm) response += `- B.Pharma (${bPharm.Duration}, Seats: ${bPharm.Seats}) - Eligibility: 10+2 with Physics, Chemistry, and Biology/Mathematics\n`;
+      if (mPharmChem && mPharmPharma) response += `- M.Pharma (2 Years) - Specializations include Pharmaceutical Chemistry (Seats: ${mPharmChem.Seats}) and Pharmaceutics (Seats: ${mPharmPharma.Seats}). Eligibility: B.Pharm degree from a recognized university.`;
+
+      options = mainOptions; // Use the global mainOptions
+    } else if (userInput.toLowerCase().includes("other academic programs")) {
+      response = `We also offer:\n`;
+      const bba = academicPrograms.Undergraduate.find((p) => p.Course === "BBA");
+      const bca = academicPrograms.Undergraduate.find((p) => p.Course === "BCA");
+      const bed = academicPrograms.Undergraduate.find((p) => p.Course === "B.Ed");
+      const mba = academicPrograms.Postgraduate.find((p) => p.Course === "MBA");
+      const mca = academicPrograms.Postgraduate.find((p) => p.Course === "MCA");
+
+      if (bba) response += `- BBA (${bba.Duration}, Seats: ${bba.Seats}) - Eligibility: 10+2 in any stream\n`;
+      if (bca) response += `- BCA (${bca.Duration}, Seats: ${bca.Seats}) - Eligibility: 10+2 in any stream\n`;
+      if (bed) response += `- B.Ed (${bed.Duration}, Seats: ${bed.Seats}) - Eligibility: Bachelor's degree in any discipline\n`;
+      if (mba) response += `- MBA (${mba.Duration}, Seats: ${mba.Seats}) - Eligibility: Bachelor's degree in any discipline\n`;
+      if (mca) response += `- MCA (${mca.Duration}, Seats: ${mca.Seats}) - Eligibility: Bachelor's degree with Mathematics at 10+2 or graduation level`;
+      options = mainOptions; // Use the global mainOptions
     } else if (userInput.toLowerCase().includes("admission")) {
       response = `Admission Process:\n1. Register Yourself: siu.in8.nopaperforms.com/\n2. Verify Email\n3. Fill Application Form Online\n4. Pay Application Fee\n5. Submit Application\n\nFor B.Tech programs, JEE Main scores are considered.`;
-    } else if (userInput.toLowerCase().includes("facility")) {
+      options = mainOptions; // Use the global mainOptions
+    } else if (
+      userInput.toLowerCase().includes("campus facilit") ||
+      userInput.toLowerCase().includes("facility")
+    ) {
       response =
-        "Our campus includes:\n- Modern labs and workshops\n- Computer centers\n- Library with digital resources\n- Hostel facilities\n- Sports complex\n- Transportation services";
-      options = [
-        "Lab details",
-        "Library info",
-        "Hostel info",
-        "Sports facilities",
-        "Transportation",
-        "Administration Details",
-      ];
-    } else if (userInput.toLowerCase().includes("placement")) {
-      response = `Our Placement Highlights:
-- Strong industry connections with leading companies
-- Regular campus recruitment drives
-- Dedicated placement cell for training and opportunities
-- Alumni network in top firms
-      
-Recent recruiters include top companies in various sectors.`;
-      options = ["Administration Details"];
-    } else if (userInput.toLowerCase().includes("b.tech")) {
-      response = `B.Tech Programs (4 years):\n`;
-        academicPrograms.Undergraduate.filter(p => p.Course.includes("Engineering") && p.Duration === "4 Years").forEach(p => {
-            response += `• ${p.Course}\n`;
-        });
-        response += `\nEligibility: 10+2 with Physics, Chemistry, and Mathematics`;
-    } else if (userInput.toLowerCase().includes("d.pharm")) {
-      const dPharm = academicPrograms.Diploma.find(p => p.Course === "D. Pharma");
-      response = `D.Pharm Program (${dPharm.Duration}):\n- Diploma in Pharmacy\n\nEligibility: 10+2 with Science (Physics, Chemistry, Biology/Mathematics)`;
-    } else if (userInput.toLowerCase().includes("b.pharm")) {
-      const bPharm = academicPrograms.Undergraduate.find(p => p.Course === "B.Pharma");
-      response = `B.Pharm Program (${bPharm.Duration}):\n- Bachelor of Pharmacy\n\nEligibility: 10+2 with Physics, Chemistry, and Biology/Mathematics`;
-    } else if (userInput.toLowerCase().includes("m.pharm")) {
-        response = `M.Pharm Programs (2 years):\n`;
-        academicPrograms.Postgraduate.filter(p => p.Course.includes("M.Pharma")).forEach(p => {
-            response += `• ${p.Course}\n`;
-        });
-        response += `\nEligibility: B.Pharm degree from a recognized university`;
-    } else if (userInput.toLowerCase().includes("bca")) {
-        const bca = academicPrograms.Undergraduate.find(p => p.Course === "BCA");
-        response = `BCA Program (${bca.Duration}):\n- Bachelor of Computer Applications\n\nEligibility: 10+2 in any stream`;
-    } else if (userInput.toLowerCase().includes("bba")) {
-        const bba = academicPrograms.Undergraduate.find(p => p.Course === "BBA");
-        response = `BBA Program (${bba.Duration}):\n- Bachelor of Business Administration\n\nEligibility: 10+2 in any stream`;
-    } else if (userInput.toLowerCase().includes("mca")) {
-        const mca = academicPrograms.Postgraduate.find(p => p.Course === "MCA");
-        response = `MCA Program (${mca.Duration}):\n- Master of Computer Applications\n\nEligibility: Bachelor's degree with Mathematics at 10+2 or graduation level`;
-    } else if (userInput.toLowerCase().includes("mba")) {
-        const mba = academicPrograms.Postgraduate.find(p => p.Course === "MBA");
-        response = `MBA Program (${mba.Duration}):\n- Master of Business Administration\n\nEligibility: Bachelor's degree in any discipline`;
+        `Our campus boasts a range of modern facilities to support your academic and personal growth:\n` +
+        `- Computing Facilities: State-of-the-art computer centers.\n` +
+        `- Central Library & Book Bank: A comprehensive library with a digital resources and a book bank facility.\n` +
+        `- Mess or Cafeteria: Hygienic and spacious mess/cafeteria offering a variety of meals.\n` +
+        `- Hostel Facility: Comfortable and secure accommodation for students.\n` +
+        `- Transportation Facility: Convenient transportation services for day scholars.\n` +
+        `- Gymnasium: Well-equipped gym for fitness enthusiasts.\n` +
+        `- Sports Complex: Extensive sports complex for various indoor and outdoor sports.\n` +
+        `- Modern labs and workshops: Hands-on learning environments for all disciplines.`;
+      options = mainOptions; // Return to main options after listing facilities
+    } else if (userInput.toLowerCase().includes("fee structure")) {
+      response = "Here's the fee structure for various programs (Session 2025-26):\n";
+      feesStructure.forEach(item => {
+        response += `- ${item.Course}: Total Fees ${item.TotalFees}, Tuition Fee ${item.TuitionFee}\n`;
+      });
+      response += "\nNote: Fees once deposited are non-refundable. Exam/form/enrollment fees are to be paid directly to the university. Dress & transport charges are separate if availed. Hostel fee: ₹50,000/year (includes mess).";
+      options = mainOptions; // Use the global mainOptions
     } else {
-      response = "I'm here to assist you with any queries about Shivdan Singh Institute of Technology & Management's programs or facilities.";
-      options = [
-        "Academic programs information",
-        "Admission process",
-        "Campus facilities",
-        "Placement details",
-        "Administration Details",
-      ];
+      response =
+        "I'm here to assist you with any queries about Shivdan Singh Institute of Technology & Management's programs or facilities. Please choose an option or type your query.";
+      options = mainOptions; // Default options for unrecognized input
     }
 
-    const botResponse = {
-      id: messages.length + 2,
-      text: response,
-      sender: "bot",
-      time: getCurrentTime(),
-      options: options,
-    };
-
-    setMessages((prev) => [...prev, botResponse]);
+    setMessages((prev) => [
+      // Use prev callback
+      ...prev,
+      {
+        id: prev.length + 1, // Correct ID calculation
+        text: response,
+        sender: "bot",
+        time: getCurrentTime(),
+        options: options,
+      },
+    ]);
   };
 
   const handleFormSubmit = async (e) => {
@@ -323,38 +337,38 @@ Recent recruiters include top companies in various sectors.`;
         college: "SSITM-ChatBot",
         name: "",
         email: "",
-        phone: "",
-        subject: "bot-subject",
-        message: "bot-message",
+        phone: "", // Keep phone if your Google Sheet expects it
+        subject: "",
+        message: "",
       });
 
-      const newMessage = {
-        id: messages.length + 1,
-        text: "I've submitted the contact form to the administration team.",
-        sender: "user",
-        time: getCurrentTime(),
-        options: null,
-      };
-
-      setMessages((prev) => [...prev, newMessage]);
-
-      setTimeout(() => {
-        setShowContactForm(false);
-        const fallbackBotResponse = {
-          id: messages.length + 2,
-          text: "Thanks for submitting the form! Is there anything else I can assist you with?",
-          sender: "bot",
+      // Add the user's confirmation message immediately
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: prev.length + 1,
+          text: "I've submitted the contact form to the administration team.",
+          sender: "user",
           time: getCurrentTime(),
-          options: [
-            "Academic programs information",
-            "Admission process",
-            "Campus facilities",
-            "Placement details",
-            "Administration Details",
-          ],
-        };
-        setMessages((prev) => [...prev, fallbackBotResponse]);
-      }, 1000);
+          options: null,
+        },
+      ]);
+
+      // Use a short delay to ensure React has processed setShowContactForm(false)
+      setTimeout(() => {
+        setShowContactForm(false); // Hide the form first
+        // Now add the bot's response with options
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: prev.length + 1,
+            text: "Thanks for submitting the form! Is there anything else I can assist you with?",
+            sender: "bot",
+            time: getCurrentTime(),
+            options: mainOptions, // This will now correctly reference the global mainOptions
+          },
+        ]);
+      }, 500); // Shortened delay to 500ms
     } catch (error) {
       console.error("Error!", error.message);
       setFormStatus("Something went wrong. Please try again later.");
@@ -423,7 +437,7 @@ Recent recruiters include top companies in various sectors.`;
                   ))}
                   <p className="text-xs opacity-70 mt-1">{message.time}</p>
                 </div>
-                {message.options && !showContactForm && (
+                {message.options && !showContactForm && ( // This condition now works correctly
                   <div className="mt-2 space-y-2">
                     {message.options.map((option, index) => (
                       <button
@@ -438,6 +452,8 @@ Recent recruiters include top companies in various sectors.`;
                 )}
               </div>
             ))}
+
+            <div ref={messagesEndRef} /> {/* Scroll to bottom ref */}
 
             {showContactForm && (
               <div className="mt-4 p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
@@ -471,6 +487,23 @@ Recent recruiters include top companies in various sectors.`;
                     placeholder="Phone Number"
                     className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                   />
+                  {/* Subject and Message hidden as per original context, uncomment if needed for Google Sheet */}
+                  {/* <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleFormChange}
+                    placeholder="Subject"
+                    className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
+                  />
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    placeholder="Your message..."
+                    rows="3"
+                    className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
+                  ></textarea> */}
                   <button
                     type="submit"
                     disabled={loading}
@@ -502,11 +535,9 @@ Recent recruiters include top companies in various sectors.`;
                 </form>
               </div>
             )}
-
-            <div ref={messagesEndRef} />
           </div>
 
-          {!showContactForm && (
+          {!showContactForm && ( // Input field appears only when form is not shown
             <div className="p-3 bg-white border-t border-gray-200 flex">
               <input
                 type="text"

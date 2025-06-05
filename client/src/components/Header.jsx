@@ -30,7 +30,8 @@ const navItems = [
         title: "Fee Structure", path: "/admission/fee-structure" },
     ],
   },
-   { title: "Alumni", path: "/alumni" },
+   { title: "Alumni", path:"https://alumni.seglko.org"},
+
     { title: "Fee Payment", path: "/fee-payment" },
   { title: "Contact Us", path: "/contact-us" },
 ];

@@ -3,44 +3,111 @@ import Layout from '../../components/Layout'; // Assuming you have a Layout comp
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'; // Example for accordion icons. Install if not present: npm install @heroicons/react
 
 const Diploma= () => {
-    // You might want to fetch this data from an API or a more structured source
-    const diplomaCourses = [
-        {
-            title: 'D.Pharma (Diploma in Pharmacy)',
-            duration: '2 Years',
-            eligibility: {
-                academic: 'Passed 10+2 examination with Physics, Chemistry, and Biology/Mathematics from a recognized board. Minimum 50% marks required.',
-                age: 'No specific age limit mentioned, typically 17 years and above.',
-                entrance: 'Admission based on merit in 10+2 or college-level entrance exam if applicable.'
-            },
-              image: 'https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg', // Reusing pharmacy image
-            careerOpportunities: [
-                'Pharmacist Assistant',
-                'Drug Store Operator',
-                'Medical Representative',
-                'Production Assistant in Pharma Industry',
-                'Quality Control Assistant'
-            ]
-        },
-        {
-            title: 'Diploma in Engineering (Various Branches)', // Example, specify actual branches if known
-            duration: '3 Years (after 10th) or 2 Years (after 12th/ITI)',
-            eligibility: {
-                academic: 'Passed 10th standard with a minimum of 35-45% aggregate marks (varies by branch/institution). Science and Mathematics are mandatory subjects. Or 10+2 (PCM) / ITI passed.',
-                age: 'Typically no specific age limit mentioned, but check specific institution guidelines.',
-                entrance: 'Admission based on merit in 10th/12th or state-level polytechnic entrance examinations.'
-            },
-           image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Generic learning/hands-on image
-            careerOpportunities: [
-                'Junior Engineer',
-                'Supervisor',
-                'Technician',
-                'Draftsman',
-                'Lab Assistant'
-            ]
-        }
-        // Add more diploma courses as needed
-    ];
+    
+const diplomaCourses = [
+  {
+    "title": "D.Pharma (Diploma in Pharmacy)",
+    "duration": "2 Years",
+    "eligibility": {
+      "academic": "Passed 10+2 examination with Physics, Chemistry, and Biology/Mathematics from a recognized board. Minimum 50% marks required.",
+      "age": "No specific age limit mentioned, typically 17 years and above.",
+      "entrance": "Admission based on merit in 10+2 or college-level entrance exam if applicable."
+    },
+    "image": "https://cdn.pixabay.com/photo/2023/10/01/14/40/medicine-8287535_1280.jpg",
+    "careerOpportunities": [
+      "Pharmacist Assistant",
+      "Drug Store Operator",
+      "Medical Representative",
+      "Production Assistant in Pharma Industry",
+      "Quality Control Assistant"
+    ]
+  },
+  {
+    "title": "Diploma in Engineering (Various Branches)",
+    "duration": "3 Years (after 10th) or 2 Years (after 12th/ITI)",
+    "eligibility": {
+      "academic": "Passed 10th standard with a minimum of 35-45% aggregate marks (varies by branch/institution). Science and Mathematics are mandatory subjects. Or 10+2 (PCM) / ITI passed.",
+      "age": "Typically no specific age limit mentioned, but check specific institution guidelines.",
+      "entrance": "Admission based on merit in 10th/12th or state-level polytechnic entrance examinations."
+    },
+    "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "careerOpportunities": [
+      "Junior Engineer",
+      "Supervisor",
+      "Technician",
+      "Draftsman",
+      "Lab Assistant"
+    ]
+  },
+  {
+    "title": "Diploma in Civil Engineering",
+    "duration": "3 Years",
+    "eligibility": {
+      "academic": "Passed 10th standard with a minimum of 35-45% aggregate marks (varies by institution). Science and Mathematics are mandatory subjects.",
+      "age": "Typically no specific age limit mentioned, but check specific institution guidelines.",
+      "entrance": "Admission based on merit in 10th or state-level polytechnic entrance examinations."
+    },
+    "image": "https://plus.unsplash.com/premium_photo-1681823749585-7dedb5a91dc6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "careerOpportunities": [
+      "Junior Engineer (Civil)",
+      "Site Supervisor",
+      "Draftsman (Civil)",
+      "Surveyor",
+      "Quality Control Assistant (Construction)"
+    ]
+  },
+  {
+    "title": "Diploma in Mechanical Engineering",
+    "duration": "3 Years",
+    "eligibility": {
+      "academic": "Passed 10th standard with a minimum of 35-45% aggregate marks (varies by institution). Science and Mathematics are mandatory subjects.",
+      "age": "Typically no specific age limit mentioned, but check specific institution guidelines.",
+      "entrance": "Admission based on merit in 10th or state-level polytechnic entrance examinations."
+    },
+    "image": "https://plus.unsplash.com/premium_photo-1726880460027-fab1b079b37a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1lY2hhbmljYWwlMjBlbmdpbmVlcnN8ZW58MHx8MHx8fDA%3D",
+    "careerOpportunities": [
+      "Junior Engineer (Mechanical)",
+      "Production Supervisor",
+      "Maintenance Technician",
+      "CAD/CAM Operator",
+      "Quality Inspector"
+    ]
+  },
+  {
+    "title": "Diploma in Electrical Engineering",
+    "duration": "3 Years",
+    "eligibility": {
+      "academic": "Passed 10th standard with a minimum of 35-45% aggregate marks (varies by institution). Science and Mathematics are mandatory subjects.",
+      "age": "Typically no specific age limit mentioned, but check specific institution guidelines.",
+      "entrance": "Admission based on merit in 10th or state-level polytechnic entrance examinations."
+    },
+    "image": "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=300",
+    "careerOpportunities": [
+      "Junior Engineer (Electrical)",
+      "Electrician",
+      "Maintenance Technician (Electrical)",
+      "Panel Board Designer",
+      "Field Service Engineer"
+    ]
+  },
+  {
+    "title": "Diploma in Agricultural Engineering",
+    "duration": "3 Years",
+    "eligibility": {
+      "academic": "Passed 10th standard with a minimum of 35-45% aggregate marks (varies by institution). Science and Mathematics are mandatory subjects.",
+      "age": "Typically no specific age limit mentioned, but check specific institution guidelines.",
+      "entrance": "Admission based on merit in 10th or state-level polytechnic entrance examinations."
+    },
+    "image": "https://plus.unsplash.com/premium_photo-1664475377531-79df49523409?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGFncmljdWx0dXJlJTIwZW5naW5lZXJzfGVufDB8fDB8fHww",
+    "careerOpportunities": [
+      "Agricultural Supervisor",
+      "Farm Machinery Technician",
+      "Irrigation Technician",
+      "Soil and Water Conservation Assistant",
+      "Horticulture Supervisor"
+    ]
+  }
+]
 
     const [openAccordion, setOpenAccordion] = useState(null); // State to manage which accordion is open
 

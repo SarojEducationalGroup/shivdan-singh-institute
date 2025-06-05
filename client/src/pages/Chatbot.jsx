@@ -42,6 +42,44 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
+  // --- Program Data (added here) ---
+  const academicPrograms = {
+    "Diploma": [
+      { "Course": "Civil Engineering", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "Mechanical Engineering", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "Electrical Engineering", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "Agricultural Engineering", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "D. Pharma", "Duration": "2 Years", "Seats": 60 }
+    ],
+    "Undergraduate": [
+      { "Course": "Computer Science and Engineering", "Duration": "4 Years", "Seats": 90 },
+      { "Course": "Information Technology", "Duration": "4 Years", "Seats": 60 },
+      { "Course": "Electronics and Communication Engineering", "Duration": "4 Years", "Seats": 90 },
+      { "Course": "Electrical Engineering", "Duration": "4 Years", "Seats": 180 },
+      { "Course": "Mechanical Engineering", "Duration": "4 Years", "Seats": 60 },
+      { "Course": "Biotechnology", "Duration": "4 Years", "Seats": 60 },
+      { "Course": "Agricultural Engineering", "Duration": "4 Years", "Seats": 180 },
+      { "Course": "Civil Engineering", "Duration": "4 Years", "Seats": 180 },
+      { "Course": "B.Pharma", "Duration": "4 Years", "Seats": 100 },
+      { "Course": "BBA", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "BCA", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "B.Ed", "Duration": "2 Years", "Seats": 100 }
+    ],
+    "Postgraduate": [
+      { "Course": "Production Engineering", "Duration": "2 Years", "Seats": 18 },
+      { "Course": "Computer Aided Design & Manufacturing", "Duration": "2 Years", "Seats": 18 },
+      { "Course": "VLSI Design", "Duration": "2 Years", "Seats": 18 },
+      { "Course": "Electronics Communication Engineering", "Duration": "2 Years", "Seats": 18 },
+      { "Course": "Computer Science", "Duration": "2 Years", "Seats": 18 },
+      { "Course": "MBA", "Duration": "2 Years", "Seats": 120 },
+      { "Course": "MCA", "Duration": "3 Years", "Seats": 60 },
+      { "Course": "M.Pharma - Pharmaceutical Chemistry", "Duration": "2 Years", "Seats": 8 },
+      { "Course": "M.Pharma - Pharmaceutics", "Duration": "2 Years", "Seats": 12 }
+    ]
+  };
+  // --- End Program Data ---
+
+
   function getCurrentTime() {
     return new Date().toLocaleTimeString([], {
       hour: "2-digit",
@@ -125,11 +163,12 @@ const Chatbot = () => {
 
     setMessages([...messages, newMessage]);
 
-    if (!hasFirstOptionBeenSelected) {
-      setHasFirstOptionBeenSelected(true);
-      setShowContactForm(true); // Changed behavior as per new logic
-      return;
-    }
+    // The logic below determines when the contact form should be shown.
+    // Based on the previous conversation, it seems you want the form to appear
+    // if "Administration Details" is selected, or if this is the first option
+    // being selected and the user has gone through the initial options.
+    // If you want to show the form for any first option selection, keep the `setHasFirstOptionBeenSelected` part.
+    // If you only want it for "Administration Details", simplify this block.
 
     if (option === "Administration Details") {
       setShowContactForm(true);
@@ -154,9 +193,29 @@ const Chatbot = () => {
     let response;
     let options = null;
 
-    if (userInput.toLowerCase().includes("program")) {
-      response =
-        "Shivdan Singh Institute of Technology & Management offers the following programs:\n\n• B.Tech\n• D.Pharm\n• B.Pharm\n• M.Pharm\n• BCA\n• BBA\n• MCA\n• MBA";
+    if (userInput.toLowerCase().includes("academic programs information") || userInput.toLowerCase().includes("program")) {
+      response = "Here are the academic programs offered at SSITM:\n\n";
+
+      // Format Diploma programs
+      response += "--- Diploma Programs ---\n";
+      academicPrograms.Diploma.forEach(program => {
+        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
+      });
+      response += "\n";
+
+      // Format Undergraduate programs
+      response += "--- Undergraduate Programs (B.Tech, B.Pharma, BBA, BCA, B.Ed) ---\n";
+      academicPrograms.Undergraduate.forEach(program => {
+        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
+      });
+      response += "\n";
+
+      // Format Postgraduate programs
+      response += "--- Postgraduate Programs (M.Tech, MBA, MCA, M.Pharma) ---\n";
+      academicPrograms.Postgraduate.forEach(program => {
+        response += `• ${program.Course} (${program.Duration}) - ${program.Seats} Seats\n`;
+      });
+
       options = [
         "B.Tech details",
         "D.Pharm details",
@@ -191,48 +250,35 @@ const Chatbot = () => {
 Recent recruiters include top companies in various sectors.`;
       options = ["Administration Details"];
     } else if (userInput.toLowerCase().includes("b.tech")) {
-      response = `B.Tech Programs (4 years):
-- Computer Science & Engineering
-- Mechanical Engineering
-- Civil Engineering
-- Electrical Engineering
-      
-Eligibility: 10+2 with Physics, Chemistry, and Mathematics`;
+      response = `B.Tech Programs (4 years):\n`;
+        academicPrograms.Undergraduate.filter(p => p.Course.includes("Engineering") && p.Duration === "4 Years").forEach(p => {
+            response += `• ${p.Course}\n`;
+        });
+        response += `\nEligibility: 10+2 with Physics, Chemistry, and Mathematics`;
     } else if (userInput.toLowerCase().includes("d.pharm")) {
-      response = `D.Pharm Program (2 years):
-- Diploma in Pharmacy
-      
-Eligibility: 10+2 with Science (Physics, Chemistry, Biology/Mathematics)`;
+      const dPharm = academicPrograms.Diploma.find(p => p.Course === "D. Pharma");
+      response = `D.Pharm Program (${dPharm.Duration}):\n- Diploma in Pharmacy\n\nEligibility: 10+2 with Science (Physics, Chemistry, Biology/Mathematics)`;
     } else if (userInput.toLowerCase().includes("b.pharm")) {
-      response = `B.Pharm Program (4 years):
-- Bachelor of Pharmacy
-      
-Eligibility: 10+2 with Physics, Chemistry, and Biology/Mathematics`;
+      const bPharm = academicPrograms.Undergraduate.find(p => p.Course === "B.Pharma");
+      response = `B.Pharm Program (${bPharm.Duration}):\n- Bachelor of Pharmacy\n\nEligibility: 10+2 with Physics, Chemistry, and Biology/Mathematics`;
     } else if (userInput.toLowerCase().includes("m.pharm")) {
-      response = `M.Pharm Program (2 years):
-- Master of Pharmacy (various specializations)
-      
-Eligibility: B.Pharm degree from a recognized university`;
+        response = `M.Pharm Programs (2 years):\n`;
+        academicPrograms.Postgraduate.filter(p => p.Course.includes("M.Pharma")).forEach(p => {
+            response += `• ${p.Course}\n`;
+        });
+        response += `\nEligibility: B.Pharm degree from a recognized university`;
     } else if (userInput.toLowerCase().includes("bca")) {
-      response = `BCA Program (3 years):
-- Bachelor of Computer Applications
-      
-Eligibility: 10+2 in any stream`;
+        const bca = academicPrograms.Undergraduate.find(p => p.Course === "BCA");
+        response = `BCA Program (${bca.Duration}):\n- Bachelor of Computer Applications\n\nEligibility: 10+2 in any stream`;
     } else if (userInput.toLowerCase().includes("bba")) {
-      response = `BBA Program (3 years):
-- Bachelor of Business Administration
-      
-Eligibility: 10+2 in any stream`;
+        const bba = academicPrograms.Undergraduate.find(p => p.Course === "BBA");
+        response = `BBA Program (${bba.Duration}):\n- Bachelor of Business Administration\n\nEligibility: 10+2 in any stream`;
     } else if (userInput.toLowerCase().includes("mca")) {
-      response = `MCA Program (2 years):
-- Master of Computer Applications
-      
-Eligibility: Bachelor's degree with Mathematics at 10+2 or graduation level`;
+        const mca = academicPrograms.Postgraduate.find(p => p.Course === "MCA");
+        response = `MCA Program (${mca.Duration}):\n- Master of Computer Applications\n\nEligibility: Bachelor's degree with Mathematics at 10+2 or graduation level`;
     } else if (userInput.toLowerCase().includes("mba")) {
-      response = `MBA Program (2 years):
-- Master of Business Administration
-      
-Eligibility: Bachelor's degree in any discipline`;
+        const mba = academicPrograms.Postgraduate.find(p => p.Course === "MBA");
+        response = `MBA Program (${mba.Duration}):\n- Master of Business Administration\n\nEligibility: Bachelor's degree in any discipline`;
     } else {
       response = "I'm here to assist you with any queries about Shivdan Singh Institute of Technology & Management's programs or facilities.";
       options = [

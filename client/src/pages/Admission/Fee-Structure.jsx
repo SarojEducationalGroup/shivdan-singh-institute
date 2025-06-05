@@ -1,10 +1,18 @@
-
 import React from 'react';
 import Layout from '../../components/Layout';
 
 const FeeStructure = () => {
-
-    const pdfPath = '/SSITM-Fee-Structure.pdf';
+    const tableData = [
+        { "S.No": 1, "Course": "B.Pharma", "Fees": "₹85,000.00", "Tuition Fee": "₹60,000.00" },
+        { "S.No": 2, "Course": "D.Pharma", "Fees": "₹75,000.00", "Tuition Fee": "₹65,000.00" },
+        { "S.No": 3, "Course": "Diploma", "Fees": "₹35,000.00", "Tuition Fee": "₹35,000.00" },
+        { "S.No": 4, "Course": "BBA", "Fees": "₹45,000.00", "Tuition Fee": "₹30,000.00" },
+        { "S.No": 5, "Course": "BCA", "Fees": "₹45,000.00", "Tuition Fee": "₹30,000.00" },
+        { "S.No": 6, "Course": "B.Tech", "Fees": "₹85,000.00", "Tuition Fee": "₹60,000.00" },
+        { "S.No": 7, "Course": "M.Tech", "Fees": "₹60,000.00", "Tuition Fee": "₹30,000.00" },
+        { "S.No": 8, "Course": "MBA", "Fees": "₹60,000.00", "Tuition Fee": "₹30,000.00" },
+        { "S.No": 9, "Course": "MCA", "Fees": "₹60,000.00", "Tuition Fee": "₹30,000.00" }
+    ];
 
     return (
         <Layout>
@@ -12,29 +20,45 @@ const FeeStructure = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8 sm:mb-12 relative pb-2 text-center">
                         <span className="border-l-4 border-orange-500 pl-4">
-                            <span> Fees <span className="text-orange-500">Structure</span> </span>
+                            <span> SSITM <span className="text-orange-500">Academic Fee Structure</span> </span>
                         </span>
                     </h1>
 
                     <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">SSITM Academic Fee Structure</h2>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Quick Overview</h2>
                         <p className="text-gray-700 mb-6">
                             Below is the comprehensive fee structure for various programs offered at SSITM. You can view the PDF document directly here or download it for your reference.
                         </p>
 
-
-
-                        <div className=" mt-8">
-                            <a
-                                href={pdfPath}
-                                download="SSITM-Fee-Structure.pdf"
-                                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-300"
-                            >
-                                <svg className="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fillRule="evenodd" d="M.5 8.25a.75.75 0 01.75.75v3.66l.006.012a6.746 6.746 0 00.902.996l.332.298.006.006a6.757 6.757 0 00.996.902H18.75a.75.75 0 010 1.5H2.25a.75.75 0 01-.75-.75V9A.75.75 0 01.5 8.25zM10 13.5a.75.75 0 00.75-.75V6.75h1.795a.75.75 0 00.559-1.28l-3.003-3a.75.75 0 00-1.124 0l-3.003 3a.75.75 0 00.559 1.28H9.25v6a.75.75 0 00.75.75z" clipRule="evenodd" />
-                                </svg>
-                                Download PDF
-                            </a>
+                        <div className="overflow-x-auto mt-8">
+                            <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+                                <thead className="bg-gray-100 border-b">
+                                    <tr>
+                                        {Object.keys(tableData[0]).map((key, index) => (
+                                            <th
+                                                key={index}
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                            >
+                                                {key.replace(/([A-Z])/g, ' $1').trim()} {/* Adds space before capital letters for better readability */}
+                                            </th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-200">
+                                    {tableData.map((row, rowIndex) => (
+                                        <tr key={rowIndex} className="hover:bg-gray-50">
+                                            {Object.values(row).map((value, colIndex) => (
+                                                <td
+                                                    key={colIndex}
+                                                    className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                                                >
+                                                    {value}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

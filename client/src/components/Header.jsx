@@ -27,11 +27,7 @@ const navItems = [
       { title: "Admission Process", path: "/admission/admission-process" },
       { title: "Eligibility Criteria", path: "/admission/eligibility" },
       {
-        title: "Fee Structure",
-        path: "/fees.pdf#toolbar=0",
-        target: "_blank",
-        rel: "noopener noreferrer",
-      },
+        title: "Fee Structure", path: "/admission/fee-structure" },
     ],
   },
    { title: "Alumni", path: "/alumni" },

@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, PhoneCall, Facebook, Instagram } from "lucide-react";
+import { BookOpen, PhoneCall, Facebook, Instagram, Linkedin } from "lucide-react";
 
 const TopNav = () => {
   return (
@@ -15,7 +15,7 @@ const TopNav = () => {
       {/* Removed 'ml-auto' to allow this div to be centered with other elements */}
       <div className="flex items-center gap-4">
         <a 
-          href="https://www.facebook.com/sarojeducationalgroup" // Replace with actual Facebook URL
+          href="https://www.facebook.com/ssitmalg" // Replace with actual Facebook URL
           target="_blank" 
           rel="noopener noreferrer"
           className="text-white hover:scale-110 transition-transform"
@@ -24,13 +24,23 @@ const TopNav = () => {
           <Facebook className="w-5 h-5" />
         </a>
         <a 
-          href="https://www.instagram.com/sarojeducationalgroup/" // Replace with actual Instagram URL
+          href="https://www.instagram.com/ssitmalg" // Replace with actual Instagram URL
           target="_blank" 
           rel="noopener noreferrer"
           className="text-white hover:scale-110 transition-transform"
           aria-label="Instagram"
         >
           <Instagram className="w-5 h-5" />
+        </a>
+
+          <a 
+          href="https://www.linkedin.com/company/ssitmalg" // Replace with actual Instagram URL
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-white hover:scale-110 transition-transform"
+          aria-label="Linkedin"
+        >
+          <Linkedin className="w-5 h-5" />
         </a>
       </div>
 

@@ -92,8 +92,8 @@ const Hero = () => {
 
             {/* Heading */}
             <motion.h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight" whileHover={{ scale: 1.02 }}>
-              WELCOME TO<br />
-              <span className="text-orange-500">SSITM</span>
+              Welcome to<br />
+              <span className="text-orange-500">Shivdan Singh Institute of Technology and Management</span>
             </motion.h1>
 
             {/* Description */}

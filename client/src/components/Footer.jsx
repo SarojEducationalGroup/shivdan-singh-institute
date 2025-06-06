@@ -1,10 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {
   MapPin,
   Phone,
   Mail,
   Instagram,
-  Linkedin,
   Facebook,
 } from 'lucide-react';
 
@@ -36,13 +36,13 @@ function Footer() {
             <h3 className="text-lg font-bold">Admissions</h3>
             <ul className="space-y-3 text-md">
               <li className="hover:text-orange-500 transition-colors">
-                <a href="/admission/admission-process">Admission Process</a>
+                <Link to="/admission/admission-process">Admission Process</Link>
               </li>
               <li className="hover:text-orange-500 transition-colors">
-                <a href="/admission/eligibility">Eligibility Criteria</a>
+                <Link to="/admission/eligibility">Eligibility Criteria</Link>
               </li>
               <li className="hover:text-orange-500 transition-colors">
-                <a href="/">Fee Structure</a>
+                <Link to="/admission/fee-structure">Fee Structure</Link>
               </li>
             </ul>
           </div>
@@ -52,10 +52,10 @@ function Footer() {
             <h3 className="text-lg font-bold">Quick Links</h3>
             <ul className="space-y-3 text-md">
               <li className="hover:text-orange-500 transition-colors">
-                <a href="/privacy-policy">Privacy Policy</a>
+                <Link to="/privacy-policy">Privacy Policy</Link>
               </li>
               <li className="hover:text-orange-500 transition-colors">
-                <a href="/terms-and-conditions">Terms and Conditions</a>
+                <Link to="/terms-and-conditions">Terms and Conditions</Link>
               </li>
             </ul>
           </div>
@@ -91,9 +91,6 @@ function Footer() {
               </a>
               <a href="https://www.instagram.com/ssitmalg" className="text-pink-500 hover:text-pink-400 transition-colors">
                 <Instagram size={20} />
-              </a>
-              <a href="https://www.linkedin.com/company/ssitmalg" className="text-blue-500 hover:text-blue-400 transition-colors">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>

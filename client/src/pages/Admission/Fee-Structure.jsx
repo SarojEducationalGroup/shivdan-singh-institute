@@ -20,17 +20,12 @@ const FeeStructure = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8 sm:mb-12 relative pb-2 text-center">
                         <span className="border-l-4 border-orange-500 pl-4">
-                            <span> SSITM <span className="text-orange-500">Academic Fee Structure</span> </span>
+                            <span>Fee Structure<span className="text-orange-500"> for 2025-26</span> </span>
                         </span>
                     </h1>
 
-                    <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Quick Overview</h2>
-                        <p className="text-gray-700 mb-6">
-                            Below is the comprehensive fee structure for various programs offered at SSITM. You can view the PDF document directly here or download it for your reference.
-                        </p>
-
-                        <div className="overflow-x-auto mt-8">
+                    <div className="bg-white rounded-lg shadow-xl p-5 sm:p-5">
+                         <div className="overflow-x-auto mt-8">
                             <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
                                 <thead className="bg-gray-100 border-b">
                                     <tr>

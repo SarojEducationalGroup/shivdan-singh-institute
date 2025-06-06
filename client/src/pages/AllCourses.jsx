@@ -3,6 +3,22 @@ import Layout from '../components/Layout';
 import { GraduationCap } from 'lucide-react';
 
 const allCourses = [
+  // AI courses
+  {
+    category: 'Artificial Intelligence',
+    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2022/04/04/16/41/technology-7111795_640.jpg',
+  },
+  {
+    category: 'Artificial Intelligence',
+    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence & Machine Learning)',
+    duration: '4 Years',
+    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
+    image: 'https://cdn.pixabay.com/photo/2023/01/14/16/50/ai-generated-7718607_640.jpg',
+  },
+
   // Diploma Courses
   {
     category: 'Diploma',
@@ -78,21 +94,7 @@ const allCourses = [
     image: 'https://cdn.pixabay.com/photo/2018/05/18/11/03/cyber-security-3410923_640.jpg',
   },
   {
-    category: 'Undergraduate',
-    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence)',
-    duration: '4 Years',
-    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
-    image: 'https://cdn.pixabay.com/photo/2022/04/04/16/41/technology-7111795_640.jpg',
-  },
-  {
-    category: 'Undergraduate',
-    title: 'B.Tech - Computer Science and Engineering (Artificial Intelligence & Machine Learning)',
-    duration: '4 Years',
-    eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',
-    image: 'https://cdn.pixabay.com/photo/2023/01/14/16/50/ai-generated-7718607_640.jpg',
-  },
-  {
-    category: 'Undergraduate',
+    category: 'Data Science',
     title: 'B.Tech - Computer Science and Engineering (Data Science)',
     duration: '4 Years',
     eligibility: '10+2 with Physics, Chemistry, Maths (PCM) or equivalent with min. 45%',

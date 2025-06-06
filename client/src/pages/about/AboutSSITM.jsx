@@ -15,7 +15,7 @@ const About = () => {
                 <span className="text-orange-600">SSITM</span>
               </h1>
            <p className="mb-4">
-            Shivdan Singh Institute of Technology & Management (SSITM) stands tall among
+            Shivdan Singh Institute of Technology & Management (SSITM) established in 1997, stands tall among
             North India's premier institutions, renowned for its accredited
             excellence through cutting-edge programs in Pharmacy, and Management.
             SSITM combines academic rigor with industry-ready training through 25+

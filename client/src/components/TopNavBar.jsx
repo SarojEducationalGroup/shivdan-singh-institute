@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, PhoneCall, Facebook, Instagram, CreditCard, Users } from "lucide-react";  
+import { BookOpen, PhoneCall, Facebook, Instagram, Linkedin, CreditCard, Users } from "lucide-react";  
 
 const TopNav = () => {
   return (
@@ -28,12 +28,20 @@ const TopNav = () => {
         >
           <Instagram className="w-5 h-5" />
         </a>
+
+        <a href="https://www.linkedin.com/company/ssitmalg"
+        target ="_blank"
+        className="text-white hover:scale-110 transition-transform"
+        >
+          <Linkedin className="w-5 h-5" />
+        </a>
+
       </div>
 
      
       <a 
         href="https://alumni.seglko.org"
-        className="flex items-center text-white font-bold hover:text-orange-200 transition-colors"
+        className="flex items-center text-white font-bold hover:text-orange-200 transition-colors" target= "_blank"
       >
         <Users className="w-4 h-4 mr-2" /> 
         <span>Alumni</span>

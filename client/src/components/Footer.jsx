@@ -6,6 +6,7 @@ import {
   Mail,
   Instagram,
   Facebook,
+  Linkedin,
 } from 'lucide-react';
 
 function Footer() {
@@ -86,11 +87,14 @@ function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex gap-4 mt-6">
-              <a href="https://www.facebook.com/ssitmalg" className="text-blue-600 hover:text-blue-500 transition-colors">
+              <a href="https://www.facebook.com/ssitmalg" className="text-white" target= "_blank">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/ssitmalg" className="text-pink-500 hover:text-pink-400 transition-colors">
+              <a href="https://www.instagram.com/ssitmalg" className="text-white" target = "_blank">
                 <Instagram size={20} />
+              </a>
+              <a href="https://www.linkedin.com/company/ssitmalg" className="text-white" target= "_blank">
+                <Linkedin size= {20} />
               </a>
             </div>
           </div>

@@ -74,7 +74,7 @@ function Header() {
                     <button
                       onMouseEnter={() => setOpenSubmenu(index)}
                       onFocus={() => setOpenSubmenu(index)}
-                      className="flex items-center text-gray-700 hover:text-orange-500 px-2 py-1"
+                      className="flex items-center text-gray-700 hover:text-red-400 px-2 py-1"
                     >
                       {item.title}
                       <ChevronDown
@@ -97,7 +97,7 @@ function Header() {
                             href={subItem.path}
                             target={subItem.target}
                             rel={subItem.rel}
-                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-500"
+                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-red-400"
                             onClick={closeAllMenus}
                           >
                             {subItem.title}
@@ -106,7 +106,7 @@ function Header() {
                           <Link
                             key={subItem.path}
                             to={subItem.path}
-                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-orange-500"
+                            className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-red-400"
                             onClick={closeAllMenus}
                           >
                             {subItem.title}
@@ -118,7 +118,7 @@ function Header() {
                 ) : (
                   <Link
                     to={item.path}
-                    className="text-gray-700 hover:text-orange-500 px-2 py-1"
+                    className="text-gray-700 hover:text-red-400 px-2 py-1"
                     onClick={closeAllMenus}
                   >
                     {item.title}

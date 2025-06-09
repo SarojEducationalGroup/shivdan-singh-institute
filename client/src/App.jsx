@@ -32,6 +32,7 @@ function App() {
             <Route path='*'  element ={< NotFound/>} />
             <Route path = 'courses/AllCourses' element ={ < AllCourses /> } />
             <Route path='fee-payment'  element ={< FeePaymentPage/>} />
+            <Route path='ssitm/fee-payment' element ={< FeePaymentPage/>} />
         </Routes>
 
     )

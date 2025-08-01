@@ -9,6 +9,7 @@ import Hero from './Hero.jsx';
 import VisionAndMission from './VisionAndMission.jsx';
 import ChairmanMessage from './ChairmanMessage.jsx';
 import AiLearningSection from './AiLearningSection.jsx';
+import  InstagramEmbed  from '../components/InstagramEmbed.jsx';
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
       <ChairmanMessage />
       <Placement />
       <VisionAndMission />
+      <InstagramEmbed />
       {/* <Courses /> */}
    
     </Layout>

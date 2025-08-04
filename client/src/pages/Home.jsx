@@ -10,6 +10,7 @@ import VisionAndMission from './VisionAndMission.jsx';
 import ChairmanMessage from './ChairmanMessage.jsx';
 import AiLearningSection from './AiLearningSection.jsx';
 import  InstagramEmbed  from '../components/InstagramEmbed.jsx';
+import AdmissionsOpen from '../components/AdmissionsOpen.jsx';
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <Hero />
       <AiLearningSection />
       <Recruiters />
+      <AdmissionsOpen />
       <WhyChooseUs />
       <ChairmanMessage />
       <Placement />

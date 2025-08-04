@@ -50,7 +50,7 @@ const InstagramFeed = () => {
             <FiInstagram className="text-2xl text-white" />
           </div>
           <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-800 to-purple-500 mb-3">
-            Campus Chronicles
+           SSITM Campus Chronicles
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto text-lg">
             Explore vibrant moments from our university life

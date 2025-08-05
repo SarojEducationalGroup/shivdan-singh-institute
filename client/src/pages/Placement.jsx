@@ -4,49 +4,50 @@ import React from 'react';
 import umeshImage from '../assets/umesh-mishra.jpeg';
 import pramuditImage from '../assets/pramudit-shukla.jpeg';
 import shaloniImage from '../assets/shaloni-devi.jpeg';
-import newStudentImage from '../assets/umesh-mishra.jpeg'; // Add your actual image
+import newStudentImage from '../assets/Raj.PNG';  
 import squareitLogo from '../assets/squareit-logo.png';
 import tendertpalmLogo from '../assets/tender-logo.png';
 import maxHealthcareLogo from '../assets/maxhealthcare-logo.png';
-import dummyLogo from '../assets/tender-logo.png'; // Add if needed
+import concentrix from '../assets/Concentrix.png';  
 
 const placementsData = [
-  {
+ {
     id: 1,
-    name: 'Umesh Mishra',
-    company: 'Square IT Solutions',
-    lpa: '₹10 LPA',
-    studentImage: umeshImage,
-    role: 'Web Developer',
-    companyLogo: squareitLogo,
+    name: 'Aman Verma',
+    company: 'Concentrix',
+    lpa: '₹18 LPA',
+    studentImage: newStudentImage,
+    role: 'Java Developer',
+    companyLogo: concentrix,
   },
   {
     id: 2,
     name: 'Pramudit Shukla',
-    company: 'TechMech',
+    company: 'Tender',
     lpa: '₹12 LPA',
     studentImage: pramuditImage,
-    role: 'Full Stack Developer',
+    role: 'Data Analyst',
     companyLogo: tendertpalmLogo,
   },
   {
     id: 3,
     name: 'Shaloni Devi',
     company: 'Max Healthcare',
-    lpa: '₹18 LPA',
+    lpa: '₹9 LPA',
     studentImage: shaloniImage,
     role: 'Executive',
     companyLogo: maxHealthcareLogo,
   },
-  {
+   {
     id: 4,
-    name: 'Aman Verma',
-    company: 'XYZ Corp',
-    lpa: '₹9 LPA',
-    studentImage: newStudentImage,
-    role: 'Data Analyst',
-    companyLogo: dummyLogo,
+    name: 'Umesh Mishra',
+    company: 'Square IT Solutions',
+    lpa: '₹10 LPA',
+    studentImage: umeshImage,
+    role: 'Software Developer',
+    companyLogo: squareitLogo,
   },
+  
 ];
 
 const Placement = () => {

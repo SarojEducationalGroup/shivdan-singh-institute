@@ -73,7 +73,7 @@ const Hero = () => {
       {techBackground}
 
       <motion.div
-        className="container px-4 sm:px-6 mx-auto py-10 relative z-10"
+        className="container px-4 sm:px-6 mx-auto pt-10 relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={controls}

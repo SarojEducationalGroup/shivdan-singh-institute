@@ -37,9 +37,11 @@ const AdmissionsBatch = ({ category, programs }) => {
       </ul>
       
       {/* The "Apply Now" button. */}
-      <button className="mt-6 w-full py-2 px-4 bg-orange-600 text-white font-medium rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+      <a href="https://seglko.in8.nopaperforms.com/"  className="mt-6 w-full py-2 px-4 bg-orange-600 text-white font-medium rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
         Apply Now
-      </button>
+      
+      </a>
+      
     </div>
   );
 };

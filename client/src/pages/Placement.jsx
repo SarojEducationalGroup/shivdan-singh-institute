@@ -6,47 +6,49 @@ import pramuditImage from '../assets/pramudit-shukla.jpeg';
 import shaloniImage from '../assets/shaloni-devi.jpeg';
 import newStudentImage from '../assets/Raj.PNG';  
 import squareitLogo from '../assets/squareit-logo.png';
-import tendertpalmLogo from '../assets/tender-logo.png';
+import tendertpalmLogo from '../assets/techmech-logo.png';
 import maxHealthcareLogo from '../assets/maxhealthcare-logo.png';
 import concentrix from '../assets/Concentrix.png';  
 
 const placementsData = [
- {
+ 
+  {
     id: 1,
-    name: 'Aman Verma',
-    company: 'Concentrix',
-    lpa: '₹18 LPA',
-    studentImage: newStudentImage,
-    role: 'Java Developer',
-    companyLogo: concentrix,
+    name: 'Umesh Mishra',
+    company: 'Square IT Solutions',
+    lpa: '₹10 LPA',
+    studentImage: umeshImage,
+    role: 'Web Developer',
+    companyLogo: squareitLogo,
   },
   {
     id: 2,
     name: 'Pramudit Shukla',
-    company: 'Tender',
+    company: 'TechMech',
     lpa: '₹12 LPA',
     studentImage: pramuditImage,
-    role: 'Data Analyst',
+    role: 'Full Stack Developer',
     companyLogo: tendertpalmLogo,
   },
   {
     id: 3,
     name: 'Shaloni Devi',
     company: 'Max Healthcare',
-    lpa: '₹9 LPA',
+    lpa: '₹18 LPA',
     studentImage: shaloniImage,
     role: 'Executive',
     companyLogo: maxHealthcareLogo,
   },
-   {
+  {
     id: 4,
-    name: 'Umesh Mishra',
-    company: 'Square IT Solutions',
-    lpa: '₹10 LPA',
-    studentImage: umeshImage,
-    role: 'Software Developer',
-    companyLogo: squareitLogo,
+    name: 'Aman Verma',
+    company: 'Concentrix',
+    lpa: '₹9 LPA',
+    studentImage: newStudentImage,
+    role: 'Data Analyst',
+    companyLogo: concentrix,
   },
+   
   
 ];
 

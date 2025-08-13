@@ -91,7 +91,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Heading */}
-            <motion.h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight" whileHover={{ scale: 1.02 }}>
+            <motion.h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight" whileHover={{ scale: 1.02 }}>
               Welcome to<br />
               <span className="text-orange-500">Shivdan Singh Institute of Technology and Management</span>
             </motion.h1>
@@ -172,12 +172,12 @@ const Hero = () => {
                 whileHover={{ scale: 1.02 }}
               />
               <motion.div
-                className="absolute -top-6 -left-6 bg-orange-600 p-2 rounded-xl shadow-lg z-30 text-white"
+                className="absolute -top-6 left-6 bg-orange-600 p-2 rounded-xl shadow-lg z-30 text-white"
                 variants={floatingVariants}
                 animate="float"
               >
                 <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-300 rounded-full mr-1"></div>
+                  <div className="w-2 h-2 bg-green-300 rounded-full m-1"></div>
                   <p className="font-bold text-xs">Admissions Open</p>
                 </div>
               </motion.div>

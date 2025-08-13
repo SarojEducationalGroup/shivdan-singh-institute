@@ -1,69 +1,56 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-// You might want an image for the Admissions hero section
-// import admissionsHeroImage from '../assets/admissions-hero.png'; // Example: create this image
 
 const AdmissionProcess = () => {
   const admissionSteps = [
     {
       id: 1,
-      title: 'Step 1: Online Registration',
-      icon: '📝', // Emoji for visual appeal
+      title: 'Online Registration',
       description: 'Go to the registration link – Online Registration. A registration form will appear.',
     },
     {
       id: 2,
-      title: 'Step 2: Fill & Submit Details',
-      icon: '✍️',
+      title: 'Fill & Submit Details',
       description: 'Fill in all the required details and click on "Submit".',
     },
     {
       id: 3,
-      title: 'Step 3: Make Payment',
-      icon: '💳',
+      title: 'Make Payment',
       description: 'After submitting the registration form, you will be directed to the Payment page. Click on the "Make Payment" option.',
     },
     {
       id: 4,
-      title: 'Step 4: Registration Fee Submission',
-      icon: '💰',
-      description: 'Candidates/ Students are required to submit a registration fee of Rs. 1000 before proceeding.',
+      title: 'Registration Fee Submission',
+      description: 'Candidates are required to submit the registration fees before proceeding.',
     },
     {
       id: 5,
-      title: 'Step 5: Receive Login Credentials & Print Form',
-      icon: '🔑',
+      title: 'Receive Login Credentials & Print Form',
       description: 'After successful payment of the registration fee, a temporary Login Id and Password will be sent to the respective Email Ids of the candidates. Students/ Candidates can also take a printout of their Registration form.',
     },
     {
       id: 6,
-      title: 'Step 6: Login to Your Account',
-      icon: '➡️',
+      title: 'Login to Your Account',
       description: 'For logging into your account, click on the Student Login. Fill in the login credentials sent to your Email Id and click on Login.',
     },
     {
       id: 7,
-      title: 'Step 7: Complete Application Form',
-      icon: '📄',
+      title: 'Complete Application Form',
       description: 'Students/ Candidates can then proceed to fill the Complete Admission Form.',
     },
     {
       id: 8,
-      title: 'Step 8: Receive Permanent Login ID',
-      icon: '✉️',
+      title: 'Receive Permanent Login ID',
       description: 'After filling the form, a permanent Login Id will be sent to the Email Id of the student/ candidate.',
     },
     {
       id: 9,
-      title: 'Step 9: Print Admission Form',
-      icon: '🖨️',
+      title: 'Print Admission Form',
       description: 'Take a printout of the admission form after successfully submitting the form online.',
     },
   ];
 
-  // The image doesn't list specific required documents directly in the steps,
-  // but it implies they are needed. We'll keep a general list, or you can remove this section
-  // if you want to strictly adhere to only what's on the screenshot for the "process"
+  
   const requiredDocuments = [
     'Academic Transcripts (10th, 12th, Graduation if applicable)',
     'Identity Proof (Aadhar Card, Passport, etc.)',
@@ -97,7 +84,7 @@ const AdmissionProcess = () => {
             href="https://seglko.in8.nopaperforms.com/" // This is the link from your screenshot for the application page
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 text-white hover:bg-orange-600 font-bold py-3 px-8 rounded-full shadow-lg
+            className="bg-white text-orange-600 font-bold py-3 px-8 rounded-full shadow-lg
                          transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Start Your Online Application <span className="ml-2">&rarr;</span>
@@ -121,8 +108,9 @@ const AdmissionProcess = () => {
               >
                 <div className="p-6 sm:p-8 flex-grow">
                   <div className="flex items-center mb-4">
-                    <div className="text-4xl mr-4 text-orange-500">{step.icon}</div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-blue-800">{step.title}</h3>
+                  <div className='w-10 h-10 text-xl sm:text-2xl bg-orange-600 rounded-full flex items-center justify-center text-white m-3'>
+                    {step.id}. </div>
+                    <h3 className="text-xl sm:text-2xl font-bold">{step.title}</h3>
                   </div>
                   <p className="text-gray-700 text-base leading-relaxed">{step.description}</p>
                 </div>
@@ -132,20 +120,17 @@ const AdmissionProcess = () => {
         </div>
       </section>
 
-      {/* Required Documents Section - Navy Blue Card Background */}
-      {/* You can keep this section if you want to provide a general list of required documents, 
-          even if the image doesn't explicitly list them step-by-step. 
-          If you want to strictly match the image, you might consider removing or integrating this differently. */}
+ 
       <section className="py-12 sm:py-16 bg-blue-900 bg-opacity-95 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-8 sm:mb-12 relative pb-2 text-center">
             <span className="border-l-4 border-orange-400 pl-4">REQUIRED <span className="text-orange-300">DOCUMENTS</span></span>
           </h2>
-          <div className="bg-blue-800 p-8 rounded-lg shadow-2xl">
-            <ul className="list-disc list-inside text-lg text-gray-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
+          <div className="bg-blue-50 p-8 rounded-lg shadow-2xl">
+            <ul className="list-disc list-inside text-base text-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-3 gap-x-6">
               {requiredDocuments.map((doc, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="mr-2 text-orange-400">●</span> {/* Custom bullet point */}
+                  <span className="mr-2 text-black">●</span> {/* Custom bullet point */}
                   <span>{doc}</span>
                 </li>
               ))}

@@ -1,27 +1,25 @@
 import React from 'react';
-import Layout from '../components/Layout'; // Assuming you have a Layout component
+import Layout from '../components/Layout';  
 
 const TnC = () => {
   return (
     <Layout>
       <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Heading - Consistent Styling */}
           <h1 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
             <span className="border-l-4 border-orange-500 pl-4">TERMS AND CONDITIONS</span>
           </h1>
 
           <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg border border-orange-200">
-            {/* Introduction */}
-            <p className="text-gray-700 text-base leading-relaxed mb-6">
-              Welcome to the Shivdan Singh Institute of Technology & Management (SSITM) website.
-              These Terms and Conditions (`"Terms"`) govern your access to and use of our website,
-              including any content, functionality, and services offered on or through the website.
-              By accessing or using this website, you agree to be bound by these Terms and our
-              Privacy Policy. If you do not agree to these Terms, please do not use our website.
-            </p>
+              <p className="text-gray-700 text-base leading-relaxed mb-6">
+                Welcome to the Shivdan Singh Institute of Technology & Management (SSITM) website.
+                These Terms and Conditions (`"Terms"`) govern your access to and use of our website,
+                including any content, functionality, and services offered on or through the website.
+                By accessing or using this website, you agree to be bound by these Terms and our
+                Privacy Policy. If you do not agree to these Terms, please do not use our website.
+              </p>
 
-            {/* Section 1 */}
+           
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 1. Acceptance of Terms
@@ -34,7 +32,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 2 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 2. Use License
@@ -54,7 +52,7 @@ const TnC = () => {
               </ul>
             </div>
 
-            {/* Section 3 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 3. Disclaimer
@@ -67,7 +65,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 4 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 4. Limitations
@@ -83,7 +81,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 5 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 5. Accuracy of Materials
@@ -97,7 +95,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 6 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 6. Links
@@ -109,7 +107,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 7 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 7. Modifications
@@ -121,7 +119,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Section 8 */}
+            
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 8. Governing Law
@@ -133,7 +131,7 @@ const TnC = () => {
               </p>
             </div>
 
-            {/* Contact Info (Optional, but good practice) */}
+            
             <div className="mt-10 pt-6 border-t border-orange-300">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3">
                 Contact Us

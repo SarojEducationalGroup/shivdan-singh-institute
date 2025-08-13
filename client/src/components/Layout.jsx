@@ -5,6 +5,7 @@ import Modal from '../pages/Modal';
 import Chatbot from '../pages/Chatbot';
 import TechnologyCTA from '../pages/TechnologyCTA';
 import HeaderCTA from './HeaderCTA';
+import HelpDesk from './Helpdesk';
 
 function Layout({children}){
     return (
@@ -18,6 +19,7 @@ function Layout({children}){
             </div>
             < Chatbot />
             <TechnologyCTA />
+            <HelpDesk/>
             <Footer />
         </div>
     );

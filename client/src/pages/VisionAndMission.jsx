@@ -15,13 +15,11 @@ const VisionAndMission = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-
           {/* Vision Card */}
           <div className="bg-white overflow-hidden shadow-xl rounded-lg transform transition-all hover:scale-[1.02] hover:shadow-2xl">
             <div className="px-6 py-8 sm:p-5 bg-gradient-to-r from-blue-600 to-blue-800">
               <div className="flex items-center">
-
-                <h2 className="text-xl font-bold text-white">Our Vision</h2>
+              <h2 className="text-xl font-bold text-white">Our Vision</h2>
               </div>
             </div>
 
@@ -32,33 +30,31 @@ const VisionAndMission = () => {
                 and technological advancement.
               </p>
             </div>
+
           </div>
 
           {/* Mission Card */}
           <div className="bg-white overflow-hidden shadow-xl rounded-lg transform transition-all hover:scale-[1.02] hover:shadow-2xl">
             <div className="px-6 py-6 sm:p-5 bg-gradient-to-r from-green-600 to-green-800">
-              <div className="flex items-center">
+            <div className="flex items-center">
                 {/* Icon removed */}
                 <h2 className="text-xl font-bold text-white">Our Mission</h2>
               </div>
             </div>
 
             <div className="px-6 py-8 sm:p-6">
-          <p className="mb-4 leading-relaxed text-gray-700">
-  Our aim is to provide quality education through innovative teaching-learning processes, 
-  fostering research, innovation, and entrepreneurship among students. 
-  We also focus on developing industry-relevant skills and professional ethics, and contributing to society 
-  through community engagement.
-</p>
+             <p className="mb-4 leading-relaxed text-gray-700">
+                Our aim is to provide quality education through innovative teaching-learning processes, 
+                fostering research, innovation, and entrepreneurship among students. 
+                We also focus on developing industry-relevant skills and professional ethics, and contributing to society 
+                through community engagement.
+              </p>
             </div>
+            
           </div>
         </div>
 
-
-
       </div>
-
-      {/* All animation styles have been removed */}
     </div>
   );
 };

@@ -94,7 +94,7 @@ const AdmissionsOpen = () => {
   ];
 
   return (
-    <div className="font-sans bg-gray-50 text-gray-800 p-8 min-h-[600px]">
+    <div className="hidden lg:block font-sans bg-gray-50 text-gray-800 p-8 min-h-[600px]">
       <div className="text-center mb-10 mt-10">
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
           UG/PG/Diploma Admissions Open for 2025-26

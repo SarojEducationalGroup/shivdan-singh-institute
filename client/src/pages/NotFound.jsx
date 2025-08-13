@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
-import notFoundImage from "../assets/nf.png"; // Make sure to add your image to the assets folder
-
+import notFoundImage from "../assets/nf.png";  
 const NotFound = () => {
   return (
     <Layout>

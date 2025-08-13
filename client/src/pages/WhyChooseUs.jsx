@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGraduationCap, FaBuilding, FaDollarSign, FaChalkboardTeacher, FaLightbulb, FaGlobe } from 'react-icons/fa'; // Example icons
+import { FaGraduationCap, FaBuilding, FaDollarSign, FaChalkboardTeacher, FaLightbulb, FaGlobe } from 'react-icons/fa';  
 import { useInView } from 'react-intersection-observer'; // For scroll animations
 
 const reasonsData = [

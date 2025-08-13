@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom";
 const Modal= () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const location = useLocation();
-  const isHomepage = location.pathname === "/"; // Adjust if your homepage has different path
-
+  const isHomepage = location.pathname === "/"; 
   useEffect(() => {
     // Track if we've shown the popup in this session
     const hasShownPopup = sessionStorage.getItem('hasShownPopup');
@@ -87,7 +86,7 @@ const Modal= () => {
         cursor: "pointer",
         backgroundColor: "green",
         color: "white", 
-        padding: "0.6rem 2rem",
+        padding: "0.3rem 2rem",
         borderRadius: "0.375rem 0.375rem 0 0.375rem", 
         boxShadow: "0 10px 15px -3px rgba(220, 38, 38, 0.5), 0 4px 6px -2px rgba(220, 38, 38, 0.25)", 
         transition: "background-color 0.3s ease", 

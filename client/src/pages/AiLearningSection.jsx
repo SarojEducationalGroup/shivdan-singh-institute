@@ -4,7 +4,7 @@ import { BookOpen, Cpu } from 'lucide-react';
 const AiLearningSection = () => {
   return (
     <section className="bg-gradient-to-r from-[#1F1300] to-[#1F1300] border-y-2 border-orange-500 text-white py-6 px-4 sm:px-8">
-      <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between flex-wrap gap-4">
         
         {/* Left Icon and Title */}
         <div className="flex items-center gap-3 flex-shrink-0">
@@ -23,7 +23,7 @@ const AiLearningSection = () => {
         </div>
 
         {/* Right Icon */}
-        <div className="flex-shrink-0">
+        <div className="hidden lg:block flex-shrink-0">
           <BookOpen className="text-orange-500" size={24} />
         </div>
       </div>

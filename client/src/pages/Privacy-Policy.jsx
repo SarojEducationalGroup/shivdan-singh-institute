@@ -1,18 +1,17 @@
 import React from 'react';
-import Layout from '../components/Layout'; // Assuming you have a Layout component
+import Layout from '../components/Layout'; 
 
 const PrivacyPolicy = () => {
   return (
     <Layout>
       <section className="bg-orange-50 bg-opacity-70 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Heading - Consistent Styling */}
+           
           <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-8 relative pb-2">
             <span className="border-l-4 border-orange-500 pl-4">PRIVACY POLICY</span>
           </h1>
 
           <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg border border-orange-200">
-            {/* Introduction */}
             <p className="text-gray-700 text-base leading-relaxed mb-6">
               This Privacy Policy describes how Shivdan Singh Institute of Technology & Management (SSITM)
               collects, uses, and discloses your personal information when you visit or make use of our
@@ -20,7 +19,6 @@ const PrivacyPolicy = () => {
               the security of your personal data.
             </p>
 
-            {/* Section 1: Information We Collect */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 1. Information We Collect
@@ -72,7 +70,6 @@ const PrivacyPolicy = () => {
               </ul>
             </div>
 
-            {/* Section 3: Disclosure of Your Information */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 3. Disclosure of Your Information
@@ -99,7 +96,6 @@ const PrivacyPolicy = () => {
               </ul>
             </div>
 
-            {/* Section 4: Security of Your Information */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 4. Security of Your Information
@@ -112,7 +108,6 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            {/* Section 5: Your Data Protection Rights */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 5. Your Data Protection Rights (e.g., GDPR, India Data Protection Act, etc.)
@@ -133,7 +128,6 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            {/* Section 6: Links to Other Sites */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 6. Links to Other Sites
@@ -146,7 +140,6 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            {/* Section 7: Children's Privacy */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 7. Children's Privacy
@@ -161,7 +154,6 @@ const PrivacyPolicy = () => {
               </p>
             </div>
 
-            {/* Section 8: Changes to This Privacy Policy */}
             <div className="mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-orange-700 mb-3 border-b border-orange-300 pb-2">
                 8. Changes to This Privacy Policy
@@ -174,10 +166,9 @@ const PrivacyPolicy = () => {
                 Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective
                 when they are posted on this page.
               </p>
-
             </div>
 
-            
+
           </div>
         </div>
       </section>

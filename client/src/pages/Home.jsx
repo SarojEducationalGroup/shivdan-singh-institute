@@ -1,8 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import campusImage from '../assets/HERO-IMAGE.jpg';
 import Recruiters from './Recruiters';
-// import Courses from './Courses';
 import Placement from './Placement';
 import WhyChooseUs from './WhyChooseUs.jsx';
 import Hero from './Hero.jsx';
@@ -11,6 +9,7 @@ import ChairmanMessage from './ChairmanMessage.jsx';
 import AiLearningSection from './AiLearningSection.jsx';
 import  InstagramEmbed  from '../components/InstagramEmbed.jsx';
 import AdmissionsOpen from '../components/AdmissionsOpen.jsx';
+import Flash from '../components/Flash.jsx';
 
 function Home() {
   return (
@@ -20,6 +19,7 @@ function Home() {
       <AiLearningSection />
       <Recruiters />
       <AdmissionsOpen />
+      <Flash/>
       <WhyChooseUs />
       <ChairmanMessage />
       <Placement />

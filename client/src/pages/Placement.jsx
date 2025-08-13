@@ -1,14 +1,13 @@
 import React from 'react';
 
-// Import student images and logos
 import umeshImage from '../assets/umesh-mishra.jpeg';
 import pramuditImage from '../assets/pramudit-shukla.jpeg';
 import shaloniImage from '../assets/shaloni-devi.jpeg';
-import newStudentImage from '../assets/Raj.PNG';  
+import amanImage from '../assets/aman-verma.png';  
 import squareitLogo from '../assets/squareit-logo.png';
-import tendertpalmLogo from '../assets/techmech-logo.png';
+import techmechLogo from '../assets/techmech-logo.png';
 import maxHealthcareLogo from '../assets/maxhealthcare-logo.png';
-import concentrix from '../assets/Concentrix.png';  
+import concentrixLogo from '../assets/Concentrix.png';  
 
 const placementsData = [
  
@@ -28,7 +27,7 @@ const placementsData = [
     lpa: '₹12 LPA',
     studentImage: pramuditImage,
     role: 'Full Stack Developer',
-    companyLogo: tendertpalmLogo,
+    companyLogo: techmechLogo,
   },
   {
     id: 3,
@@ -44,9 +43,9 @@ const placementsData = [
     name: 'Aman Verma',
     company: 'Concentrix',
     lpa: '₹9 LPA',
-    studentImage: newStudentImage,
+    studentImage: amanImage,
     role: 'Data Analyst',
-    companyLogo: concentrix,
+    companyLogo: concentrixLogo,
   },
    
   

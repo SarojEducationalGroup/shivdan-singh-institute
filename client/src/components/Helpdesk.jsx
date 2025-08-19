@@ -12,13 +12,6 @@ const HelpDesk = () => {
     }
   };
 
-  // Set up the scroll to top functionality
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", toggleVisibility);
@@ -27,7 +20,7 @@ const HelpDesk = () => {
 
   return (
     <div className="relative bg-gray-100 flex items-center justify-center">
-      <div className="fixed bottom-4 flex flex-row items-end space-y-1 z-50">
+      <div className="fixed bottom-8 left-8 flex flex-row items-start space-y-1 z-50">
         {/* Help Desk Component */}
         <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white flex items-center p-3 rounded-full shadow-lg max-w-sm">
           {/* Headphone Icon SVG */}
@@ -51,26 +44,6 @@ const HelpDesk = () => {
           </div>
         </div>
 
-        {/* Scroll to top button */}
-        {isVisible && (
-          <button
-            onClick={scrollToTop}
-            className="p-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full shadow-lg transition-opacity duration-300 hover:opacity-80"
-            aria-label="Scroll to top"
-          >
-            {/* Up arrow SVG */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-          </button>
-        )}
       </div>
    
     </div>

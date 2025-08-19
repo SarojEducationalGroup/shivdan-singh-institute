@@ -9,7 +9,7 @@ import ChairmanMessage from './ChairmanMessage.jsx';
 import AiLearningSection from './AiLearningSection.jsx';
 import  InstagramEmbed  from '../components/InstagramEmbed.jsx';
 import AdmissionsOpen from '../components/AdmissionsOpen.jsx';
-import Flash from '../components/Flash.jsx';
+import Flash from '../components/AiEnabledAdmissions.jsx';
 
 function Home() {
   return (

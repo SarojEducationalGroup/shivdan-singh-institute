@@ -6,7 +6,7 @@ const AITag = ({ icon, title, description, isActive, onClick }) => {
       onClick={onClick}
       className={`relative cursor-pointer transition-all duration-300 ${isActive ? 'scale-105' : 'hover:scale-100'}`}
     >
-      <div className={`absolute -top-3 -right-3 bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-md ${isActive ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`absolute -top-3 -right-3 bg-green-600 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-md ${isActive ? 'opacity-100' : 'opacity-0'}`}>
         ✓
       </div>
       <div className={`p-4 rounded-xl shadow-lg ${isActive ? 'bg-orange-500 text-white' : 'bg-white text-orange-800'} border-2 ${isActive ? 'border-orange-600' : 'border-orange-200'} hover:shadow-xl transition-all`}>
@@ -24,7 +24,7 @@ const AITag = ({ icon, title, description, isActive, onClick }) => {
   );
 };
 
-const AIFloatingTags = () => {
+const AiEnabledAdmissions = () => {
   const [activeTag, setActiveTag] = useState(null);
   const [isFloating, setIsFloating] = useState(true);
 
@@ -59,16 +59,7 @@ const AIFloatingTags = () => {
       title: "Admission Predictor",
       description: "Get AI-powered chances of admission based on historical data"
     },
-    {
-      id: 4,
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-        </svg>
-      ),
-      title: "Essay Optimizer",
-      description: "AI feedback to strengthen your application essays"
-    }
+ 
   ];
 
   // Auto-rotate active tag
@@ -138,4 +129,4 @@ const AIFloatingTags = () => {
   );
 };
 
-export default AIFloatingTags;
+export default AiEnabledAdmissions;

@@ -382,7 +382,7 @@ const Chatbot = () => {
       {!isOpen && (
         <button
           onClick={toggleChatbot}
-          className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
+          className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
         >
           <FiMessageSquare className="text-white text-2xl" />
         </button>
@@ -390,9 +390,9 @@ const Chatbot = () => {
 
       {isOpen && (
         <div className="w-80 h-[32rem] bg-white rounded-lg shadow-xl flex flex-col overflow-hidden border border-gray-200">
-          <div className="bg-blue-600 text-white p-4 flex justify-between items-center">
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 flex justify-between items-center">
             <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center mr-2">
                 <FiMessageSquare className="text-white" />
               </div>
               <div>
@@ -428,7 +428,7 @@ const Chatbot = () => {
                 <div
                   className={`inline-block p-3 rounded-lg max-w-[80%] ${
                     message.sender === "user"
-                      ? "bg-blue-500 text-white rounded-tr-none"
+                      ? "bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-tr-none"
                       : "bg-white text-gray-800 rounded-tl-none shadow-sm border border-gray-200"
                   }`}
                 >
@@ -487,30 +487,14 @@ const Chatbot = () => {
                     placeholder="Phone Number"
                     className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
                   />
-                  {/* Subject and Message hidden as per original context, uncomment if needed for Google Sheet */}
-                  {/* <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleFormChange}
-                    placeholder="Subject"
-                    className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
-                  />
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleFormChange}
-                    placeholder="Your message..."
-                    rows="3"
-                    className="w-full p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500"
-                  ></textarea> */}
+                
                   <button
                     type="submit"
                     disabled={loading}
                     className={`w-full py-2 text-sm rounded font-medium transition ${
                       loading
                         ? "bg-blue-300 cursor-not-allowed text-white"
-                        : "bg-blue-600 hover:bg-blue-700 text-white"
+                        : "bg-gradient-to-r from-orange-500 to-red-500 hover:bg-blue-700 text-white"
                     }`}
                   >
                     <div className="flex items-center justify-center space-x-2">
@@ -552,7 +536,7 @@ const Chatbot = () => {
                 disabled={!inputValue.trim()}
                 className={`ml-2 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                   inputValue.trim()
-                    ? "bg-blue-600 hover:bg-blue-700 text-white"
+                    ? "bg-gradient-to-r from-orange-500 to-red-500 hover:bg-blue-700 text-white"
                     : "bg-gray-200 text-gray-400 cursor-not-allowed"
                 }`}
               >

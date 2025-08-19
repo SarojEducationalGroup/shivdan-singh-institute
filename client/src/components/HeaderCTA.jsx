@@ -16,7 +16,7 @@ const HeaderCTA = () => {
   }
   50% {
     transform: scale(1.05);
-    opacity: 0;
+    opacity: 1;
   }
 }
 

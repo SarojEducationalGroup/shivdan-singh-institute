@@ -46,106 +46,33 @@ export default function SearchBar() {
   
   // The navItems data provided by the user.
   // Note: 'programsData' is a placeholder and would need to be defined.
-  const navItems = [
-    {
-      title: "About",
-      path: "/about",
-      subItems: [
-        { title: "About SIU", path: "/about/about-siu" },
-        { title: "Boards", path: "/about/boards" },
-        { title: "Deans", path: "/about/deans" },
-        { title: "Recognition", path: "/about/recognition" },
-        { title: "Annual Reports", path: "/annual-account" },
-        { title: "Committees", path: "/about/committees" },
-        {
-          title: "Public Self Disclosure",
-          path: "/about/public-self-disclosure",
-        },
-        { title: "Act and Statutes or MoA", path: "/about/approvals-documents" },
-      ],
-    },
-    {
-      title: "Administration",
-      path: "/administration",
-      subItems: [
-        { title: "Chancellor", path: "/chancellor" },
-        { title: "Finance Commitee", path: "/administration/finance-commitee" },
-        {
-          title: "Academic Council",
-          path: "/administration/academic-council",
-        },
-        {
-          title: "Executive Council",
-          path: "/administration/executive-council",
-        },
-        {
-          title: "Internal Complaint Committee",
-          path: "/administration/internal-complaint",
-        },
-      ],
-    },
-    {
-      title: "Programs",
-      megaMenu: true,
-      columns: [], // programsData.columns; placeholder for user to define
-    },
-    {
-      title: "Academics",
-      path: "/academics",
-      megaMenu: true,
-      columns: [
-        {
-          heading: "INSTITUTES",
-          type: "institutes",
-          items: [
-            { title: "Saroj Institute of Artificial Intelligence (SIAI)", path: "/academics/Saroj-Institute-of-Artificial-Intelligence" },
-            { title: "Saroj Institute of Management & Technology (SIMT)", approval: "AICTE Approved", path: "/academics/Saroj-Institute-of-Management-and-Technology" },
-            { title: "Saroj Institute of Basic & Health Sciences (SIBHS)", path: "/academics/Saroj-Institute-of-Basic-and-Health-Sciences" },
-            { title: "Saroj Institute of Humanities & Education (SiHE)", path: "/academics/Saroj-Institute-of-Humanities-and-Education" },
-            { title: "Saroj Institute of Sports Sciences & Research (SISSR)", path: "/academics/Saroj-Institute-of-Sports-Science-and-Research" },
-            { title: "Saroj Institute of Entrepreneurship & Business (SIEB)", path: "/academics/Saroj-Insitute-of-Entrepreneurship-and-Business" },
-            { title: "Saroj Institute of Film and Fashion (SIFF)", approval: "AICTE Approved", path: "/academics/Saroj-Institute-of-Film-and-Fashion" },
-            { title: "Lucknow Institute of Pharmacy (LIP)", approval: "PCI Approved", path: "/academics/Lucknow-Institute-of-Pharmacy" },
-            { title: "Saroj College of Law (SCL)", path: "/academics/saroj-college-of-law" }
-          ],
-        },
-        {
-          heading: "PROGRAMS & FEES",
-          type: "fees",
-          items: [
-            { title: "Saroj Institute of Artificial Intelligence- Programs & Fee", path: "/academics/Saroj-Institute-of-Artificial-Intelligence" },
-            { title: "Saroj Institute of Management & Technology- Programs & Fee ", path: "/academics/Saroj-Institute-of-Management-and-Technology" },
-            { title: "Saroj Institute of Basic & Health Sciences- Programs & Fee ", path: "/academics/Saroj-Institute-of-Basic-and-Health-Sciences" },
-            { title: "Saroj Institute of Humanities & Education- Programs & Fee ", path: "/academics/Saroj-Institute-of-Humanities-and-Education" },
-            { title: "Saroj Institute of Sports Sciences & Research- Programs & Fee ", path: "/academics/Saroj-Institute-of-Sports-Science-and-Research" },
-            { title: "Saroj Institute of Entrepreneurship & Business- Programs & Fee", path: "/academics/Saroj-Insitute-of-Entrepreneurship-and-Business" },
-            { title: "Saroj Institute of Film and Fashion- Programs & Fee", path: "/academics/Saroj-Institute-of-Film-and-Fashion" },
-            { title: "Lucknow Institute of Pharmacy- Programs & Fee", path: "/academics/Lucknow-Institute-of-Pharmacy" }
-          ],
-        },
-        {
-          heading: "ACADEMICS MENU",
-          type: "academics-menu",
-          items: [
-            { title: "Academic Calendar", path: "/academics/academic-calendar" },
-            { title: "Statutes", path: "/academics/statutes" },
-            { title: "Faculty", path: "/academics/faculty" },
-          ],
-        },
-      ],
-    },
-    {
-      title: "Admissions",
-      path: "/admissions",
-      subItems: [
-        { title: "Admission Process", path: "/admissions/admission-process" },
-        { title: "Eligibility Criteria", path: "/admissions/admission-criteria" },
-        { title: "Fee Structure", path: "/admissions/fee-structure" },
-        { title: "Scholarship", path: "/admissions/scholarship" },
-      ],
-    },
-    { title: "Contact Us", path: "/contact-us" },
-  ];
+ const navItems = [
+  { title: "Home", path: "/" },
+  {
+    title: "About Us",
+     
+    subItems: [{ title: "About SSITM", path: "/about/about-ssitm" }],
+  },
+  {
+    title: "Courses",
+    subItems: [
+      { title: "All Courses", path: "/courses/AllCourses" },
+      { title: "Undergraduate", path: "/courses/undergraduate" },
+      { title: "Postgraduate", path: "/courses/postgraduate" },
+      { title: "Diploma", path: "/courses/diploma" },
+    ],
+  },
+  {
+    title: "Admission",
+    subItems: [
+      { title: "Admission Process", path: "/admission/admission-process" },
+      { title: "Eligibility Criteria", path: "/admission/eligibility" },
+      {
+        title: "Fee Structure", path: "/admission/fee-structure" },
+    ],
+  },
+  { title: "Contact Us", path: "/contact-us" },
+];
 
   // State to hold the current search query from the input field.
   const [query, setQuery] = useState('');

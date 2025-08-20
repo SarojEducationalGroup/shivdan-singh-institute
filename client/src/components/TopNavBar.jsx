@@ -1,5 +1,6 @@
 import React from "react";
 import { BookOpen, PhoneCall, Facebook, Instagram, Linkedin, CreditCard, Users } from "lucide-react";  
+import SearchBar from "./SearchBar";
 
 const TopNav = () => {
   return (
@@ -77,6 +78,9 @@ const TopNav = () => {
 
       <div>
         <span className="text-white font-extrabold text-xl">AKTU Code: 007</span>
+      </div>
+      <div>
+        <SearchBar/>
       </div>
     </div>
   );
